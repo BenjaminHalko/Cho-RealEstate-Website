@@ -1,0 +1,14 @@
+// Scrollbar
+* {
+    scrollbar-color: #333333 #111111;
+    ::-webkit-scrollbar {
+        width: 14px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #111111;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #242424;
+        border-radius: 20px;
+    }
+}
