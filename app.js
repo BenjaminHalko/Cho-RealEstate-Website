@@ -7,24 +7,8 @@ const path = require('path')
 const app = express();
 app.set('view engine', 'ejs');
 
-// Compile sass
-const sass = require("dart-sass")
-app.use('/public/css', (req, res, next) => {
-  sass.renderSync({
-    file: path.join(__dirname, 'public', 'scss', 'main.scss'),
-    outputStyle: 'compressed'
-  }, (err, result) => {
-    if (err) {
-      console.log(err)
-      res.send('Error')
-    } else {
-      res.set('Content-Type', 'text/css')
-      res.send(result.css.toString())
-    }
-  })
-});
-
 // Load static files
+app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
 app.use('/', express.static(path.join(__dirname, 'public')))
 

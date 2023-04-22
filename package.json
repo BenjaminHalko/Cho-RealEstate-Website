@@ -1,10 +1,10 @@
 {
   "dependencies": {
-    "bootstrap": "^5.2.3",
     "ejs": "^3.1.9",
     "express": "^4.18.2"
   },
   "devDependencies": {
+    "bootstrap": "^5.2.3",
     "nodemon": "^2.0.22",
     "npm-run-all": "^4.1.5",
     "sass": "^1.61.0"
@@ -13,6 +13,6 @@
     "start": "node app.js",
     "dev": "npm-run-all --parallel startnodemon sass-watch",
     "startnodemon": "nodemon app.js",
-    "sass-watch": "sass --watch --no-source-map scss:public/css"
+    "sass-watch": "sass --watch --no-source-map --style=compressed scss:public/css"
   }
 }

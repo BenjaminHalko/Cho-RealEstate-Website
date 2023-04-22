@@ -1,0 +1,52 @@
+.navbar {
+    // Variables
+    $transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
+
+    // Constants
+    padding: 16px;
+    transition: $transition;
+
+
+    .nav-link {
+        font-size: medium;
+        font-weight: bold;
+        color: white;
+    }
+
+    // Navbar Dropdown
+    .dropdown-menu {
+        background-color: #000000a6;
+        backdrop-filter: blur(3px);
+        border: 1px solid #4b4b4ba6;
+
+        .dropdown-item {
+            color: white;
+            padding: 8px 16px;
+            transition: $transition;
+
+            &:hover {
+                background-color: #000000a6;
+                color: white;
+            }
+        }
+    }
+
+    // Change the navbar styling once the user starts to scroll
+    background-color: #000000a6;
+    backdrop-filter: blur(3px);
+
+    .navbar-brand img {
+        height: 50px;
+        transition: $transition;
+    }
+
+    // On Scroll
+    &.navbar-shrink {
+        background-color: black;
+        backdrop-filter: none;
+
+        .navbar-brand img {
+            height: 30px;
+        }
+    }
+}

@@ -1,7 +1,11 @@
+// Custom
 @import "_meta.scss";
 @import "_navbar.scss";
 
+
 // Temp
 body {
-    background-image: url("/images/logo2.png");
+    background-image: url("/images/backTemp.png");
+    background-repeat: no-repeat;
+    height: 120vh;
 }
