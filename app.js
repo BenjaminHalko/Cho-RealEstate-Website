@@ -12,9 +12,12 @@ app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
 app.use('/', express.static(path.join(__dirname, 'public')))
 
+// Load presale-data
+const presaleData = require('./presale-data.json');
+
 // Load routes
 app.get("/", (req, res) => {
-  res.render('pages/main');
+  res.render('pages/home');
 });
 
 // Start server
