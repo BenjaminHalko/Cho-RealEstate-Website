@@ -3,13 +3,29 @@
 <head>
     <%- include('../partials/header'); %>
     <link rel="stylesheet" href="./css/home.css">
+    <style>
+        body {
+            height: 200vh;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
     <%- include('../partials/navbar'); %>
 
     <!-- Main -->
-    <div class="featured-background" style="<%= `background-image: ${randomProject}` %>">
-    </div>
+    <div class="main-background" style="--background-image: url('../images/presale/<%= featured %>/<%= main_background %>')">
+        <div class="main-content d-inline-flex justify-content-center align-items-center flex-wrap">
+            <div class="main-content__left d-inline-flex flex-column justify-content-center align-items-center">
+                <img src="./images/home/headshot.png" alt="headshot">
+                <a class="btn btn-primary d-inline-flex justify-content-center align-items-center" href="#" role="button" style="--bs-btn-font-size: 2rem; gap: 10px; width: 100%">
+                    Contact
+                    <svg width="32" height="32">
+                        <use xlink:href="./svg/person-lines-fill.svg#id"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div> 
 </body>
 </html>

@@ -1,12 +1,11 @@
 {
     "featured-location": "test",
-    "locations": [
-        {
+    "locations": {
+        "test": {
             "name": "testing",
-            "id": "test",
             "description": "this is a lovely place",
-            "background-image": "temp.png",
+            "images": ["temp.png"],
             "featured-video": "3EBrKnOJW1E"
         }
-    ]
+    }
 }

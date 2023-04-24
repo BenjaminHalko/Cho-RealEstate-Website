@@ -16,8 +16,13 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 const presaleData = require('./presale-data.json');
 
 // Load routes
+const featured = presaleData["locations"][presaleData["featured-location"]];
 app.get("/", (req, res) => {
-  res.render('pages/home');
+  res.render('pages/home',
+    {
+      featured: presaleData["featured-location"],
+      main_background: featured["images"][Math.floor(Math.random() * featured["images"].length)]
+    });
 });
 
 // Start server
