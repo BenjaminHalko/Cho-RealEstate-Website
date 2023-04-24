@@ -6,7 +6,6 @@
     padding: 16px;
     transition: $transition;
 
-
     .nav-link {
         font-size: medium;
         font-weight: bold;
@@ -37,11 +36,21 @@
         height: 50px;
         transition: $transition;
     }
+    
+     // On Scroll
+    @media screen and (min-width: 1150px) {
+        &.navbar-shrink {
+            background-color: black;
+    
+            .navbar-brand img {
+                height: 30px;
+            }
+        }
+    }
 
-    // On Scroll
-    &.navbar-shrink {
+    // Mobile
+    @media screen and (max-width: 1150px) {
         background-color: black;
-
         .navbar-brand img {
             height: 30px;
         }
