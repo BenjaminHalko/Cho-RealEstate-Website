@@ -1,4 +1,14 @@
-<div class="presale_card">
-    <h1>content goes here<h1>
-    <p>I love content!</p>
+<div class="presale_card" style="background-image: url('/images/presale/<%= location.id %>/<%= location.card_image %>');">
+    <div class="card-image">
+        <img src="/images/presale/<%= location.id %>/<%= location.card_image %>" alt="<%= location.name %>">
+        <span class="overlay" style="--color: #3DDC84">Featured</span>
+    </div>
+    <div class="content">
+        <div class="title">
+            <h1><%= location.name %></h1>
+            <p><%= location.location %></p>
+        </div>
+        <p class="desc"><%= location.short_desc %></p>
+        <p class="link">View Sale →</p>
+    </div>
 </div>

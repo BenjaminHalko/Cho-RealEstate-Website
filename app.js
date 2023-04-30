@@ -15,13 +15,18 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 // Load presale-data
 const presaleData = require('./presale-data.json');
 
+// Adjust presale-data to be more easily accessible
+for (var location in presaleData["locations"]) {
+  presaleData["locations"][location]["id"] = location;
+}
+
 // Load routes
-const featured = presaleData["locations"][presaleData["featured-location"]];
+const featured = presaleData["locations"][presaleData["featured_location"]];
 app.get("/", (req, res) => {
   res.render('pages/home',
     {
-      featured: presaleData["featured-location"],
-      main_background: featured["images"][Math.floor(Math.random() * featured["images"].length)]
+      featured: featured,
+      main_background: featured['images'][Math.floor(Math.random() * featured["images"].length)]
     });
 });
 

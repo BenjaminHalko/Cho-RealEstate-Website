@@ -14,7 +14,8 @@
     <%- include('../partials/navbar'); %>
 
     <!-- Main -->
-    <div class="main-background" style="--background-image: url('../images/presale/<%= featured %>/<%= main_background %>')">
+    <div class="main">
+        <span class="main-background" style="--image: url('../images/presale/<%= featured %>/<%= main_background %>')"></span>
         <div class="main-content d-inline-flex justify-content-center align-items-center flex-wrap">
             <div class="main-content__left d-inline-flex flex-column justify-content-center align-items-center">
                 <img src="./images/home/headshot.png" alt="headshot">
@@ -25,7 +26,7 @@
                     </svg>
                 </a>
             </div>
-            <%- include('../partials/presale_card'); %>
+            <%- include('../partials/presale_card', {location: featured}); %>
         </div>
     </div> 
 </body>
