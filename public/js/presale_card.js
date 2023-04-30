@@ -12,7 +12,6 @@ window.onload = function() {
         let rotateY = map(mouseX, 0, 300, -20, 20);
         let rotateX = map(mouseY, 0, 400, 20, -20);
         let brightness = map(mouseY, 0, 400, 1.5, 0.5);
-        console.log(mouseX, mouseY, rotateX, rotateY, brightness)
 
         inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         inner.style.filter = `brightness(${brightness})`;
