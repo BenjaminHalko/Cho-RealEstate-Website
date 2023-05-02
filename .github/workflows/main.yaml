@@ -20,4 +20,4 @@ jobs:
           git pull
           npm install
           killall node
-          node app.js
+          node app.js &
