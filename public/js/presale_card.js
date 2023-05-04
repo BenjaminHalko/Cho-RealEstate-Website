@@ -1,4 +1,4 @@
-window.onload = function() {
+addEventListener("load", (event) => {
     const cards = document.querySelectorAll('.presale_card');
 
     function map(val, minA, maxA, minB, maxB) {
@@ -28,4 +28,4 @@ window.onload = function() {
             inner.style.filter = 'brightness(1)';
         });
     });
-};
+});

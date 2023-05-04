@@ -1,4 +1,4 @@
-window.onload = function() {
+addEventListener("load", (event) => {
     const navbar = document.getElementById('navbar-main');
 
     window.onscroll = function() {
@@ -8,4 +8,4 @@ window.onload = function() {
             navbar.classList.remove('navbar-shrink')
         }
     };
-};
+});
