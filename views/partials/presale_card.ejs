@@ -1,16 +1,22 @@
-<a class="presale_card" href="/<%= location.id %>">
+<a class="presale_card horizontal" href="/<%= location.id %>" style="--height: <%= (typeof isFeatured !== 'undefined' ? '400px' : '300px') %>">
     <div class="card_inner" style="background-image: url('/images/presale/<%= location.id %>/<%= location.card_image %>');">
         <div class="card-image">
             <img src="/images/presale/<%= location.id %>/<%= location.card_image %>" alt="<%= location.name %>">
+            <% if(typeof isFeatured !== 'undefined') { %>
             <span class="overlay" style="--color: #3DDC84">Featured</span>
+            <% } %>
         </div>
         <div class="content">
             <div class="title">
                 <h1><%= location.name %></h1>
+                <% if(typeof isFeatured !== 'undefined') { %>
                 <p><%= location.location %></p>
+                <% } %>
             </div>
             <p class="desc"><%= location.short_desc %></p>
+            <% if(typeof isFeatured !== 'undefined') { %>
             <p class="link">View Sale →</p>
+            <% } %>
         </div>
     </div>
 </a>

@@ -30,6 +30,14 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/presales", (req, res) => {
+  res.render('pages/presale',
+    {
+      featured: featured,
+      locations: presaleData["locations"]
+    });
+});
+
 // Start server
 app.listen(5000, () => {
   console.log('Listening on port ' + 5000);

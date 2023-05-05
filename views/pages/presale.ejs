@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+    <link rel="stylesheet" href="./css/presale.css">
+    <script src="./js/presale.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <%- include('../partials/navbar'); %>
+
+    <!-- Main -->
+    <div class="main">
+        <span class="main-background" id="mainBackground" style="background-color: aqua;"></span>
+        <div class="main-content">
+            <h1 class="header">Southern Burnaby</h1>
+            <div class="group d-flex flex-wrap justify-content-center">
+            <%- include('../partials/presale_card', {location: featured}); %>
+            <%- include('../partials/presale_card', {location: featured}); %>
+            <%- include('../partials/presale_card', {location: featured}); %>
+            <%- include('../partials/presale_card', {location: featured}); %>
+            </div>
+            <h1 class="header">Northern Burnaby</h1>
+            <div class="group d-flex flex-wrap justify-content-center">
+            <%- include('../partials/presale_card', {location: featured}); %>
+            <%- include('../partials/presale_card', {location: featured}); %>
+            <%- include('../partials/presale_card', {location: featured}); %>
+            <%- include('../partials/presale_card', {location: featured}); %>
+            </div>
+            <h1 class="header">Other Burnaby</h1>
+            <div class="group d-flex flex-wrap justify-content-center">
+            <%- include('../partials/presale_card', {location: featured}); %>
+            <%- include('../partials/presale_card', {location: featured}); %>
+            <%- include('../partials/presale_card', {location: featured}); %>
+            <%- include('../partials/presale_card', {location: featured}); %>
+            </div>
+            <h1 class="header">Maybe Vancouver</h1>
+            <div class="group d-flex flex-wrap justify-content-center">
+            <%- include('../partials/presale_card', {location: featured}); %>
+            <%- include('../partials/presale_card', {location: featured}); %>
+            <%- include('../partials/presale_card', {location: featured}); %>
+            <%- include('../partials/presale_card', {location: featured}); %>
+            </div>
+        </div>
+    </div>
+</body>

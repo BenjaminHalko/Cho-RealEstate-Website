@@ -1,0 +1,41 @@
+.main-background {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+
+    & .fading {
+        filter: none;
+        transform: scale(1);
+        opacity: 0;
+        animation: fade 0.5s;
+        animation-direction: normal;
+        animation-timing-function: var(--curve);
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fade {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+}
+
+.main-content {
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 60px;
+
+    .header {
+        font-size: 50px;
+        font-weight: bold;
+        margin-top: 70px;
+        margin-bottom: 50px;
+        color: white;
+        text-shadow: 5px 5px 5px #00000080;
+    }
+
+    .group {
+        gap: 40px;
+    }
+}

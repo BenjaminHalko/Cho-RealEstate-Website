@@ -4,19 +4,6 @@
     position: relative;
     overflow: hidden;
 
-    .main-background {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        z-index: -1;
-        background-image: url('../images/presale/test/test.jpeg');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        transform: scale(1.1);
-        filter: blur(5px) brightness(0.8);
-    }
-
     .main-content {
         width: 100%;
         height: 100%;

@@ -1,11 +1,5 @@
 .presale_card {
-    // Variables
-    $width: 300px;
-    $height: 400px;
-
     // Dimensions
-    width: $width;
-    height: $height;
     perspective: 600px;
     
     // More Styles
@@ -27,23 +21,21 @@
 
     .card_inner {
         // Dimensions
-        width: $width;
-        height: $height;
+        width: 300px;
 
         // Background
         background-size: cover;
         background-position: center;
+        overflow: hidden;
 
         // More Styles
         border-radius: 20px;
-        overflow: hidden;
         transform: scale(1);
         pointer-events: none;
-        
 
         .card-image {
             // Variables
-            $imageHeight: 200px;
+            $imageHeight: (var(--height) / 2);
 
             // Dimensions
             width: 100%;
@@ -53,7 +45,7 @@
             overflow: hidden;
 
             img {
-                width: $width;
+                width: 300px;
                 height: $imageHeight;
                 object-fit: cover;
                 object-position: center;
@@ -97,7 +89,7 @@
 
             // Dimensions
             width: 100%;
-            height: 100%;
+            height: calc(var(--height) / 2);
 
             // Positioning
             padding: 10px;
@@ -105,17 +97,22 @@
             padding-left: 15px;
             text-align: end;
 
+            display: flex;
+            flex-direction: column;
+
             .title {
                 h1 {
                     font-size: 1.5rem;
                     font-weight: 600;
                     margin: 0;
                     padding: 0;
+                    color: black;
                 }
+                height: 100%;
             }
 
             .link {
-                margin-top: auto;
+                margin-bottom: 0px;
             }
         }
     }

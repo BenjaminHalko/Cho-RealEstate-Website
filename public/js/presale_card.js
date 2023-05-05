@@ -7,11 +7,13 @@ addEventListener("load", (event) => {
 
     function PresaleCard(card, ev) {
         let inner = card.querySelector('.card_inner');
+        let cardWidth = card.offsetWidth;
+        let cardHeight = card.offsetHeight;
         let mouseX = ev.offsetX;
         let mouseY = ev.offsetY;
-        let rotateY = map(mouseX, 0, 300, -20, 20);
-        let rotateX = map(mouseY, 0, 400, 20, -20);
-        let brightness = map(mouseY, 0, 400, 1.5, 0.5);
+        let rotateY = map(mouseX, 0, cardWidth, -20, 20);
+        let rotateX = map(mouseY, 0, cardHeight, 20, -20);
+        let brightness = map(mouseY, 0, cardHeight, 1.5, 0.5);
 
         inner.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         inner.style.filter = `brightness(${brightness})`;
