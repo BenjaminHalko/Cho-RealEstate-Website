@@ -1,4 +1,12 @@
 .presale_card {
+    --height: 260px;
+    --width: 260px;
+
+    &.featured {
+        --height: 400px;
+        --width: 300px;
+    }
+
     // Dimensions
     perspective: 600px;
     
@@ -21,7 +29,7 @@
 
     .card_inner {
         // Dimensions
-        width: 300px;
+        width: var(--width);
 
         // Background
         background-size: cover;
@@ -33,20 +41,16 @@
         transform: scale(1);
         pointer-events: none;
 
-        .card-image {
-            // Variables
-            $imageHeight: (var(--height) / 2);
-
+        .card_image {
             // Dimensions
             width: 100%;
-            height: $imageHeight;
 
             // Set Overflow
             overflow: hidden;
 
             img {
-                width: 300px;
-                height: $imageHeight;
+                width: var(--width);
+                height: calc(var(--height) / 2);
                 object-fit: cover;
                 object-position: center;
                 transform: scale(1.1);
@@ -111,8 +115,61 @@
                 height: 100%;
             }
 
+            p {
+                font-size: 0.92rem;
+                line-height: 1.3rem;
+                margin-bottom: 0;
+            }
+
             .link {
                 margin-bottom: 0px;
+            }
+        }
+    }
+
+    &.featured {
+        .content {
+            p {
+                font-size: initial;
+                line-height: initial;
+                margin-bottom: initial;
+            }
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        .card_inner {
+            $height: 100px;
+
+            width: auto;
+            height: $height;
+
+            display: flex;
+
+            .card_image {
+                height: $height;
+
+                img {
+                    width: 100%;
+                    height: $height;
+                }
+            }
+
+            .content {
+                width: auto;
+                height: $height;
+
+                .title {
+                    h1 {
+                        font-size: 1.3rem;
+                    }
+                }
+
+                p {
+                    font-size: 0.75rem;
+                    line-height: 1rem;
+                    margin-bottom: 0px;
+                }
             }
         }
     }

@@ -5,8 +5,10 @@
 }
 
 
-// Scrollbar
+// Scrollbar & scrolling
 * {
+    scroll-margin-top: 100px;
+
     scrollbar-color: #333333 #111111;
     ::-webkit-scrollbar {
         width: 14px;
