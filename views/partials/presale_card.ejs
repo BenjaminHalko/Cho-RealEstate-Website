@@ -1,5 +1,5 @@
 <a class="presale_card <% if(typeof isFeatured !== 'undefined') { %> featured <% } %>" href="/<%= location.id %>">
-    <div class="card_inner" style="background-image: url('/images/presale/<%= location.id %>/<%= location.card_image %>');">
+    <div class="card_inner" style="--image: url('/images/presale/<%= location.id %>/<%= location.card_image %>');">
         <div class="card_image">
             <img src="/images/presale/<%= location.id %>/<%= location.card_image %>" alt="<%= location.name %>">
             <% if(typeof isFeatured !== 'undefined') { %>
