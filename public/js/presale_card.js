@@ -5,8 +5,8 @@ addEventListener("load", (event) => {
         return minB + ((val - minA) * (maxB - minB)) / (maxA - minA);
     }
 
-    function PresaleCard(card, ev) {
-        let inner = card.querySelector('.card_inner');
+    function PresaleCard_MouseMove(card, ev) {
+        const inner = card.querySelector('.card_inner');
         if (window.innerWidth >= 700) {
             let cardWidth = card.offsetWidth;
             let cardHeight = card.offsetHeight;
@@ -27,10 +27,10 @@ addEventListener("load", (event) => {
     // Set up the cards
     cards.forEach((card) => {
         card.addEventListener('mousemove', (ev) => {
-            PresaleCard(card, ev);
+            PresaleCard_MouseMove(card, ev);
         });
         card.addEventListener('mouseleave', (ev) => {
-            let inner = card.querySelector('.card_inner');
+            const inner = card.querySelector('.card_inner');
             inner.style.transform = 'rotateX(0deg) rotateY(0deg)';
             inner.style.filter = 'brightness(1)';
         });

@@ -1,11 +1,15 @@
 .presale_card {
-    --height: 260px;
-    --width: 260px;
+    // Variables
+    --height: 230px;
+    --width: 300px;
+    --imgHeight: 160px;
 
     &.featured {
-        --height: 400px;
+        --height: 330px;
         --width: 300px;
+        --imgHeight: 160px;
     }
+    
 
     // Dimensions
     perspective: 600px;
@@ -61,7 +65,7 @@
 
             img {
                 width: var(--width);
-                height: calc(var(--height) / 2);
+                height: var(--imgHeight);
                 object-fit: cover;
                 object-position: center;
                 transform: scale(1.1);
@@ -118,7 +122,8 @@
 
             .title {
                 h1 {
-                    font-size: 1.5rem;
+                    white-space: nowrap;
+                    font-size: 1.4rem;
                     font-weight: 600;
                     margin: 0;
                     padding: 0;
@@ -144,14 +149,14 @@
             p {
                 font-size: initial;
                 line-height: initial;
-                margin-bottom: initial;
+                margin-bottom: 14px;
             }
         }
     }
 
     @media screen and (max-width: 700px) {
         &:hover {
-            transform: scale(1.05);
+            transform: scale(1.045);
         }
 
         .card_inner {
