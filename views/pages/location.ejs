@@ -11,5 +11,18 @@
     <!-- Main -->
     <div class="main">
         <span class="main-background" id="mainBackground" style="background-image: url('/images/locations/<%= location.id %>/<%= location.main_background %>')"></span>
+
+        <div class="main-content">
+            <div class="floating-content">
+                <h1><%= location.name %></h1>
+            </div>
+            <div class="panel">
+                <h1 class="name"><%= location.name %></h1>
+                <div class="description">
+                    <%- include(`../partials/location_descriptions/${location.id}.ejs`); %>
+                </div>
+            </div>
+            
+        </div>
     </div>
 </body>

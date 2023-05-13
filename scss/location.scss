@@ -1,10 +1,67 @@
 .main {
     width: 100%;
     min-height: 100vh;
-    position: fixed;
     overflow: hidden;
 
     .main-background {
         filter: none;
+        position: fixed;
+    }
+
+    .main-content {
+        display: flex;
+
+        .panel {
+            $extra: calc(20vw - 200px);
+
+            background-color: #0000008e;
+            margin-left: auto;
+
+            width: 800px;
+            height: 100vh;
+
+            padding: 30px;
+            padding-top: 110px;
+            padding-left: calc($extra);
+            position: relative;
+            color:white;
+            text-align: right;
+
+            backdrop-filter: blur(10px);
+
+            clip-path: polygon(0 0, 100% 0, 100% 100%, $extra 100%);
+
+            .name {
+                font-size: 2rem;
+                font-weight: 700;
+            }
+
+            .description {
+                font-size: 1rem;
+                font-weight: 300;
+                margin-top: 60px;
+            }
+
+            .name, .description {
+                transform: translateX(-10%);
+                width: 110%;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            flex-direction: column-reverse;
+
+            .panel {
+                width: 100%;
+                height: auto;
+                margin-left: 0px;
+
+                .name, .description {
+                    text-align: center;
+                    width: auto;
+                    transform: translateX(0%);
+                }
+            }
+        }
     }
 }
