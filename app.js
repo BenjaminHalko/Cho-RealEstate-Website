@@ -12,16 +12,16 @@ app.set('view engine', 'ejs');
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
 app.use('/', express.static(path.join(__dirname, 'public')))
 
-// Load presale-data
-const presaleData = require('./presale-data.json');
+// Load location-data
+const locationData = require('./location-data.json');
 
-// Adjust presale-data to be more easily accessible
-for (var location in presaleData["locations"]) {
-  presaleData["locations"][location]["id"] = location;
+// Adjust location-data to be more easily accessible
+for (var location in locationData["locations"]) {
+  locationData["locations"][location]["id"] = location;
 }
 
 // Load routes
-const featured = presaleData["locations"][presaleData["featured_location"]];
+const featured = locationData["locations"][locationData["featured_location"]];
 app.get("/", (req, res) => {
   res.render('pages/home',
     {
@@ -31,12 +31,22 @@ app.get("/", (req, res) => {
 });
 
 app.get("/presales", (req, res) => {
-  res.render('pages/presale',
+  res.render('pages/presales',
     {
       featured: featured,
-      locations: presaleData["locations"]
+      locations: locationData["locations"]
     });
 });
+
+// Load location routes
+for (var location in locationData["locations"]) {
+  app.get("/" + location, (req, res) => {
+    res.render('pages/location',
+      {
+        location: locationData["locations"][location]
+      }); 
+  });
+}
 
 // Start server
 app.listen(5000, () => {

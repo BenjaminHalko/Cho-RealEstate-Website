@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+    <link rel="stylesheet" href="./css/location.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <%- include('../partials/navbar'); %>
+
+    <!-- Main -->
+    <div class="main">
+        <span class="main-background" id="mainBackground" style="background-image: url('/images/locations/<%= location.id %>/<%= location.main_background %>')"></span>
+    </div>
+</body>

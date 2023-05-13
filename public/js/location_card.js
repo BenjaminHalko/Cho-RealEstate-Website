@@ -1,5 +1,5 @@
 addEventListener("load", (event) => {
-    const cards = document.querySelectorAll('.presale_card');
+    const cards = document.querySelectorAll('.location_card');
 
     function map(val, minA, maxA, minB, maxB) {
         return minB + ((val - minA) * (maxB - minB)) / (maxA - minA);

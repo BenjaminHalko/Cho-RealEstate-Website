@@ -3,9 +3,9 @@ addEventListener("load", (event) => {
 
     addEventListener("scroll", (event) => {
         if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
-            navbar.classList.add('navbar-shrink')
+            navbar.classList.add('navbar-shrink');
         } else {
-            navbar.classList.remove('navbar-shrink')
+            navbar.classList.remove('navbar-shrink');
         }
     });
 });
