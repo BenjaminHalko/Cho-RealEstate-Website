@@ -7,7 +7,7 @@
             "location": "Southern Burnaby",
             "card_image": "contour.png",
             "main_background": "main_background.jpg",
-            "images": ["contour.png"]
+            "images": ["test.jpeg"]
         }
     }
 }

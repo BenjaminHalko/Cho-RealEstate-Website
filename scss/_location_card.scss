@@ -42,6 +42,7 @@
         overflow: hidden;
         position: relative;
 
+        /*
         &::before {
             background-image: var(--image);
             background-size: cover;
@@ -55,6 +56,7 @@
             height: 100%;
             filter: blur(4px);
         }
+        */
 
         .card_image {
             // Dimensions
@@ -99,11 +101,14 @@
                     border-left: 0px solid transparent;
                 }
             }
+
+            
         }
 
         .content {
             // Background
-            background-color: #ffffff66;
+            //background-color: #ffffff66;
+            background-color: white;
 
             // Dimensions
             width: 100%;
