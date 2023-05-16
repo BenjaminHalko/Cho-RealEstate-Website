@@ -19,10 +19,11 @@
 
             width: 800px;
             height: 100vh;
+            overflow: hidden;
 
             padding: 30px;
             padding-top: 110px;
-            padding-left: calc($extra);
+            padding-left: calc($extra / 2 + 93px);
             position: relative;
             color:black;
             text-align: right;
@@ -55,6 +56,7 @@
                 width: 100%;
                 height: auto;
                 margin-left: 0px;
+                padding-left: 30px;
 
                 .name, .description {
                     text-align: center;
