@@ -9,28 +9,28 @@
     .nav-link {
         font-size: medium;
         font-weight: bold;
-        color: white;
+        color: black;
     }
 
     // Navbar Dropdown
     .dropdown-menu {
-        background-color: #000000a6;
+        background-color: #ffffffa6;
         border: 1px solid #4b4b4ba6;
 
         .dropdown-item {
-            color: white;
+            color: black;
             padding: 8px 16px;
             transition: $transition;
 
             &:hover {
-                background-color: #000000a6;
-                color: white;
+                background-color: #ffffffa6;
+                color: black;
             }
         }
     }
 
     // Change the navbar styling once the user starts to scroll
-    background-color: #000000a6;
+    background-color: #ffffffa6;
 
     .navbar-brand img {
         height: 50px;
@@ -40,7 +40,7 @@
      // On Scroll
     @media screen and (min-width: 1150px) {
         &.navbar-shrink {
-            background-color: black;
+            background-color: white;
     
             .navbar-brand img {
                 height: 30px;
@@ -50,7 +50,7 @@
 
     // Mobile
     @media screen and (max-width: 1150px) {
-        background-color: black;
+        background-color: white;
         .navbar-brand img {
             height: 30px;
         }

@@ -14,7 +14,7 @@
         .panel {
             $extra: calc(20vw - 200px);
 
-            background-color: #0000008e;
+            background-color: #ffffff5d;
             margin-left: auto;
 
             width: 800px;
@@ -24,7 +24,7 @@
             padding-top: 110px;
             padding-left: calc($extra);
             position: relative;
-            color:white;
+            color:black;
             text-align: right;
 
             backdrop-filter: blur(10px);
