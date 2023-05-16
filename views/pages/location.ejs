@@ -3,6 +3,7 @@
 <head>
     <%- include('../partials/header'); %>
     <link rel="stylesheet" href="./css/location.css">
+    <script src="./js/location.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -19,6 +20,7 @@
             </div>
             <div class="panel">
                 <h1 class="name"><%= location.name %></h1>
+                <h2 class="location"><%= location.location %></h2>
                 <div class="description">
                     <%- include(`../partials/location_descriptions/${location.id}.ejs`); %>
                 </div>
