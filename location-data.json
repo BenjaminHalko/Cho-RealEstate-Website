@@ -6,8 +6,8 @@
             "short_desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
             "location": "Southern Burnaby",
             "card_image": "contour.png",
-            "main_background": "test.jpeg",
-            "images": ["test.jpeg"]
+            "main_background": "main_background.jpeg",
+            "images": ["main_background.jpeg"]
         }
     }
 }
