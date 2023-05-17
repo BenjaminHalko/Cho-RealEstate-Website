@@ -26,20 +26,23 @@
 
             min-width: 500px;
 
+            --width: 480px;
+            --height: 270px;
+
             iframe, #imageCarousel {
                 filter: var(--card-shadow);
-                width: 480px;
-                height: 270px;
+                width: var(--width);
+                height: var(--height);
             }
 
             #imageCarousel .carousel-item {
-                width: 480px;
-                height: 270px;
+                width: var(--width);
+                height: var(--height);
                 overflow: hidden;
 
                 img {
-                    width: 480px;
-                    height: 270px;
+                    width: var(--width);
+                    height: var(--height);
                 }
             }
         }
@@ -104,6 +107,8 @@
                 flex-direction: row;
                 min-width: none;
 
+                --width: 360px;
+                --height: 180px;
             }
 
             .panel {
