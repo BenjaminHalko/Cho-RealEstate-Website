@@ -5,6 +5,8 @@
     // Constants
     padding: 16px;
     transition: $transition;
+    background-color: #ffffffba;
+    backdrop-filter: blur(10px);
 
     .nav-link {
         font-size: medium;
@@ -29,30 +31,7 @@
         }
     }
 
-    // Change the navbar styling once the user starts to scroll
-    background-color: #ffffffa6;
-
     .navbar-brand img {
-        height: 50px;
-        transition: $transition;
-    }
-    
-     // On Scroll
-    @media screen and (min-width: 1150px) {
-        &.navbar-shrink {
-            background-color: white;
-    
-            .navbar-brand img {
-                height: 30px;
-            }
-        }
-    }
-
-    // Mobile
-    @media screen and (max-width: 1150px) {
-        background-color: white;
-        .navbar-brand img {
-            height: 30px;
-        }
+        height: 30px;
     }
 }

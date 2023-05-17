@@ -1,7 +1,11 @@
 // Global Variables
 :root {
     --shadow: drop-shadow(10px 10px 5px #00000080);
+    --card-shadow: drop-shadow(0 0 10px black);
     --curve: cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    --glass-white: #ffffffba;
+    --glass-blur: blur(10px);
 }
 
 
@@ -9,20 +13,20 @@
 * {
     scroll-margin-top: 100px;
 
-    scrollbar-color: #333333 #111111;
+    scrollbar-color: #cccccc #eeeeee;
     ::-webkit-scrollbar {
         width: 14px;
     }
     ::-webkit-scrollbar-track {
-        background: #111111;
+        background: #eeeeee;
     }
     ::-webkit-scrollbar-thumb {
-        background-color: #242424;
+        background-color: #c9c9c9;
         border-radius: 20px;
     }
 }
 
 // Body
 body {
-    font-family: 'Helvetica', Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
