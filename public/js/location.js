@@ -15,5 +15,5 @@ addEventListener("load", (event) => {
     addEventListener('resize', Resize);
     Resize();
 
-    panel.classList.remove('intro');
+    document.querySelector('.intro').classList.remove('intro');
 });

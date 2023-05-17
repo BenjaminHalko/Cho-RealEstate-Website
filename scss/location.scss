@@ -26,6 +26,9 @@
 
             min-width: 500px;
 
+            transition: transform 0.5s var(--curve);
+            transform: translateX(0%);
+
             --width: 480px;
             --height: 270px;
 
@@ -71,10 +74,6 @@
             transition: transform 0.5s var(--curve);
             transform: translateX(0%);
 
-            &.intro {
-                transform: translateX(100%);
-            }
-
             .name {
                 font-size: 2rem;
                 font-weight: 700;
@@ -96,6 +95,16 @@
             & > * {
                 margin-left: calc($angle * var(--dist, 0.5));
                 padding-left: 0px;
+            }
+        }
+
+        &.intro {
+            .panel {
+                transform: translateX(120%);
+            }
+
+            .floating-content {
+                transform: translateX(-120%);
             }
         }
 
