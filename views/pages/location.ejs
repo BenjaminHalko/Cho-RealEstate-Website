@@ -14,31 +14,6 @@
         <span class="main-background" id="mainBackground" style="background-image: url('/images/locations/<%= location.id %>/<%= location.main_background %>')"></span>
 
         <div class="main-content intro">
-            <div class="floating-content">
-                <iframe src="https://www.youtube.com/embed/<%= location.video_id %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <% for(let i = 0; i < location.images.length; i++) { %>
-                        <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="<%= i %>" class="<%= i == 0 ? 'active' : '' %>" aria-current="true" aria-label="Slide <%= i + 1 %>"></button>
-                        <% } %>
-                    </div>
-                    <div class="carousel-inner">
-                        <% for(let i = 0; i < location.images.length; i++) { %>
-                        <div class="carousel-item <%= i == 0 ? 'active' : '' %>">
-                            <img src="/images/locations/<%= location.id %>/<%= location.images[i] %>">
-                        </div>
-                        <%  } %>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
             <div class="panel">
                 <h1 class="name"><%= location.name %></h1>
                 <h2 class="location"><%= location.location %></h2>
@@ -64,7 +39,31 @@
                     </a>
                 </div>
             </div>
-            
+            <div class="floating-content">
+                <iframe src="https://www.youtube.com/embed/<%= location.video_id %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <% for(let i = 0; i < location.images.length; i++) { %>
+                        <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="<%= i %>" class="<%= i == 0 ? 'active' : '' %>" aria-current="true" aria-label="Slide <%= i + 1 %>"></button>
+                        <% } %>
+                    </div>
+                    <div class="carousel-inner">
+                        <% for(let i = 0; i < location.images.length; i++) { %>
+                        <div class="carousel-item <%= i == 0 ? 'active' : '' %>">
+                            <img src="/images/locations/<%= location.id %>/<%= location.images[i] %>">
+                        </div>
+                        <%  } %>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

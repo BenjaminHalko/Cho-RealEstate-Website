@@ -14,17 +14,16 @@
         .floating-content {
             display: flex;
             flex-grow: 1;
-            padding-top: 100px;
+            padding-top: 80px;
 
-            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             gap: 30px;
 
-            overflow: hidden;
-
-            min-width: 500px;
+            min-width: 550px;
+            min-height: 600px;
+            height: 100vh;
 
             transition: transform 0.5s var(--curve);
             transform: translateX(0%);
@@ -51,25 +50,24 @@
         }
 
         .panel {
-            $angle: calc(15vw - 200px);
+            $angle: calc(17vw - 200px);
 
-            background-color: #ffffffe0;
+            background-color: var(--glass-white);
             margin-left: auto;
 
-            max-width: 800px;
-            height: 100vh;
+            max-width: 850px;
+            min-height: 100vh;
             overflow: hidden;
 
             padding: 30px;
-            padding-top: 110px;
-            padding-right: 40px;
+            padding-top: 90px;
+            padding-left: 40px;
             position: relative;
             color:black;
-            text-align: right;
 
             backdrop-filter: var(--glass-blur);
 
-            clip-path: polygon(0 0, 100% 0, 100% 100%, $angle 100%);
+            clip-path: polygon(0 0, 0 100%, calc(100% - $angle) 100%, 100% 0);
 
             transition: transform 0.5s var(--curve);
             transform: translateX(0%);
@@ -81,10 +79,14 @@
 
             .location {
                 font-size: 1.2rem;
-                margin-bottom: 60px;
+                margin-bottom: 30px;
             }
 
             .buttons {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
                 a {
                     svg {
                         margin-left: 8px;
@@ -93,39 +95,57 @@
             }
 
             & > * {
-                margin-left: calc($angle * var(--dist, 0.5));
-                padding-left: 0px;
+                margin-right: calc($angle * var(--dist, 0.5));
+                padding-right: 0px;
             }
         }
 
         &.intro {
             .panel {
-                transform: translateX(120%);
+                transform: translateX(-120%);
             }
 
             .floating-content {
-                transform: translateX(-120%);
+                transform: translateX(120%);
             }
         }
 
-        @media screen and (max-width: 1000px) {
-            flex-direction: column-reverse;
+        @media screen and (max-width: 1200px) {
+            .panel {
+                clip-path: none;
+                padding-right: 40px;
+
+                & > * {
+                    margin-right: 0px;
+                }
+            }
+        }
+
+        @media screen and ((max-width: 1600px) or (max-height: 700px)) {
+            .floating-content {
+                --width: 400px;
+                --height: 225px;
+            }
+        }
+
+        @media screen and (max-width: 1080px) {
+            flex-direction: column;
 
             .floating-content {
-                padding: 30px;
+                padding: 40px;
                 flex-direction: row;
-                min-width: none;
-
-                --width: 360px;
-                --height: 180px;
+                min-width: 0;
+                position: initial;
+                flex-wrap: wrap;
             }
 
             .panel {
+                background-color: var(--clear-white);
                 max-width: none;
                 width: 100%;
                 height: auto;
-                margin-left: 0px;
-                padding-left: 30px;
+                margin-right: 0px;
+                padding-right: 30px;
 
                 .location {
                     margin-bottom: 30px;
@@ -134,7 +154,7 @@
                 * {
                     text-align: center;
                     width: auto;
-                    margin-left: 0px;
+                    margin-right: 0px;
                 }
             }
         }
