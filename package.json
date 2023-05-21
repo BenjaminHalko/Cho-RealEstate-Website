@@ -10,9 +10,9 @@
     "sass": "^1.61.0"
   },
   "scripts": {
-    "start": "node app.js",
+    "build": "node build.js",
     "dev": "npm-run-all --parallel startnodemon sass-watch",
-    "startnodemon": "nodemon app.js",
+    "startnodemon": "nodemon full_app.js",
     "sass-watch": "sass --watch --no-source-map --style=compressed scss:public/css"
   }
 }

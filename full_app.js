@@ -1,5 +1,3 @@
-// app.js
-// ======
 const express = require("express")
 const path = require('path')
 
@@ -8,7 +6,6 @@ const app = express();
 app.set('view engine', 'ejs');
 
 // Load static files
-//app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
 app.use('/', express.static(path.join(__dirname, 'public')))
 
@@ -26,14 +23,12 @@ app.get("/", (req, res) => {
   res.render('pages/home',
     {
       featured: featured,
-      main_background: featured['images'][Math.floor(Math.random() * featured["images"].length)]
     });
 });
 
 app.get("/presales", (req, res) => {
   res.render('pages/presales',
     {
-      featured: featured,
       locations: locationData["locations"]
     });
 });
