@@ -12,7 +12,7 @@
   "scripts": {
     "build": "node build.js",
     "dev": "npm-run-all --parallel startnodemon sass-watch",
-    "startnodemon": "nodemon full_app.js",
+    "startnodemon": "nodemon dev_app.js",
     "sass-watch": "sass --watch --no-source-map --style=compressed scss:public/css"
   }
 }
