@@ -1,7 +1,7 @@
 const ejs = require('ejs');
 const path = require('path');
 const fs = require('fs');
-const Rsync = require('rsync');
+const { exec } = require("child_process");
 
 // Load location-data
 const locationData = require('./location-data.json');
@@ -34,14 +34,17 @@ for(var folder of fs.readdirSync(path.resolve(__dirname,"public"))) {
 }
 
 // Copy files
-const rsync = new Rsync()
-    .shell('sh')
-    .flags('Lavc')
-    .exclude('.*')
-    .source('build/')
-    .destination('~./public_html');
+exec("rsync --delete -Lacv --exclude='.*' ~/repository/build/ ~/public_html", (error, stdout, stderr) => {
+    if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+    }
+    if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+    }
+    console.log(`stdout: ${stdout}`);
 
-rsync.execute(function(error, code, cmd) {
-    if (error) console.log(error);
-    console.log(cmd);
+    // Remove build folder
+    fs.rmSync(path.resolve(__dirname,"build"), {recursive: true});
 });
