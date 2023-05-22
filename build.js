@@ -1,6 +1,7 @@
 const ejs = require('ejs');
 const path = require('path');
 const fs = require('fs');
+const Rsync = require('rsync');
 
 // Load location-data
 const locationData = require('./location-data.json');
@@ -31,3 +32,16 @@ for (var location in locationData["locations"]) {
 for(var folder of fs.readdirSync(path.resolve(__dirname,"public"))) {
     fs.symlinkSync(path.resolve(__dirname,"public",folder), path.resolve(__dirname,"build",folder), 'dir');
 }
+
+// Copy files
+const rsync = new Rsync()
+    .shell('sh')
+    .flags('Lavc')
+    .exclude('.*')
+    .source('build/')
+    .destination('~./public_html');
+
+rsync.execute(function(error, code, cmd) {
+    if (error) console.log(error);
+    console.log(cmd);
+});
