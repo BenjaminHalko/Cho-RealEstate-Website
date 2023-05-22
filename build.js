@@ -1,20 +1,6 @@
-console.log("Starting build process");
-
 const ejs = require('ejs');
 const path = require('path');
 const fs = require('fs');
-const { exec } = require("child_process");
-const sass = require('sass');
-
-// Compile Sass folder to CSS
-for(var file of fs.readdirSync(path.resolve(__dirname,'scss'))) {
-    if(file.startsWith('_')) continue;
-    console.log("Compiling " + file);
-
-    fs.writeFileSync(path.resolve(__dirname,'public','css',file.replace('.scss','.css')),
-        sass.compile(path.resolve(__dirname,'scss',file), {style: "compressed"}).css
-    );
-}
 
 // Load location-data
 console.log("Loading location data");
@@ -46,18 +32,8 @@ for (var location in locationData["locations"]) {
     compile('location', {location: locationData["locations"][location]}, location + '/');
 }
 
-// Create loop over folders in public folder
-console.log("Creating symlinks");
-for(var folder of fs.readdirSync(path.resolve(__dirname,"public"))) {
-    fs.symlinkSync(path.resolve(__dirname,"public",folder), path.resolve(__dirname,"build",folder), 'dir');
+// Create Symlink to Bootstrap if not already existing
+if (!fs.existsSync(path.resolve(__dirname,"public","js","bootstrap.bundle.min.js"))) {
+    console.log("Creating Symlink to Bootstrap");
+    fs.symlinkSync(path.resolve(__dirname,"node_modules","bootstrap","dist","js","bootstrap.bundle.min.js"), path.resolve(__dirname,"public","js","bootstrap.bundle.min.js"));
 }
-
-// Copy files
-console.log("Copying files");
-exec("rsync --delete -Lacv --exclude='.*' ~/repository/build/ ~/public_html", (error, stdout, stderr) => {
-    console.log(stdout);
-
-    // Remove build folder
-    console.log("Removing build folder");
-    fs.rmSync(path.resolve(__dirname,"build"), {recursive: true});
-});
