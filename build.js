@@ -31,6 +31,3 @@ for (var location in locationData["locations"]) {
 for(var folder of fs.readdirSync(path.resolve(__dirname,"public"))) {
     fs.symlinkSync(path.resolve(__dirname,"public",folder), path.resolve(__dirname,"build",folder), 'dir');
 }
-
-
-//rsync --del -La --exclude='_*' build/ temp/
