@@ -1,18 +1,18 @@
 {
   "dependencies": {
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
+    "express": "^4.18.2",
     "bootstrap": "^5.2.3",
     "nodemon": "^2.0.22",
     "npm-run-all": "^4.1.5",
     "sass": "^1.61.0"
   },
   "scripts": {
-    "build": "node build.js",
+    "build": "npm-run-all compile-sass compile-app",
     "dev": "npm-run-all --parallel startnodemon sass-watch",
     "startnodemon": "nodemon dev_app.js",
-    "sass-watch": "sass --watch --no-source-map --style=compressed scss:public/css"
+    "sass-watch": "sass --watch --no-source-map scss:public/css",
+    "compile-sass": "sass --no-source-map --style=compressed scss:public/css",
+    "compile-app": "node build.js"
   }
 }

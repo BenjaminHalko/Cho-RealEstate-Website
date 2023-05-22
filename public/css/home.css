@@ -1,1 +1,21 @@
-.main{width:100%;min-height:100vh;position:relative;overflow:hidden}.main .main-content{width:100%;height:100%;gap:120px;margin-top:calc(50vh - 210px);margin-bottom:100px}.main .main-content .main-content__left img{height:400px;object-fit:contain;margin-bottom:20px}.main .main-content .main-content__left img,.main .main-content .main-content__left a{filter:var(--shadow)}
+.main {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.main .main-content {
+  width: 100%;
+  height: 100%;
+  gap: 120px;
+  margin-top: calc(50vh - 210px);
+  margin-bottom: 100px;
+}
+.main .main-content .main-content__left img {
+  height: 400px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+.main .main-content .main-content__left img, .main .main-content .main-content__left a {
+  filter: var(--shadow);
+}
