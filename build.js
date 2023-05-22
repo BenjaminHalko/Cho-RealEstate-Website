@@ -35,15 +35,7 @@ for(var folder of fs.readdirSync(path.resolve(__dirname,"public"))) {
 
 // Copy files
 exec("rsync --delete -Lacv --exclude='.*' ~/repository/build/ ~/public_html", (error, stdout, stderr) => {
-    if (error) {
-        console.log(`error: ${error.message}`);
-        return;
-    }
-    if (stderr) {
-        console.log(`stderr: ${stderr}`);
-        return;
-    }
-    console.log(`stdout: ${stdout}`);
+    console.log(stdout);
 
     // Remove build folder
     fs.rmSync(path.resolve(__dirname,"build"), {recursive: true});

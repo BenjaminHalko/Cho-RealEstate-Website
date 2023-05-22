@@ -8,11 +8,9 @@
     "sass": "^1.62.1"
   },
   "scripts": {
-    "build": "npm-run-all compile-sass compile-app",
     "dev": "npm-run-all --parallel startnodemon sass-watch",
     "startnodemon": "nodemon dev_app.js",
     "sass-watch": "sass --watch --no-source-map scss:public/css",
-    "compile-sass": "sass --no-source-map --style=compressed scss:public/css",
-    "compile-app": "node build.js"
+    "compile-sass": "sass --no-source-map --style=compressed scss:public/css"
   }
 }
