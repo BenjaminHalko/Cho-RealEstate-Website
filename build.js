@@ -1,3 +1,5 @@
+console.log("Starting build process");
+
 const ejs = require('ejs');
 const path = require('path');
 const fs = require('fs');
