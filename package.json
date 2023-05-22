@@ -10,7 +10,6 @@
   "scripts": {
     "dev": "npm-run-all --parallel startnodemon sass-watch",
     "startnodemon": "nodemon dev_app.js",
-    "sass-watch": "sass --watch --no-source-map scss:public/css",
-    "compile-sass": "sass --no-source-map --style=compressed scss:public/css"
+    "sass-watch": "sass --watch --no-source-map scss:public/css"
   }
 }
