@@ -17,7 +17,7 @@ const compile = function (filename, options, buildFolder) {
 }
 
 // Clear build folder
-if (fs.existsSync(path.resolve(__dirname,"build"))) fs.rmdirSync(path.resolve(__dirname,"build"), {recursive: true});
+if (fs.existsSync(path.resolve(__dirname,"build"))) fs.rmdirSync(path.resolve(__dirname,"build"), {recursive: true, force: true});
 
 // Compile templates
 compile('home', {featured: featured}, '');
