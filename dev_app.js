@@ -14,13 +14,10 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 const locationData = require('./location-data.json');
 
 // Load instagram-data
-if (!fs.existsSync(path.resolve(__dirname,"instagram_api","data.json"))) {
-  console.log("No instagram data found. Please run the instagram_api script first.");
-  const instagramData = [];
-} else {
-  const instagramData = require('./instagram_api/data.json');
+let instagramData = [];
+if (fs.existsSync(path.resolve(__dirname,"instagram_api","data.json"))) {
+  instagramData = require('./instagram_api/data.json');
 }
-
 
 // Adjust location-data to be more easily accessible
 for (var location in locationData["locations"]) {

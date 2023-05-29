@@ -25,3 +25,18 @@
     }
 }
 
+.instagram {
+    margin: 20px;
+    .instagram_cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+
+        .instagram_card {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+        }
+    }
+}

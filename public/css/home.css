@@ -19,3 +19,18 @@
 .main .main-content .main-content__left img, .main .main-content .main-content__left a {
   filter: var(--shadow);
 }
+
+.instagram {
+  margin: 20px;
+}
+.instagram .instagram_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.instagram .instagram_cards .instagram_card {
+  width: 300px;
+  height: 300px;
+  background-color: green;
+}
