@@ -83,7 +83,7 @@ if path.exists(path.expanduser("~/public_html")):
     dataDir = path.join(path.expanduser("~/public_html"), "public", "instagram")
 else:
     print("Using local data directory")
-    dataDir = path.join(path.dirname(__file__), "..", "public", "instagram")
+    dataDir = path.join(path.dirname(__file__), "..", "public", "images", "instagram")
 
 if not path.exists(dataDir):
     Path(dataDir).mkdir(parents=True, exist_ok=True)
