@@ -1,2 +1,5 @@
 node_modules/
 build/
+public/js/bootstrap.bundle.min.js
+instagram_api/session.json
+instagram_api/data.json
