@@ -41,4 +41,5 @@ for (var location in locationData["locations"]) {
 
 // Create copy of Bootstrap
 console.log("Creating copy of Bootstrap");
-fs.copyFileSync(path.resolve(__dirname,"node_modules","bootstrap","dist","js","bootstrap.bundle.min.js"), path.resolve(__dirname,"public","js","bootstrap.bundle.min.js"));
+fs.mkdirSync(path.resolve(__dirname,"build","js"), {recursive: true});
+fs.copyFileSync(path.resolve(__dirname,"node_modules","bootstrap","dist","js","bootstrap.bundle.min.js"), path.resolve(__dirname,"build","js","bootstrap.bundle.min.js"));

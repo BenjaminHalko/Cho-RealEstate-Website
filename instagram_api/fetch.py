@@ -74,16 +74,61 @@ def login_user(USERNAME, PASSWORD):
 
 cl = login_user(USERNAME,PASSWORD)
 
-user_id = int(cl.user_id_from_username(USERNAME))
-medias = cl.user_medias(user_id, 10)
+user_id = cl.user_id_from_username(USERNAME)
+medias = cl.user_medias(int(user_id), 12)
+user_info = cl.user_info(user_id)
 
-data = []
+# Make sure we have the data directory
+if path.exists(path.expanduser("~/public_html")):
+    dataDir = path.join(path.expanduser("~/public_html"), "public", "instagram")
+else:
+    print("Using local data directory")
+    dataDir = path.join(path.dirname(__file__), "..", "public", "instagram")
+
+if not path.exists(dataDir):
+    Path(dataDir).mkdir(parents=True, exist_ok=True)
+
+# Get Data
+downloadedImages = []
+mediaCodes = []
+
+for file in Path(dataDir).glob('[!profile.]*'): downloadedImages.append(file.stem)
+
+data = {
+    'username': user_info.username,
+    'full_name': user_info.full_name,
+    'biography': user_info.biography,
+    'followers': user_info.follower_count,
+    'following': user_info.following_count,
+    'media_count': user_info.media_count,
+    'posts': []
+}
+
 for media in medias:
-    data.append({
+    data['posts'].append({
         'caption': media.caption_text,
-        'thumbnail': media.thumbnail_url,
         'code': media.code
     })
 
+    mediaCodes.append(media.code)
+
+    if not media.code in downloadedImages:
+        print("Downloading media: " + media.code)
+        cl.photo_download_by_url(str(media.thumbnail_url), path.join(dataDir, media.code))
+
+# Download profile picture
+if not path.exists(path.join(dataDir, "profile.jpg")):
+    print("Downloading profile picture")
+    cl.photo_download_by_url(str(user_info.profile_pic_url), path.join(dataDir, "profile"))
+
+# Save Data
 with open(path.join(path.dirname(__file__), "data.json"), 'w') as outfile:
     json.dump(data, outfile)
+
+# Compile HTML
+
+# Remove old images
+for file in Path(dataDir).glob('[!profile.]*'):
+    if not file.stem in mediaCodes:
+        print("Removing old media: " + file.stem)
+        file.unlink()
