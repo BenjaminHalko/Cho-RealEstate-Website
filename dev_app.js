@@ -1,14 +1,14 @@
-const express = require("express")
-const path = require('path')
-const fs = require('fs')
+const express = require("express");
+const path = require('path');
+const fs = require('fs');
 
 // Init app
 const app = express();
 app.set('view engine', 'ejs');
 
 // Load static files
-app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
-app.use('/', express.static(path.join(__dirname, 'public')))
+app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 // Load location-data
 const locationData = require('./location-data.json');

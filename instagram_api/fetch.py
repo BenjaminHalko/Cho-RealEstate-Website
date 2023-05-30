@@ -4,6 +4,7 @@ from os import path
 from pathlib import Path
 from base64 import b64decode
 from subprocess import run
+from PIL import Image
 import json
 
 # Get credentials
@@ -16,7 +17,10 @@ if path.exists(path.expanduser(credentialsPath)):
         PASSWORD = b64decode(credentials["password"]).decode("utf-8")
 else:
     print("No credentials.json file found")
-    exit()
+    #exit()
+
+USERNAME = "benjaminhalko"
+PASSWORD = "secure"
 
 def login_user(USERNAME, PASSWORD):
     """
@@ -80,6 +84,9 @@ user_id = cl.user_id_from_username(USERNAME)
 medias = cl.user_medias(int(user_id), 12)
 user_info = cl.user_info(user_id)
 
+# Write data to file
+print("Writing data to file")
+
 # Make sure we have the data directory
 dataDir = path.abspath(path.join(path.dirname(__file__), "..", "public", "images", "instagram"))
 
@@ -109,12 +116,16 @@ for media in medias:
 
     if not media.code in downloadedImages:
         print("Downloading media: " + media.code)
-        cl.photo_download_by_url(str(media.thumbnail_url), path.join(dataDir, media.code))
+        imagePath = path.join(dataDir, media.code)
+        cl.photo_download_by_url(str(media.thumbnail_url), imagePath)
+        Image.open(imagePath+".jpg").resize((300, 300)).save(imagePath+".jpg")
 
 # Download profile picture
 if not path.exists(path.join(dataDir, "profile.jpg")):
     print("Downloading profile picture")
-    cl.photo_download_by_url(str(user_info.profile_pic_url), path.join(dataDir, "profile"))
+    profilePath = path.join(dataDir, "profile")
+    cl.photo_download_by_url(str(user_info.profile_pic_url), profilePath)
+    Image.open(profilePath+".jpg").resize((86, 86)).save(profilePath+".jpg")
 
 # Save Data
 with open(path.join(path.dirname(__file__), "data.json"), 'w') as outfile:
