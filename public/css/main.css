@@ -61,9 +61,9 @@ body {
   filter: var(--card-shadow);
 }
 .location_card.featured {
-  --height: 330px;
-  --width: 300px;
-  --imgHeight: 160px;
+  --height: 300px;
+  --width: 500px;
+  --imgHeight: 250px;
 }
 .location_card, .location_card .card_inner {
   transition: transform 250ms var(--curve);

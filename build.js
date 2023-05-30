@@ -8,6 +8,13 @@ const locationData = require('./location-data.json');
 for (var location in locationData["locations"]) { locationData["locations"][location]["id"] = location; }
 const featured = locationData["locations"][locationData["featured_location"]];
 
+// Load instagram-data
+console.log("Loading instagram data");
+let instagramData = undefined;
+if (fs.existsSync(path.resolve(__dirname,"instagram_api","data.json"))) {
+    instagramData = require('./instagram_api/data.json');
+}
+
 // Function to compile ejs templates
 const compile = function (filename, options, buildFolder) {
     console.log("Compiling " + filename + " template");
@@ -25,15 +32,14 @@ if (fs.existsSync(path.resolve(__dirname,"build"))) {
 }
 
 // Compile templates
-compile('home', {featured: featured}, '');
+compile('home', {featured: featured, instagramData: instagramData}, '');
 compile('presales', {locations: locationData["locations"]}, 'presales/');
 
 for (var location in locationData["locations"]) {
     compile('location', {location: locationData["locations"][location]}, location + '/');
 }
 
-// Create Symlink to Bootstrap if not already existing
-if (!fs.existsSync(path.resolve(__dirname,"public","js","bootstrap.bundle.min.js"))) {
-    console.log("Creating Symlink to Bootstrap");
-    fs.symlinkSync(path.resolve(__dirname,"node_modules","bootstrap","dist","js","bootstrap.bundle.min.js"), path.resolve(__dirname,"public","js","bootstrap.bundle.min.js"));
-}
+// Create copy of Bootstrap
+console.log("Creating copy of Bootstrap");
+fs.mkdirSync(path.resolve(__dirname,"build","js"), {recursive: true});
+fs.copyFileSync(path.resolve(__dirname,"node_modules","bootstrap","dist","js","bootstrap.bundle.min.js"), path.resolve(__dirname,"build","js","bootstrap.bundle.min.js"));

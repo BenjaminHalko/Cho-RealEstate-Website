@@ -67,7 +67,6 @@
 .main .main-content .panel .buttons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
 }
 .main .main-content .panel .buttons a svg {
@@ -114,7 +113,11 @@
     width: 100%;
     height: auto;
     margin-right: 0px;
+    padding-left: 30px;
     padding-right: 30px;
+  }
+  .main .main-content .panel .buttons {
+    justify-content: center;
   }
   .main .main-content .panel .location {
     margin-bottom: 30px;

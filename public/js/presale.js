@@ -1,7 +1,7 @@
 addEventListener("load", (event) => {
     const mainBackground = document.getElementById('mainBackground');
 
-    const cards = document.querySelectorAll('.location_card');
+    const cards = document.querySelectorAll('.card3D');
     let currentBackground = 0;
 
     cards.forEach((card) => {

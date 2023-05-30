@@ -4,6 +4,7 @@
     <%- include('../partials/header'); %>
     <link rel="stylesheet" href="/css/home.css">
     <script src="/js/_location_card.js"></script>
+    <script src="/js/home.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -24,6 +25,37 @@
             </div>
             <%- include('../partials/location_card', {location: featured, isFeatured: true}); %>
         </div>
-    </div> 
+    </div>
+
+    <!-- Instagram -->
+    <% if(instagramData != undefined) { %>
+    <div class="instagram">
+        <div class="instagram_header">
+            <a href="https://www.instagram.com/<%- instagramData.username %>/" target="_blank">
+            <img src="/images/instagram/profile.jpg" alt="profile_picture" width="86px" height="86px">
+            </a>
+            <div class="user_info">
+                <a class="username" href="https://www.instagram.com/<%- instagramData.username %>/" target="_blank">@<%- instagramData.username %></a>
+                <p class="bio"><b><%- instagramData.full_name %></b> • "<%- instagramData.biography %>"</p>
+                <a class="follow_button btn btn-primary d-inline-flex justify-content-center align-items-center" style="margin-bottom: auto; gap: 6px" href="https://www.instagram.com/<%- instagramData.username %>/" target="_blank" role="button">
+                    Follow
+                    <svg width="18" height="18">
+                        <use xlink:href="/svg/instagram.svg#id"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="instagram_cards">
+            <% instagramData.posts.forEach((post) => { %>
+                <div class="instagram_card">
+                    <a href="https://www.instagram.com/p/<%- post.code %>/" target="_blank">
+                        <img src="/images/instagram/<%- post.code %>.jpg" alt="<%- post.caption %>">
+                    </a>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+    <% } %>
 </body>
 </html>

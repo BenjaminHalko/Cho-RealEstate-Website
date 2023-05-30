@@ -4,6 +4,9 @@
   position: relative;
   overflow: hidden;
 }
+.main .main-background {
+  position: fixed;
+}
 .main .main-content {
   width: 100%;
   height: 100%;
@@ -18,4 +21,62 @@
 }
 .main .main-content .main-content__left img, .main .main-content .main-content__left a {
   filter: var(--shadow);
+}
+
+.instagram {
+  padding: 20px;
+  background-color: white;
+}
+.instagram .instagram_header {
+  display: flex;
+  gap: 20px;
+}
+.instagram .instagram_header img {
+  border-radius: 50%;
+}
+.instagram .instagram_header .user_info .username {
+  font-weight: 300;
+  font-size: 1.6em;
+  text-decoration: none;
+  color: var(--text-color);
+}
+.instagram .instagram_header .user_info .bio {
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+.instagram .instagram_cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.instagram .instagram_cards .instagram_card {
+  --size: 300px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.instagram .instagram_cards .instagram_card img {
+  transition: transform 0.3s var(--curve);
+  object-fit: cover;
+  width: var(--size);
+  height: var(--size);
+}
+.instagram .instagram_cards .instagram_card:hover img {
+  transform: scale(1.1);
+}
+@media screen and (max-width: 1000px) {
+  .instagram .instagram_cards .instagram_card {
+    --size: 200px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .instagram .instagram_cards .instagram_card {
+    --size: 150px;
+  }
 }
