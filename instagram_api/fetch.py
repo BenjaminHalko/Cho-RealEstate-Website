@@ -143,6 +143,6 @@ for file in Path(dataDir).glob('[!profile.]*'):
 # Rsync Images
 if path.exists(path.expanduser("~/public_html")):
     print("Rsyncing images")
-    run("rsync -acv --delete "+dataDir+" ~/public_html/images/instagram", shell=True)
+    run("rsync -acv --delete "+dataDir+" ~/public_html/images/", shell=True)
 else:
     print("No public_html directory found, skipping rsync")
