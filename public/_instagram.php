@@ -7,7 +7,7 @@ define('SECRET', 'XLzyjJQHpvoDiL61KwEd');
 
 try {
     if (is_null($_SERVER['HTTP_AUTHORIZATION']) || $_SERVER['HTTP_AUTHORIZATION'] != SECRET) {
-        //die('go away');
+        die('go away');
     }
 
     // run the deploy script
