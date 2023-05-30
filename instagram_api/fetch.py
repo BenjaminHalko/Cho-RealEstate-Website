@@ -1,3 +1,5 @@
+#!/opt/alt/python39/bin/python3
+
 from instagrapi import Client
 from instagrapi.exceptions import LoginRequired
 from os import path
