@@ -18,8 +18,8 @@ const templateStr = fs.readFileSync(templatePath, 'utf8');
 const htmlString = ejs.compile(templateStr, {filename: templatePath})(options);
 
 // Write home template
-if(fs.existsSync(path.join('~','public_html'))) {
-    fs.writeFileSync(path.join('~','public_html','index.html'), htmlString);
+if(fs.existsSync(path.join(process.env.HOME,'public_html'))) {
+    fs.writeFileSync(path.join(process.env.HOME,'public_html','index.html'), htmlString);
 } else {
     console.log("No public_html directory found, skipping home template");
 }
