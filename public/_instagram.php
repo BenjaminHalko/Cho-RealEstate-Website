@@ -11,7 +11,7 @@ try {
     }
 
     // run the deploy script
-    die(shell_exec('python ~/repository/instagram_api/fetch.py'));
+    die(shell_exec('python3 ~/repository/instagram_api/fetch.py'));
 } catch (Exception $e) {
     die("bad");
 }
