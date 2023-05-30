@@ -17,10 +17,7 @@ if path.exists(path.expanduser(credentialsPath)):
         PASSWORD = b64decode(credentials["password"]).decode("utf-8")
 else:
     print("No credentials.json file found")
-    #exit()
-
-USERNAME = "benjaminhalko"
-PASSWORD = "secure"
+    exit()
 
 def login_user(USERNAME, PASSWORD):
     """
