@@ -1,22 +1,22 @@
 from instagrapi import Client
 from instagrapi.exceptions import LoginRequired
-import logging
 from os import path
-import json
 from pathlib import Path
 from base64 import b64decode
-from os import environ
+from subprocess import run
+import json
 
-logger = logging.getLogger()
+# Get credentials
+credentialsPath = path.join('~', "credentials.json")
 
-USERNAME = environ.get("USERNAME")
-PASSWORD = environ.get("PASSWORD")
-
-if USERNAME is None or PASSWORD is None:
-    raise Exception("Please provide USERNAME and PASSWORD as environment variables")
-
-USERNAME = b64decode(str(USERNAME)).decode("utf-8")
-PASSWORD = b64decode(str(PASSWORD)).decode("utf-8")
+if path.exists(path.expanduser(credentialsPath)):
+    with open(path.expanduser(credentialsPath)) as json_file:
+        credentials = json.load(json_file)
+        USERNAME = b64decode(credentials["username"]).decode("utf-8")
+        PASSWORD = b64decode(credentials["password"]).decode("utf-8")
+else:
+    print("No credentials.json file found")
+    exit()
 
 def login_user(USERNAME, PASSWORD):
     """
@@ -44,8 +44,6 @@ def login_user(USERNAME, PASSWORD):
             try:
                 cl.get_timeline_feed()
             except LoginRequired:
-                logger.info("Session is invalid, need to login via username and password")
-
                 old_session = cl.get_settings()
 
                 # use the same device uuids across logins
@@ -56,34 +54,34 @@ def login_user(USERNAME, PASSWORD):
                 cl.dump_settings(Path(sessionPath))
             login_via_session = True
         except Exception as e:
-            logger.info("Couldn't login user using session information: %s" % e)
+            print("Couldn't login user")
 
     if not login_via_session:
         try:
-            logger.info("Attempting to login via username and password. username: %s" % USERNAME)
             if cl.login(USERNAME, PASSWORD):
                 login_via_pw = True
                 cl.dump_settings(Path(sessionPath))
         except Exception as e:
-            logger.info("Couldn't login user using username and password: %s" % e)
+            print("Couldn't login user")
 
     if not login_via_pw and not login_via_session:
         raise Exception("Couldn't login user with either password or session")
     
     return cl
 
+# Login
+print("Logging in")
 cl = login_user(USERNAME,PASSWORD)
+
+# Get Data
+print("Getting data")
 
 user_id = cl.user_id_from_username(USERNAME)
 medias = cl.user_medias(int(user_id), 12)
 user_info = cl.user_info(user_id)
 
 # Make sure we have the data directory
-if path.exists(path.expanduser("~/public_html")):
-    dataDir = path.join(path.expanduser("~/public_html"), "public", "instagram")
-else:
-    print("Using local data directory")
-    dataDir = path.join(path.dirname(__file__), "..", "public", "images", "instagram")
+dataDir = path.abspath(path.join(path.dirname(__file__), "..", "public", "images", "instagram"))
 
 if not path.exists(dataDir):
     Path(dataDir).mkdir(parents=True, exist_ok=True)
@@ -98,9 +96,6 @@ data = {
     'username': user_info.username,
     'full_name': user_info.full_name,
     'biography': user_info.biography,
-    'followers': user_info.follower_count,
-    'following': user_info.following_count,
-    'media_count': user_info.media_count,
     'posts': []
 }
 
@@ -126,9 +121,18 @@ with open(path.join(path.dirname(__file__), "data.json"), 'w') as outfile:
     json.dump(data, outfile)
 
 # Compile HTML
+print("Compiling HTML")
+run(["node", path.join(path.dirname(__file__), "compile.js")])
 
 # Remove old images
 for file in Path(dataDir).glob('[!profile.]*'):
     if not file.stem in mediaCodes:
         print("Removing old media: " + file.stem)
         file.unlink()
+
+# Rsync Images
+if path.exists(path.expanduser("~/public_html")):
+    print("Rsyncing images")
+    run(["rsync", "-acv", "--delete", dataDir, "~/public_html/images/instagram/"])
+else:
+    print("No public_html directory found, skipping rsync")

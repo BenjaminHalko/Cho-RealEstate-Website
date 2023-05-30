@@ -26,17 +26,30 @@
 }
 
 .instagram {
-    margin: 20px;
-    .instagram_cards {
+    padding: 20px;
+    .instagram_header {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
         gap: 20px;
+        align-items: center;
 
-        .instagram_card {
-            width: 300px;
-            height: 300px;
-            background-color: green;
+        img {
+            border-radius: 50%;
+        }
+
+        .user_info {
+            .user_info__header {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                margin-bottom: 3px;
+
+                .username {
+                    font-weight: 300;
+                    font-size: 1.6em;
+                    text-decoration: none;
+                    color: var(--text-color);
+                }
+            }
         }
     }
 }

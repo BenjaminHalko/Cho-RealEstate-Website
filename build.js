@@ -10,7 +10,7 @@ const featured = locationData["locations"][locationData["featured_location"]];
 
 // Load instagram-data
 console.log("Loading instagram data");
-let instagramData = [];
+let instagramData = undefined;
 if (fs.existsSync(path.resolve(__dirname,"instagram_api","data.json"))) {
     instagramData = require('./instagram_api/data.json');
 }

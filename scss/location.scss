@@ -85,7 +85,6 @@
             .buttons {
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: center;
                 gap: 10px;
                 a {
                     svg {
@@ -146,6 +145,10 @@
                 margin-right: 0px;
                 padding-left: 30px;
                 padding-right: 30px;
+
+                .buttons {
+                    justify-content: center;
+                }
 
                 .location {
                     margin-bottom: 30px;

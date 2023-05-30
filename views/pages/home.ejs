@@ -14,7 +14,7 @@
         <span class="main-background" style="background-image: url('/images/locations/<%= featured.id %>/<%= featured.main_background %>')"></span>
         <div class="main-content d-inline-flex justify-content-center align-items-center flex-wrap">
             <div class="main-content__left d-inline-flex flex-column justify-content-center align-items-center">
-                <img src="/images/home/headshcot.png" alt="headshot">
+                <img src="/images/home/headshot.png" alt="headshot">
                 <a class="btn btn-primary d-inline-flex justify-content-center align-items-center" href="#" role="button" style="--bs-btn-font-size: 2rem; gap: 10px; width: 100%">
                     Contact
                     <svg width="32" height="32">
@@ -27,7 +27,24 @@
     </div>
 
     <!-- Instagram -->
+    <% if(instagramData != undefined) { %>
     <div class="instagram">
+        <div class="instagram_header">
+            <img src="/images/instagram/profile.jpg" alt="profile_picture" width="86px" height="86px">
+            <div class="user_info">
+                <div class="user_info__header">
+                    <a class="username" href="https://www.instagram.com/<%- instagramData.username %>/" target="_blank">@<%- instagramData.username %></a>
+                    <a class="btn btn-primary d-inline-flex justify-content-center align-items-center" style="margin-bottom: auto; gap: 6px" href="https://www.instagram.com/<%- instagramData.username %>/" target="_blank" role="button">
+                        Follow
+                        <svg width="18" height="18">
+                            <use xlink:href="/svg/instagram.svg#id"/>
+                        </svg>
+                    </a>
+                </div>
+                <p style="margin-bottom: 0px"><b><%- instagramData.full_name %></b> • "<%- instagramData.biography %>"</p>
+            </div>
+        </div>
     </div>
+    <% } %>
 </body>
 </html>
