@@ -29,7 +29,7 @@ body {
   padding: 16px;
   transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
   background-color: var(--glass-white);
-  backdrop-filter: blur(10px);
+  backdrop-filter: var(--glass-blur);
 }
 .navbar .nav-link {
   font-size: medium;
@@ -199,11 +199,16 @@ body {
 .main-background {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   transform: scale(1.1);
-  filter: blur(5px);
+  filter: blur(3px);
+}
+
+.panel {
+  background-color: var(--glass-white);
+  backdrop-filter: var(--glass-blur);
 }

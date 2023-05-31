@@ -6,7 +6,7 @@
     padding: 16px;
     transition: $transition;
     background-color: var(--glass-white);
-    backdrop-filter: blur(10px);
+    backdrop-filter: var(--glass-blur);
 
     .nav-link {
         font-size: medium;

@@ -1,0 +1,23 @@
+.main .main-background {
+  filter: none;
+}
+.main .main-content {
+  padding-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+.main .main-content .panel {
+  padding: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 1000px;
+  border-radius: 20px;
+}
+.main .main-content .panel p {
+  margin: 0px;
+  text-align: justify;
+  text-justify: inter-word;
+}

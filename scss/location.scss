@@ -4,8 +4,7 @@
     overflow: hidden;
 
     .main-background {
-        filter: brightness(0.8);
-        position: fixed;
+        filter: none;
     }
 
     .main-content {
@@ -52,7 +51,6 @@
         .panel {
             $angle: calc(17vw - 200px);
 
-            background-color: var(--glass-white);
             margin-left: auto;
 
             max-width: 850px;
@@ -64,8 +62,6 @@
             padding-left: 40px;
             position: relative;
             color:black;
-
-            backdrop-filter: var(--glass-blur);
 
             clip-path: polygon(0 0, 0 100%, calc(100% - $angle) 100%, 100% 0);
 
@@ -134,14 +130,16 @@
                 padding: 40px;
                 flex-direction: row;
                 min-width: 0;
+                min-height: 0;
+                height: auto;
                 position: initial;
                 flex-wrap: wrap;
             }
 
             .panel {
                 max-width: none;
+                min-height: 0;
                 width: 100%;
-                height: auto;
                 margin-right: 0px;
                 padding-left: 30px;
                 padding-right: 30px;

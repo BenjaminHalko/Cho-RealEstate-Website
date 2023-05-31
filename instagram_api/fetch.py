@@ -1,11 +1,16 @@
 from instagrapi import Client
 from instagrapi.exceptions import LoginRequired
+from instagrapi.mixins.challenge import ChallengeChoice
 from os import path
 from pathlib import Path
 from base64 import b64decode
 from subprocess import run
 from PIL import Image
 import json
+
+# Challenge handler
+def challenge_code_handler(username, choice=None):
+    return input(f"Enter code (6 digits) for {username}: ").strip()
 
 # Get credentials
 credentialsPath = path.join('~', "credentials.json")
@@ -28,6 +33,7 @@ def login_user(USERNAME, PASSWORD):
     sessionPath = path.join(path.dirname(__file__), "session.json")
 
     cl = Client()
+    cl.challenge_code_handler = challenge_code_handler
     if path.exists(sessionPath):
         session = cl.load_settings(Path(sessionPath))
     else:
@@ -72,7 +78,10 @@ def login_user(USERNAME, PASSWORD):
 
 # Login
 print("Logging in")
-cl = login_user(USERNAME,PASSWORD)
+cl = Client()
+cl.challenge_code_handler = challenge_code_handler
+cl.login(USERNAME, PASSWORD)
+#cl = login_user(USERNAME,PASSWORD)
 
 # Get Data
 print("Getting data")
@@ -129,8 +138,11 @@ with open(path.join(path.dirname(__file__), "data.json"), 'w') as outfile:
     json.dump(data, outfile)
 
 # Compile HTML
-print("Compiling HTML")
-run(["node", path.join(path.dirname(__file__), "compile.js")])
+if path.exists(path.expanduser("~/public_html")):
+    print("Compiling HTML")
+    run(["node", path.join(path.dirname(__file__), "compile.js")])
+else:
+    print("No public_html directory found, skipping HTML compilation")
 
 # Remove old images
 for file in Path(dataDir).glob('[!profile.]*'):

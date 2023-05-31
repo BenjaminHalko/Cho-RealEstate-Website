@@ -33,7 +33,8 @@ if (fs.existsSync(path.resolve(__dirname,"build"))) {
 
 // Compile templates
 compile('home', {featured: featured, instagramData: instagramData}, '');
-compile('presales', {locations: locationData["locations"]}, 'presales/');
+compile('bio', {featured: featured}, 'bio/');
+compile('presales', {featured: featured, locations: locationData["locations"]}, 'presales/');
 
 for (var location in locationData["locations"]) {
     compile('location', {location: locationData["locations"][location]}, location + '/');

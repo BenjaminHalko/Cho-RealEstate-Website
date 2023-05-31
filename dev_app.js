@@ -34,9 +34,17 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/bio", (req, res) => {
+  res.render('pages/bio',
+  {
+    featured: featured
+  });
+ });
+
 app.get("/presales", (req, res) => {
   res.render('pages/presales',
     {
+      featured: featured,
       locations: locationData["locations"]
     });
 });

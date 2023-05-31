@@ -4,6 +4,7 @@
     <%- include('../partials/header'); %>
     <link rel="stylesheet" href="/css/location.css">
     <script src="/js/location.js"></script>
+    <title><%- location.name %> | Kitty Cho | Personal Real Estate Corporation</title>
 </head>
 <body>
     <!-- Navbar -->
@@ -11,8 +12,7 @@
 
     <!-- Main -->
     <div class="main">
-        <span class="main-background" id="mainBackground" style="background-image: url('/images/locations/<%= location.id %>/<%= location.main_background %>')"></span>
-
+        <span class="main-background" id="mainBackground" style="background-image: url('/images/locations/<%= location.id %>/<%= location.background %>')"></span>
         <div class="main-content intro">
             <div class="panel">
                 <h1 class="name"><%= location.name %></h1>
