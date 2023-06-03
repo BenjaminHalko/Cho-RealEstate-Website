@@ -2,7 +2,7 @@ const { initApp, loadLocationData, loadInstagramInfo } = require('./common/commo
 
 // Load components
 const app = initApp();
-const locationData = loadLocationData();
+let locationData = loadLocationData();
 
 // Load routes
 app.get("/", (req, res) => {
@@ -12,6 +12,12 @@ app.get("/", (req, res) => {
             instagramData: instagramData
         });
     });
+});
+
+// Reload data, when requested
+app.post("/.reload", (req, res) => {
+    locationData = loadLocationData();
+    res.send("Data reloaded");
 });
 
 // Start server
