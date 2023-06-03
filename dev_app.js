@@ -1,4 +1,4 @@
-const { initApp, loadLocationData, fetchInstagramInfo } = require('./common/common.js');
+const { initApp, loadLocationData, loadInstagramInfo } = require('./common/common.js');
 
 // Load components
 const app = initApp();
@@ -6,7 +6,7 @@ const locationData = loadLocationData();
 
 // Load routes
 app.get("/", (req, res) => {
-  fetchInstagramInfo().then(instagramData => {
+  loadInstagramInfo().then(instagramData => {
     res.render('pages/home',{
       featured: locationData.featured,
       instagramData: instagramData
