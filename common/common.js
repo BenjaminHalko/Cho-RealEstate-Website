@@ -1,3 +1,4 @@
+// Load secret
 let secret = undefined;
 try {
     secret = require('./secret.json');
@@ -5,6 +6,7 @@ try {
     console.log("No secret.json file found. Please create one with your Facebook Graph API key and Instagram Business Account ID.");
 }
 
+// Functions
 function initApp() {
     console.log("Initializing app");
     const express = require('express');
@@ -33,7 +35,7 @@ function loadLocationData() {
 async function loadInstagramInfo() {
     if (secret == undefined) { return undefined; }
 
-    const res = await fetch(`https://graph.facebook.com/${secret.id}?access_token=${secret.key}&fields=
+    const res = await fetch(`https://graph.facebook.com/${secret.user_id}?access_token=${secret.access_token}&fields=
         username,name,biography,media_count,followers_count,follows_count,profile_picture_url,
         media{caption,media_url,media_type,thumbnail_url,permalink,like_count,comments_count}`)
     .then(res => res.json());
