@@ -1,19 +1,10 @@
-const ejs = require('ejs');
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
+const ejs = require('ejs');
+const loadLocationData = require('./common/common.js').loadLocationData;
 
 // Load location-data
-console.log("Loading location data");
-const locationData = require('./location-data.json');
-for (var location in locationData["locations"]) { locationData["locations"][location]["id"] = location; }
-const featured = locationData["locations"][locationData["featured_location"]];
-
-// Load instagram-data
-console.log("Loading instagram data");
-let instagramData = undefined;
-if (fs.existsSync(path.resolve(__dirname,"instagram_api","data.json"))) {
-    instagramData = require('./instagram_api/data.json');
-}
+const locationData = loadLocationData();
 
 // Function to compile ejs templates
 const compile = function (filename, options, buildFolder) {
@@ -32,12 +23,11 @@ if (fs.existsSync(path.resolve(__dirname,"build"))) {
 }
 
 // Compile templates
-compile('home', {featured: featured, instagramData: instagramData}, '');
-compile('bio', {featured: featured}, 'bio/');
-compile('presales', {featured: featured, locations: locationData["locations"]}, 'presales/');
+compile('bio', {featured: locationData.featured}, 'bio/');
+compile('presales', {featured: locationData.featured, locations: locationData.locations}, 'presales/');
 
-for (var location in locationData["locations"]) {
-    compile('location', {location: locationData["locations"][location]}, location + '/');
+for (let location in locationData.locations) {
+    compile('location', {location: locationData.locations[location]}, location + '/');
 }
 
 // Create copy of Bootstrap

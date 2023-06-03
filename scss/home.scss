@@ -45,9 +45,9 @@
                 color: var(--text-color);
             }
 
-            .bio {
-                margin-top: 6px;
-                margin-bottom: 10px;
+            .info {
+                margin-top: 10px;
+                margin-bottom: 6px;
             }
         }
     }
@@ -64,21 +64,47 @@
 
         .instagram_card {
             --size: 300px;
+            border-radius: 20px;
+            filter: var(--card-shadow);
             width: var(--size);
             height: var(--size);
-            border-radius: 10px;
+            text-decoration: none;
             overflow: hidden;
 
-            img {
-                transition: transform 0.3s var(--curve);
-                object-fit: cover;
-                width: var(--size);
-                height: var(--size);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+
+            .video_icon {
+                margin: 50%;
+                transform: translateX(-50%) translateY(-25%);
+                svg {
+                    color: white;
+                    filter: var(--card-shadow);
+                }
+            }
+
+            .overlay {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 16px;
+                color: white;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: #003c7874;
+                backdrop-filter: blur(4px);
+                opacity: 0;
+                transition: opacity 0.2s var(--curve);
+                font-size: 1.4em;
             }
 
             &:hover {
-                img {
-                    transform: scale(1.1);
+                .overlay {
+                    opacity: 1;
                 }
             }
 

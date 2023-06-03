@@ -1,5 +1,3 @@
 node_modules/
 build/
-instagram_api/session.json
-instagram_api/data.json
-public/images/instagram/
+common/secret.json
