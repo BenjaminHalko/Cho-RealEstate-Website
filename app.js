@@ -1,25 +1,18 @@
-const { initApp, loadLocationData, loadInstagramInfo } = require('./common/common.js');
+const fs = require('fs');
+const { initApp, loadInstagramInfo } = require('./common/common.js');
 
 // Load components
 const app = initApp();
-let locationData = loadLocationData();
 
 // Load routes
 app.get("/", (req, res) => {
+    const locationData = JSON.parse(fs.readFileSync('./common/location.json'));
     loadInstagramInfo().then(instagramData => {
         res.render('pages/home',{
-            featured: locationData.featured,
+            featured: locationData.locations[locationData.featured],
             instagramData: instagramData
         });
     });
-});
-
-// Reload data, when requested
-app.get("/.reload", (req, res) => {
-    if (!process.env.reload_secret) { res.send("No reload secret"); return; }
-    if (req.query.secret != process.env.reload_secret) { res.send("Invalid secret"); return; }
-    locationData = loadLocationData();
-    res.send("Data reloaded");
 });
 
 // Start server

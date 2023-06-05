@@ -14,5 +14,8 @@
     "sass-watch": "sass --watch --no-source-map scss:public/css",
     "sass-build": "sass --no-source-map --style=compressed scss:public/css",
     "app-build": "node build.js"
+  },
+  "devDependencies": {
+    "dotenv": "^16.1.4"
   }
 }
