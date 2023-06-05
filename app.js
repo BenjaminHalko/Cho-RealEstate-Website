@@ -1,10 +1,5 @@
 const { initApp, loadLocationData, loadInstagramInfo } = require('./common/common.js');
 
-// Load reload secret
-let reloadSecret = "";
-try { reloadSecret = require('./common/secret.json').reload_secret;
-} catch (err) { console.log("No secret.json file found. Please create one with your reload secret."); }
-
 // Load components
 const app = initApp();
 let locationData = loadLocationData();
@@ -20,8 +15,9 @@ app.get("/", (req, res) => {
 });
 
 // Reload data, when requested
-app.get("/reload", (req, res) => {
-    if (req.query.secret != reloadSecret) { res.send("Invalid secret"); return; }
+app.get("/.reload", (req, res) => {
+    if (!process.env.reload_secret) { res.send("No reload secret"); return; }
+    if (req.query.secret != process.env.reload_secret) { res.send("Invalid secret"); return; }
     locationData = loadLocationData();
     res.send("Data reloaded");
 });
