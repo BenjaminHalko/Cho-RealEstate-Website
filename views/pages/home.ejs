@@ -12,7 +12,7 @@
 
     <!-- Main -->
     <div class="main">
-        <span class="main-background" style="background-image: url('/images/locations/<%= featured.id %>/<%= featured.background %>')"></span>
+        <%- include('../partials/background', {background: featured}); %>
         <div class="main-content d-inline-flex justify-content-center align-items-center flex-wrap">
             <div class="main-content__left d-inline-flex flex-column justify-content-center align-items-center">
                 <img src="/images/common/headshot.png" alt="headshot">

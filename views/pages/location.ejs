@@ -12,7 +12,7 @@
 
     <!-- Main -->
     <div class="main">
-        <span class="main-background" id="mainBackground" style="background-image: url('/images/locations/<%= location.id %>/<%= location.background %>')"></span>
+        <%- include('../partials/background', {background: location}); %>
         <div class="main-content intro">
             <div class="panel">
                 <h1 class="name"><%= location.name %></h1>

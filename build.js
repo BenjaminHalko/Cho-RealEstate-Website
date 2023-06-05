@@ -2,9 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const ejs = require('ejs');
 
-// Load location-data
+// Load data
 const locationData = require('./common/location.json');
 const featured = locationData.locations[locationData.featured];
+const reviews = require('./common/reviews.json');
 
 // Function to compile ejs templates
 const compile = function (filename, options, buildFolder) {
@@ -23,11 +24,12 @@ if (fs.existsSync(path.resolve(__dirname,"build"))) {
 }
 
 // Compile templates
-compile('bio', {featured: featured}, 'bio/');
-compile('presales', {featured: featured, locations: locationData.locations}, 'presales/');
+compile('bio', {featured: featured}, 'bio');
+compile('reviews', {featured: featured, reviews: reviews}, 'reviews');
+compile('presales', {featured: featured, locations: locationData.locations}, 'presales');
 
 for (let location in locationData.locations) {
-    compile('location', {location: locationData.locations[location]}, location + '/');
+    compile('location', {location: locationData.locations[location]}, location);
 }
 
 // Create copy of Bootstrap

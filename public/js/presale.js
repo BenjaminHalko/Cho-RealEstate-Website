@@ -1,5 +1,5 @@
 addEventListener("load", (event) => {
-    const mainBackground = document.getElementById('mainBackground');
+    const mainBackground = document.querySelector('.main-background');
 
     const cards = document.querySelectorAll('.card3D');
     let currentBackground = 0;

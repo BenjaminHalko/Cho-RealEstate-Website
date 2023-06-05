@@ -5,6 +5,7 @@ const { initApp, loadInstagramInfo } = require('./common/common.js');
 const app = initApp();
 const locationData = require('./common/location.json');
 const featured = locationData.locations[locationData.featured];
+const reviews = require('./common/reviews.json');
 
 // Load routes
 app.get("/", (req, res) => {
@@ -19,6 +20,13 @@ app.get("/", (req, res) => {
 app.get("/bio", (req, res) => {
   res.render('pages/bio',{
     featured: featured
+  });
+});
+
+app.get("/reviews", (req, res) => {
+  res.render('pages/reviews',{
+    featured: featured,
+    reviews: reviews
   });
 });
 
