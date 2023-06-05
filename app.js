@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 // Reload data, when requested
-app.get("/.reload", (req, res) => {
+app.get("/reload", (req, res) => {
     if (req.query.secret != reloadSecret) { res.send("Invalid secret"); return; }
     locationData = loadLocationData();
     res.send("Data reloaded");
