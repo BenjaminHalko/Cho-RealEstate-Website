@@ -18,7 +18,16 @@ function initApp() {
     // Return app
     return app;
 }
-async function loadInstagramInfo() {
+
+function loadLocationData() {
+    console.log("Loading location data");
+    const locationData = require('./location.json');
+    for (let location in locationData.locations) { locationData.locations[location].id = location; }
+    locationData.featured = locationData.locations[locationData.featured];
+    return locationData;
+}
+
+async function loadInstagramData() {
     const res = await fetch(`https://graph.facebook.com/${user_id}?access_token=${access_token}&fields=
         username,name,biography,media_count,followers_count,follows_count,profile_picture_url,
         media{caption,media_url,media_type,thumbnail_url,permalink,like_count,comments_count}`)
@@ -35,5 +44,6 @@ async function loadInstagramInfo() {
 // Export functions
 module.exports = {
     initApp,
-    loadInstagramInfo
+    loadLocationData,
+    loadInstagramData
 };

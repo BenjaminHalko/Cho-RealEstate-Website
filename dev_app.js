@@ -1,15 +1,14 @@
 require('dotenv').config('.env');
-const { initApp, loadInstagramInfo } = require('./common/common.js');
+const { initApp, loadLocationData, loadInstagramData } = require('./common/common.js');
 
 // Load components
 const app = initApp();
-const locationData = require('./common/location.json');
-const featured = locationData.locations[locationData.featured];
+const locationData = loadLocationData();
 const reviews = require('./common/reviews.json');
 
 // Load routes
 app.get("/", (req, res) => {
-  loadInstagramInfo().then(instagramData => {
+  loadInstagramData().then(instagramData => {
     res.render('pages/home',{
       featured: featured,
       instagramData: instagramData

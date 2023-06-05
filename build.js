@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const ejs = require('ejs');
+const loadLocationData = require('./common/common.js').loadLocationData;
 
 // Load data
-const locationData = require('./common/location.json');
-const featured = locationData.locations[locationData.featured];
+const locationData = loadLocationData();
 const reviews = require('./common/reviews.json');
 
 // Function to compile ejs templates
@@ -24,9 +24,9 @@ if (fs.existsSync(path.resolve(__dirname,"build"))) {
 }
 
 // Compile templates
-compile('bio', {featured: featured}, 'bio');
-compile('reviews', {featured: featured, reviews: reviews}, 'reviews');
-compile('presales', {featured: featured, locations: locationData.locations}, 'presales');
+compile('bio', {featured: locationData.featured}, 'bio');
+compile('reviews', {featured: locationData.featured, reviews: reviews}, 'reviews');
+compile('presales', {featured: locationData.featured, locations: locationData.locations}, 'presales');
 
 for (let location in locationData.locations) {
     compile('location', {location: locationData.locations[location]}, location);
