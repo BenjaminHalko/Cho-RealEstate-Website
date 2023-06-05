@@ -10,7 +10,7 @@ const reviews = require('./common/reviews.json');
 app.get("/", (req, res) => {
   loadInstagramData().then(instagramData => {
     res.render('pages/home',{
-      featured: featured,
+      featured: locationData.featured,
       instagramData: instagramData
     });
   });
@@ -18,20 +18,20 @@ app.get("/", (req, res) => {
 
 app.get("/bio", (req, res) => {
   res.render('pages/bio',{
-    featured: featured
+    featured: locationData.featured
   });
 });
 
 app.get("/reviews", (req, res) => {
   res.render('pages/reviews',{
-    featured: featured,
+    featured: locationData.featured,
     reviews: reviews
   });
 });
 
 app.get("/presales", (req, res) => {
   res.render('pages/presales',{
-    featured: featured,
+    featured: locationData.featured,
     locations: locationData.locations
   });
 });

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/header'); %>
+    <link rel="stylesheet" href="/css/sub_page.css">
     <title>Reviews | Kitty Cho | Personal Real Estate Corporation</title>
 </head>
 <body>
@@ -11,5 +12,21 @@
     <!-- Main Content -->
     <div class="main">
         <%- include('../partials/background', {background: featured}); %>
+        <div class="main-content">
+            <div class="panel">
+                <h1><b>Testimonials</b></h1>
+            </div>
+            <% for (review of reviews) { %>
+            <div class="panel">
+                <div class="d-inline-flex align-items-center" style="gap: 16px">
+                    <img src="/images/common/headshot.png" width="40" height="40">
+                    <div>
+                        <p><b><%- review.name %></b><br>★★★★★</p>
+                    </div>
+                </div>
+                <p><%- review.review %></p>
+            </div>
+            <% } %>
+        </div>
     </div>
 </body>
