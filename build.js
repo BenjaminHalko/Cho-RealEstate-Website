@@ -34,8 +34,8 @@ compile('buy/home_cost',{featured: locationData.featured}, 'cost-in-buying-a-hom
 compile('buy/mortgage_calc',{featured: locationData.featured}, 'mortgage-payment-calculator');
 compile('buy/reasons_for_realtor',{featured: locationData.featured}, 'top-5-reasons-for-using-a-realtor');
 //sell
-compile('buy/thinking_of_selling',{featured: locationData.featured}, 'thinking-of-selling');
-compile('buy/unique_approach',{featured: locationData.featured}, 'my-unique-approach');
+compile('sell/thinking_of_selling',{featured: locationData.featured}, 'thinking-of-selling');
+compile('sell/unique_approach',{featured: locationData.featured}, 'my-unique-approach');
 //other
 compile('newsletter', {featured: locationData.featured, news: []}, 'newsletter');
 compile('presales', {featured: locationData.featured, locations: locationData.locations}, 'presales');
