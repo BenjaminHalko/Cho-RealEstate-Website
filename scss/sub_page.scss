@@ -31,10 +31,14 @@
                 padding-left: 16px;
             }
 
-            h1, h3 {
+            h1, h2 {
                 margin: 0px;
                 text-align: center;
             }
+        }
+
+        .panel.full {
+            width: 100%;
         }
 
         .panel, .btn {

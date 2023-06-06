@@ -26,9 +26,12 @@
 .main .main-content .panel ul {
   padding-left: 16px;
 }
-.main .main-content .panel h1, .main .main-content .panel h3 {
+.main .main-content .panel h1, .main .main-content .panel h2 {
   margin: 0px;
   text-align: center;
+}
+.main .main-content .panel.full {
+  width: 100%;
 }
 .main .main-content .panel, .main .main-content .btn {
   transition: all 0.5s var(--curve);
