@@ -47,7 +47,24 @@ app.get("/mortgage-payment-calculator", (req, res) => {
   res.render('pages/buy/mortgage_calc',{ featured: locationData.featured });
 });
 
+app.get("/top-5-reasons-for-using-a-realtor", (req, res) => {
+  res.render('pages/buy/reasons_for_realtor',{ featured: locationData.featured });
+});
+
+// SELL
+app.get("/thinking-of-selling", (req, res) => {
+  res.render('pages/sell/thinking_of_selling',{ featured: locationData.featured });
+});
+
+app.get("/my-unique-approach", (req, res) => {
+  res.render('pages/sell/unique_approach',{ featured: locationData.featured });
+});
+
 // OTHER
+app.get("/newsletter", (req, res) => {
+  res.render('pages/newsletter',{ featured: locationData.featured, news: [] });
+});
+
 app.get("/presales", (req, res) => {
   res.render('pages/presales',{
     featured: locationData.featured,

@@ -32,7 +32,12 @@ compile('buy/thinking_of_buying',{featured: locationData.featured}, 'thinking-of
 compile('buy/first_time_buyers',{featured: locationData.featured}, 'first-time-home-buyers');
 compile('buy/home_cost',{featured: locationData.featured}, 'cost-in-buying-a-home');
 compile('buy/mortgage_calc',{featured: locationData.featured}, 'mortgage-payment-calculator');
+compile('buy/reasons_for_realtor',{featured: locationData.featured}, 'top-5-reasons-for-using-a-realtor');
+//sell
+compile('buy/thinking_of_selling',{featured: locationData.featured}, 'thinking-of-selling');
+compile('buy/unique_approach',{featured: locationData.featured}, 'my-unique-approach');
 //other
+compile('newsletter', {featured: locationData.featured, news: []}, 'newsletter');
 compile('presales', {featured: locationData.featured, locations: locationData.locations}, 'presales');
 for (let location in locationData.locations) {
     compile('location', {location: locationData.locations[location]}, location);
