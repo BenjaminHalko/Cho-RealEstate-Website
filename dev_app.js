@@ -16,19 +16,38 @@ app.get("/", (req, res) => {
   });
 });
 
+// ABOUT
 app.get("/bio", (req, res) => {
-  res.render('pages/bio',{
+  res.render('pages/about/bio',{
     featured: locationData.featured
   });
 });
 
 app.get("/testimonials", (req, res) => {
-  res.render('pages/testimonials',{
+  res.render('pages/about/testimonials',{
     featured: locationData.featured,
     reviews: reviews
   });
 });
 
+// BUY
+app.get("/thinking-of-buying", (req, res) => {
+  res.render('pages/buy/thinking_of_buying',{ featured: locationData.featured });
+});
+
+app.get("/first-time-home-buyers", (req, res) => {
+  res.render('pages/buy/first_time_buyers',{ featured: locationData.featured });
+});
+
+app.get("/cost-in-buying-a-home", (req, res) => {
+  res.render('pages/buy/home_cost',{ featured: locationData.featured });
+});
+
+app.get("/mortgage-payment-calculator", (req, res) => {
+  res.render('pages/buy/mortgage_calc',{ featured: locationData.featured });
+});
+
+// OTHER
 app.get("/presales", (req, res) => {
   res.render('pages/presales',{
     featured: locationData.featured,

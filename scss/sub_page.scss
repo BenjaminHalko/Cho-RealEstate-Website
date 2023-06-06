@@ -10,29 +10,40 @@
         align-items: center;
         gap: 30px;
         padding-bottom: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
         
         .panel {
             padding: 20px;
-            margin-left: 10px;
-            margin-right: 10px;
             max-width: 1000px;
             border-radius: 20px;
-            transition: all 0.5s var(--curve);
 
-            p {
-                margin: 0px;
+            p,ul {
                 text-align: justify;
                 text-justify: inter-word;
             }
 
-            h1 {
+            p:last-child, ul:last-child {
+                margin-bottom: 0px;
+            }
+
+            ul {
+                padding-left: 16px;
+            }
+
+            h1, h3 {
                 margin: 0px;
                 text-align: center;
             }
         }
 
+        .panel, .btn {
+            transition: all 0.5s var(--curve);
+            filter: var(--shadow);
+        }
+
         &.intro {
-            .panel {
+            .panel, .btn {
                 transform: translateY(-50px);
                 opacity: 0;
             }

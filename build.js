@@ -9,7 +9,7 @@ const reviews = require('./common/reviews.json');
 
 // Function to compile ejs templates
 const compile = function (filename, options, buildFolder) {
-    console.log("Compiling " + filename + " template");
+    console.log("Compiling " + buildFolder + " template");
     const templatePath = path.resolve(__dirname, './views/pages/', filename + '.ejs');
     const templateStr = fs.readFileSync(templatePath, 'utf8');
     const htmlString = ejs.compile(templateStr, {filename: templatePath})(options);
@@ -24,10 +24,16 @@ if (fs.existsSync(path.resolve(__dirname,"build"))) {
 }
 
 // Compile templates
-compile('bio', {featured: locationData.featured}, 'bio');
-compile('testimonials', {featured: locationData.featured, reviews: reviews}, 'testimonials');
+//about
+compile('about/bio', {featured: locationData.featured}, 'bio');
+compile('about/testimonials', {featured: locationData.featured, reviews: reviews}, 'testimonials');
+//buy
+compile('buy/thinking_of_buying',{featured: locationData.featured}, 'thinking-of-buying');
+compile('buy/first_time_buyers',{featured: locationData.featured}, 'first-time-home-buyers');
+compile('buy/home_cost',{featured: locationData.featured}, 'cost-in-buying-a-home');
+compile('buy/mortgage_calc',{featured: locationData.featured}, 'mortgage-payment-calculator');
+//other
 compile('presales', {featured: locationData.featured, locations: locationData.locations}, 'presales');
-
 for (let location in locationData.locations) {
     compile('location', {location: locationData.locations[location]}, location);
 }
