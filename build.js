@@ -25,7 +25,7 @@ if (fs.existsSync(path.resolve(__dirname,"build"))) {
 
 // Compile templates
 compile('bio', {featured: locationData.featured}, 'bio');
-compile('reviews', {featured: locationData.featured, reviews: reviews}, 'reviews');
+compile('testimonials', {featured: locationData.featured, reviews: reviews}, 'testimonials');
 compile('presales', {featured: locationData.featured, locations: locationData.locations}, 'presales');
 
 for (let location in locationData.locations) {

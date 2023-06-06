@@ -22,8 +22,8 @@ app.get("/bio", (req, res) => {
   });
 });
 
-app.get("/reviews", (req, res) => {
-  res.render('pages/reviews',{
+app.get("/testimonials", (req, res) => {
+  res.render('pages/testimonials',{
     featured: locationData.featured,
     reviews: reviews
   });

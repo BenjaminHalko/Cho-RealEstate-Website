@@ -15,9 +15,18 @@
   margin-right: 10px;
   max-width: 1000px;
   border-radius: 20px;
+  transition: all 0.5s var(--curve);
 }
 .main .main-content .panel p {
   margin: 0px;
   text-align: justify;
   text-justify: inter-word;
+}
+.main .main-content .panel h1 {
+  margin: 0px;
+  text-align: center;
+}
+.main .main-content.intro .panel {
+  transform: translateY(-50px);
+  opacity: 0;
 }
