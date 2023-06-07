@@ -3,7 +3,9 @@
 <head>
     <%- include('../partials/header'); %>
     <link rel="stylesheet" href="/css/sub_page.css">
+    <link rel="stylesheet" href="/css/newsletter.css">
     <script src="/js/sub_page.js"></script>
+    <script src="/js/newsletter.js"></script>
     <title>Newsletter - Kitty Cho | Personal Real Estate Corporation</title>
 </head>
 <body>
@@ -14,6 +16,50 @@
     <div class="main">
         <%- include('../partials/background', {background: featured}); %>
         <div class="main-content intro">
+            <div class="panel">
+                <h1><b>Monthly Newsletter</b></h1>
+            </div>
+            <div class="d-inline-flex flex-wrap align-items-center justify-content-center" style="gap: 20px; max-width: 1030px">
+                <img src="/images/misc/newsletter.png" width="505" class="floating-img">
+                <div style="flex: 1 0 460px; margin-bottom: auto; font-size: 1.2em;">
+                    <div class="panel">
+                    <p style="text-align: center">Kitty's Monthly Real Estate Newsletter is divided into 3 sections as listed below.</p>
+                    <p style="text-align: center">Free subscription to monthly real estate content.</p>
+                    </div>
+                    <div class="panel" style="margin-top: 18px">
+                        <form class="d-inline-flex" style="width: 100%; gap: 20px">
+                            <input type="email" class="form-control" id="email" required placeholder="Enter Email:">
+                            <button class="btn btn-primary btn-lg" type="submit">Subscribe</button>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="panel-wrapper d-inline-flex flex-wrap align-items-center justify-content-center">
+                <div class="panel">
+                    <svg width="40" height="40" style="margin-bottom: 16px"><use xlink:href="/svg/bar-chart-line-fill.svg#id"></use></svg>
+                    <h4>Market Update</h4>
+                    <p style="text-align: center">Information gathered from the <br>REBGV, including graphs and up to <br>date changes in the market.</p>
+                </div>
+                <div class="panel">
+                    <svg width="40" height="40" style="margin-bottom: 16px"><use xlink:href="/svg/building.svg#id"></use></svg>
+                    <h4>Presale Corner</h4>
+                    <p style="text-align: center">Featuring a particular Presale by a <br>reputable developer from Sutton <br>First West with VIP Access.</p>
+                </div>
+                <div class="panel">
+                    <svg width="40" height="40" style="margin-bottom: 16px"><use xlink:href="/svg/bag-check.svg#id"></use></svg>
+                    <h4>Featuring A Local Business</b></h4>
+                    <p style="text-align: center">Featuring a small local business <br>in Kitty's community.</p>
+                </div>
+            </div>
+            <div class="panel" style="max-width: 800px; width: 100%">
+                <h3>Monthly Newsletters</h3>
+                <ul>
+                    <% for (newsletter of newsletters) { %>
+                        <li><a href="/files/newsletters/<%- newsletter.file %>" target="_blank"><%- newsletter.name %></a></li>
+                    <% } %>
+                </ul>
+            </div>
         </div>
     </div>
 </body>

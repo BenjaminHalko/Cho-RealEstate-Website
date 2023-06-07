@@ -30,14 +30,20 @@
   margin: 0px;
   text-align: center;
 }
+.main .main-content .panel a {
+  color: black;
+}
 .main .main-content .panel.full {
   width: 100%;
 }
-.main .main-content .panel, .main .main-content .btn {
+.main .main-content .panel, .main .main-content .floating-btn, .main .main-content .floating-img {
   transition: all 0.5s var(--curve);
   filter: var(--shadow);
 }
-.main .main-content.intro .panel, .main .main-content.intro .btn {
+.main .main-content .floating-img {
+  border-radius: 20px;
+}
+.main .main-content.intro .panel, .main .main-content.intro .floating-btn, .main .main-content.intro .floating-img {
   transform: translateY(-50px);
   opacity: 0;
 }

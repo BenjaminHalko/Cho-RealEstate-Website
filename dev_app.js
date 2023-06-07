@@ -1,10 +1,9 @@
 require('dotenv').config('.env');
-const { initApp, loadLocationData, loadInstagramData } = require('./common/common.js');
+const { initApp, loadCommonData, loadInstagramData } = require('./common/common.js');
 
 // Load components
 const app = initApp();
-const locationData = loadLocationData();
-const reviews = require('./common/reviews.json');
+const { locationData, reviews, newsletters } = loadCommonData();
 
 // Load routes
 app.get("/", (req, res) => {
@@ -62,7 +61,7 @@ app.get("/my-unique-approach", (req, res) => {
 
 // OTHER
 app.get("/newsletter", (req, res) => {
-  res.render('pages/newsletter',{ featured: locationData.featured, news: [] });
+  res.render('pages/newsletter',{ featured: locationData.featured, newsletters: newsletters });
 });
 
 app.get("/presales", (req, res) => {

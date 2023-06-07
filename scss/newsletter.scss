@@ -1,0 +1,16 @@
+.panel-wrapper {
+    gap: 20px;
+    text-align: center;
+
+    .panel {
+        width: 330px;
+        height: 200px;
+    }
+}
+
+#newsletter_signup {
+    height: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

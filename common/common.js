@@ -19,12 +19,38 @@ function initApp() {
     return app;
 }
 
-function loadLocationData() {
+function loadCommonData() {
+    const fs = require('fs');
+    const path = require('path');
+
+    // Locations
     console.log("Loading location data");
     const locationData = require('./location.json');
     for (let location in locationData.locations) { locationData.locations[location].id = location; }
     locationData.featured = locationData.locations[locationData.featured];
-    return locationData;
+
+    // Reviews
+    console.log("Loading review data");
+    const reviews = require('./reviews.json');
+    
+    // News
+    console.log("Loading news data");
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const newsletters = [];
+    for (file of fs.readdirSync(path.resolve(__dirname, '..', 'public', 'files', 'newsletters')).reverse()) {
+        newsletters.push({
+            file: file,
+            name: months[Number(file.split('_')[1].split('.')[0])-1] + ' ' + file.split('_')[0]
+        })
+    }
+
+    
+    // Return data
+    return {
+        locationData: locationData,
+        reviews: reviews,
+        newsletters: newsletters
+    };
 }
 
 async function loadInstagramData() {
@@ -44,6 +70,6 @@ async function loadInstagramData() {
 // Export functions
 module.exports = {
     initApp,
-    loadLocationData,
+    loadCommonData,
     loadInstagramData
 };

@@ -1,6 +1,5 @@
 addEventListener("load", (event) => {
-
-    const panels = document.querySelector('.intro').children;
+    const panels = document.querySelectorAll('.panel, .floating-btn, .floating-img');
 
     for (let i = 0; i < panels.length; i++) {
         panels[i].style.transitionDelay = `${i * 0.2}s`;

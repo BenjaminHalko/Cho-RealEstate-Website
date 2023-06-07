@@ -19,6 +19,13 @@
 .main .main-content .main-content__left img, .main .main-content .main-content__left a {
   filter: var(--shadow);
 }
+.main .main-content .main-content__left .btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+}
 
 .instagram {
   padding: 20px;

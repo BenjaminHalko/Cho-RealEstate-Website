@@ -1,11 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const ejs = require('ejs');
-const loadLocationData = require('./common/common.js').loadLocationData;
 
 // Load data
-const locationData = loadLocationData();
-const reviews = require('./common/reviews.json');
+const { locationData, reviews, newsletters } = require('./common/common.js').loadCommonData();
 
 // Function to compile ejs templates
 const compile = function (filename, options, buildFolder) {
@@ -37,7 +35,7 @@ compile('buy/reasons_for_realtor',{featured: locationData.featured}, 'top-5-reas
 compile('sell/thinking_of_selling',{featured: locationData.featured}, 'thinking-of-selling');
 compile('sell/unique_approach',{featured: locationData.featured}, 'my-unique-approach');
 //other
-compile('newsletter', {featured: locationData.featured, news: []}, 'newsletter');
+compile('newsletter', {featured: locationData.featured, newsletters: newsletters}, 'newsletter');
 compile('presales', {featured: locationData.featured, locations: locationData.locations}, 'presales');
 for (let location in locationData.locations) {
     compile('location', {location: locationData.locations[location]}, location);

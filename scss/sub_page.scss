@@ -35,19 +35,27 @@
                 margin: 0px;
                 text-align: center;
             }
+
+            a {
+                color: black;
+            }
         }
 
         .panel.full {
             width: 100%;
         }
 
-        .panel, .btn {
+        .panel, .floating-btn, .floating-img {
             transition: all 0.5s var(--curve);
             filter: var(--shadow);
         }
 
+        .floating-img {
+            border-radius: 20px;
+        }
+
         &.intro {
-            .panel, .btn {
+            .panel, .floating-btn, .floating-img {
                 transform: translateY(-50px);
                 opacity: 0;
             }

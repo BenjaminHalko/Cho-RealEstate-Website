@@ -21,6 +21,15 @@
             img, a {
                 filter: var(--shadow);
             }
+
+            .btn-social {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 56px;
+                height: 56px;
+            }
         }
     }
 }

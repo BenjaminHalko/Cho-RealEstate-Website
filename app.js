@@ -1,9 +1,8 @@
-const fs = require('fs');
-const { initApp, loadLocationData, loadInstagramData } = require('./common/common.js');
+const { initApp, loadCommonData, loadInstagramData } = require('./common/common.js');
 
 // Load components
 const app = initApp();
-const locationData = loadLocationData();
+const locationData = loadCommonData().locationData;
 
 // Load routes
 app.get("/", (req, res) => {
