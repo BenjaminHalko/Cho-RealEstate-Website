@@ -11,6 +11,16 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+@keyframes fade_in {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
 .main .main-content .panel {
   padding: 20px;
   max-width: 1000px;
@@ -37,13 +47,13 @@
   width: 100%;
 }
 .main .main-content .panel, .main .main-content .floating-btn, .main .main-content .floating-img {
-  transition: all 0.5s var(--curve);
+  animation-duration: 0.5s;
+  animation-timing-function: var(--curve);
+  opacity: 0;
+  transform: translateY(-50px);
+  animation-fill-mode: forwards;
   filter: var(--shadow);
 }
 .main .main-content .floating-img {
   border-radius: 20px;
-}
-.main .main-content.intro .panel, .main .main-content.intro .floating-btn, .main .main-content.intro .floating-img {
-  transform: translateY(-50px);
-  opacity: 0;
 }

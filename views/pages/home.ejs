@@ -16,13 +16,8 @@
         <div class="main-content d-inline-flex justify-content-center align-items-center flex-wrap">
             <div class="main-content__left d-inline-flex flex-column justify-content-center align-items-center">
                 <img src="/images/common/headshot.png" alt="headshot">
-                <a class="btn btn-primary d-inline-flex justify-content-center align-items-center" href="mailto:kittychosutton@gmail.com" role="button" style="--bs-btn-font-size: 2rem; gap: 10px; width: 100%">
-                    Contact
-                    <svg width="32" height="32">
-                        <use xlink:href="/svg/person-lines-fill.svg#id"/>
-                    </svg>
-                </a>
-                <div class="d-inline-flex align-items-center" style="gap: 10px; margin-top: 10px">
+                <%- include('../partials/contact', {fullWidth: true}); %>
+                <div class="d-inline-flex align-items-center" style="gap: 10px; margin-top: 20px; z-index: 5">
                     <a class="btn btn-facebook btn-social" href="https://www.facebook.com/kitty.cho.10/" target="_blank" role="button">
                         <svg width="32" height="32" color="white">
                             <use xlink:href="/svg/facebook.svg#id"/>

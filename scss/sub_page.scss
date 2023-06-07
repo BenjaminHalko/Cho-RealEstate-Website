@@ -4,6 +4,17 @@
     }
 
     .main-content {
+        @keyframes fade_in {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
         padding-top: 100px;
         display: flex;
         flex-direction: column;
@@ -46,19 +57,16 @@
         }
 
         .panel, .floating-btn, .floating-img {
-            transition: all 0.5s var(--curve);
+            animation-duration: 0.5s;
+            animation-timing-function: var(--curve);
+            opacity: 0;
+            transform: translateY(-50px);
+            animation-fill-mode: forwards;
             filter: var(--shadow);
         }
 
         .floating-img {
             border-radius: 20px;
-        }
-
-        &.intro {
-            .panel, .floating-btn, .floating-img {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
         }
     }
 }
