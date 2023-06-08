@@ -4,6 +4,7 @@
     <%- include('../../partials/header'); %>
     <link rel="stylesheet" href="/css/sub_page.css">
     <link rel="stylesheet" href="/css/calculator.css">
+    <script src="/js/calculator.js"></script>
     <title>Mortgage Payment Calculator - Kitty Cho | Personal Real Estate Corporation</title>
 </head>
 <body>
@@ -17,31 +18,36 @@
             <div class="panel">
                 <h1><b>Mortgage Payment Calculator</b></h1>
             </div>
-            <div class="d-inline-flex flex-wrap" style="max-width: 1000px; width: 100%; gap: 20px">
+            <div class="d-inline-flex flex-wrap justify-content-center align-items-center" style="max-width: 1000px; width: 100%; gap: 20px">
                 <form class="panel" style="max-width: 500px;">
                     <div class="form-group">
-                        <label for="total">Total Amount:</label>
-                        <input type="text" class="form-control" id="total" placeholder="Total Amount:">
+                        <label for="total">House Price:</label>
+                        <input required type="number" step="any" min="0" class="form-control" id="house" placeholder="$">
                     </div>
                     <div class="form-group">
                         <label for="down">Down Payment:</label>
-                        <input type="text" class="form-control" id="down" placeholder="Down Payment:">
+                        <input required type="number" step="any" min="0" class="form-control" id="downpayment" placeholder="$">
                     </div>
                     <div class="form-group">
                         <label for="interest">Interest Rate:</label>
-                        <input type="text" class="form-control" id="interest" placeholder="Interest Rate:">
+                        <input required type="number" step="any" min="0" max="100" class="form-control" id="interest" placeholder="%">
                     </div>
                     <div class="form-group">
-                        <label for="amortization">Amortization Period:</label>
-                        <input type="text" class="form-control" id="amortization" placeholder="Amortization Period:">
+                        <label for="amortization">Mortgage Term:</label>
+                        <input required type="number" step="any" min="0" class="form-control" id="term" placeholder="Years">
                     </div>
-                    <button type="submit" class="btn btn-primary" style="filter: none">Submit</button>
+
+                    <button type="submit" class="btn btn-primary" style="filter: none">Calculate</button>
                 </form>
 
-                <div style="max-width: 400px">
-                    <div class="panel" style="margin-left: auto; margin-right: auto; margin-bottom: auto">
+                <div class="d-inline-flex flex-column justify-content-center align-items-center" style="max-width: 400px">
+                    <div class="panel full" style="order: 2">
                         <h4>Get a Pre-Qualified Mortgage!</h4>
                         <p>Speaking to a mortgage broker or a mortgage specialist before you buy a presale or before you shop for a home is necessary to give you a clear idea of what you can and cannot afford.</p>
+                    </div>
+                    <div class="panel full hidden" id="results">
+                        <h3>Results:</h3>
+                        <p></p>
                     </div>
                 </div>
             </div>
