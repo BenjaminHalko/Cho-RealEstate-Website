@@ -11,7 +11,7 @@
         margin-top: calc(50vh - 210px);
         margin-bottom: 100px;
 
-        .main-content__left, .location_card {
+        .main-content__left, .main-content__right {
             transition: all 0.5s var(--curve);
             opacity: 1;
         }
@@ -43,7 +43,7 @@
                 opacity: 0;
             }
 
-            .location_card {
+            .main-content__right {
                 transform: translateX(100px);
                 opacity: 0;
             }

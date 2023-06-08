@@ -19,7 +19,12 @@
                 <img src="/images/common/headshot.png" alt="headshot">
                 <%- include('../partials/contact', {fullWidth: true}); %>
             </div>
-            <%- include('../partials/location_card', {location: featured, isFeatured: true}); %>
+            <div class="main-content__right d-inline-flex flex-column justify-content-center align-items-center" style="gap: 20px">
+                <%- include('../partials/location_card', {location: featured, isFeatured: true}); %>
+                <a href="/presales" class="btn btn-primary btn-large" style="filter: var(--card-shadow)">
+                    View All Presales
+                </a>
+            </div>
         </div>
     </div>
 
