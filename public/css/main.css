@@ -223,6 +223,11 @@ body {
   background-color: var(--glass-white);
   backdrop-filter: var(--glass-blur);
 }
+@media (pointer: none), (pointer: coarse) {
+  .panel {
+    backdrop-filter: none;
+  }
+}
 
 .btn-contact {
   border-radius: 50px;

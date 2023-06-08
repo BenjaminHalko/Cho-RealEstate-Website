@@ -1,4 +1,8 @@
 .panel {
     background-color: var(--glass-white);
     backdrop-filter: var(--glass-blur);
+    
+    @media (pointer:none), (pointer:coarse) {
+        backdrop-filter: none;
+    }
 }
