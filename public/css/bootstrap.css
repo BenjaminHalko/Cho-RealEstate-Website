@@ -11858,70 +11858,24 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/*
 .btn-youtube {
-  --bs-btn-color: #970815;
-  --bs-btn-bg: #c70b1c;
-  --bs-btn-border-color: #a30917;
-  --bs-btn-hover-color: #360308;
-  --bs-btn-hover-bg: #df0c1f;
-  --bs-btn-hover-border-color: #df0c1f;
-  --bs-btn-focus-shadow-rgb: 161, 9, 23;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #d23c49;
-  --bs-btn-active-border-color: #ac222e;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #c70b1c;
-  --bs-btn-disabled-border-color: #a30917;
+    $color: #c70b1c;
+    @include button-variant($color, darken($color, 7.5%), darken($color, 10%), lighten($color,5%), lighten($color, 5%), darken($color,30%));
 }
 
 .btn-facebook {
-  --bs-btn-color: #2d4472;
-  --bs-btn-bg: #3c5a96;
-  --bs-btn-border-color: #314a7b;
-  --bs-btn-hover-color: #101829;
-  --bs-btn-hover-bg: #4365a8;
-  --bs-btn-hover-border-color: #4365a8;
-  --bs-btn-focus-shadow-rgb: 48, 73, 122;
-  --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #637bab;
-  --bs-btn-active-border-color: #465c88;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #3c5a96;
-  --bs-btn-disabled-border-color: #314a7b;
+    $color: #3c5a96;
+    @include button-variant($color, darken($color, 7.5%), darken($color, 10%), lighten($color,5%), lighten($color, 5%), darken($color,30%));
 }
 
 .btn-instagram {
-  --bs-btn-color: #922466;
-  --bs-btn-bg: #bb2e82;
-  --bs-btn-border-color: #9c266d;
-  --bs-btn-hover-color: #40102d;
-  --bs-btn-hover-bg: #cd3590;
-  --bs-btn-hover-border-color: #cd3590;
-  --bs-btn-focus-shadow-rgb: 155, 38, 108;
-  --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #c9589b;
-  --bs-btn-active-border-color: #a63c7c;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #bb2e82;
-  --bs-btn-disabled-border-color: #9c266d;
+    $color: #bb2e82;
+    @include button-variant($color, darken($color, 7.5%), darken($color, 10%), lighten($color,5%), lighten($color, 5%), darken($color,30%));
 }
 
 .btn-whatsapp {
-  --bs-btn-color: #2cbd52;
-  --bs-btn-bg: #48d46d;
-  --bs-btn-border-color: #2fc757;
-  --bs-btn-hover-color: #196a2e;
-  --bs-btn-hover-bg: #5dd97d;
-  --bs-btn-hover-border-color: #5dd97d;
-  --bs-btn-focus-shadow-rgb: 47, 198, 86;
-  --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #6ddd8a;
-  --bs-btn-active-border-color: #44cd68;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #48d46d;
-  --bs-btn-disabled-border-color: #2fc757;
+    $color: #48d46d;
+    @include button-variant($color, darken($color, 7.5%), darken($color, 10%), lighten($color,5%), lighten($color, 5%), darken($color,30%));
 }
+*/

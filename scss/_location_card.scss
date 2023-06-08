@@ -157,41 +157,60 @@
     }
 
     @media screen and (max-width: 700px) {
+        
         &:hover {
             transform: scale(1.045);
         }
 
         .card_inner {
-            $height: 100px;
-
-            width: auto;
-            height: $height;
-
-            display: flex;
+            width: 100%;
 
             .card_image {
-                height: $height;
-
                 img {
                     width: 100%;
-                    height: $height;
                 }
             }
+        }
 
-            .content {
+        &.featured {
+            width: calc(100% - 40px);  
+            --imgHeight: 150px;
+            --height: 340px;
+        }
+
+        &:not(.featured) {
+            .card_inner {
+                $height: 100px;
+
                 width: auto;
                 height: $height;
 
-                .title {
-                    h1 {
-                        font-size: 1.3rem;
+                display: flex;
+
+                .card_image {
+                    height: $height;
+
+                    img {
+                        width: 100%;
+                        height: $height;
                     }
                 }
 
-                p {
-                    font-size: 0.75rem;
-                    line-height: 1rem;
-                    margin-bottom: 0px;
+                .content {
+                    width: auto;
+                    height: $height;
+
+                    .title {
+                        h1 {
+                            font-size: 1.3rem;
+                        }
+                    }
+    
+                    p {
+                        font-size: 0.75rem;
+                        line-height: 1rem;
+                        margin-bottom: 0px;
+                    }
                 }
             }
         }

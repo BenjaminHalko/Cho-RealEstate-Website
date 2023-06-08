@@ -1,4 +1,4 @@
-<a class="location_card card3D <% if(typeof isFeatured !== 'undefined') { %> featured <% } %>" href="/<%= location.id %>">
+<a class="location_card <% if(typeof isFeatured !== 'undefined') { %> featured <% } %>" href="/<%= location.id %>">
     <div class="card_inner" style="--image: url('/images/locations/<%= location.id %>/<%= location.card_image %>');">
         <div class="card_image">
             <img src="/images/locations/<%= location.id %>/<%= location.card_image %>" alt="<%= location.name %>">

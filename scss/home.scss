@@ -10,6 +10,11 @@
         gap: 120px;
         margin-top: calc(50vh - 210px);
         margin-bottom: 100px;
+
+        .main-content__left, .location_card {
+            transition: all 0.5s var(--curve);
+            opacity: 1;
+        }
     
         .main-content__left {
             img {
@@ -29,6 +34,18 @@
 
                 width: 56px;
                 height: 56px;
+            }
+        }
+
+        &.intro {
+            .main-content__left {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            .location_card {
+                transform: translateX(100px);
+                opacity: 0;
             }
         }
     }

@@ -4,6 +4,7 @@
     <%- include('../partials/header'); %>
     <link rel="stylesheet" href="/css/home.css">
     <script src="/js/_location_card.js"></script>
+    <script src="/js/sub_page.js"></script>
     <title>Kitty Cho | Personal Real Estate Corporation</title>
 </head>
 <body>
@@ -13,32 +14,10 @@
     <!-- Main -->
     <div class="main">
         <%- include('../partials/background', {background: featured}); %>
-        <div class="main-content d-inline-flex justify-content-center align-items-center flex-wrap">
+        <div class="main-content d-inline-flex justify-content-center align-items-center flex-wrap intro">
             <div class="main-content__left d-inline-flex flex-column justify-content-center align-items-center">
                 <img src="/images/common/headshot.png" alt="headshot">
                 <%- include('../partials/contact', {fullWidth: true}); %>
-                <div class="d-inline-flex align-items-center" style="gap: 10px; margin-top: 20px; z-index: 5">
-                    <a class="btn btn-facebook btn-social" href="https://www.facebook.com/kitty.cho.10/" target="_blank" role="button">
-                        <svg width="32" height="32" color="white">
-                            <use xlink:href="/svg/facebook.svg#id"/>
-                        </svg>
-                    </a>
-                    <a class="btn btn-youtube btn-social" href="#" role="button">
-                        <svg width="32" height="32" color="white">
-                            <use xlink:href="/svg/youtube.svg#id"/>
-                        </svg>
-                    </a>
-                    <a class="btn btn-instagram btn-social" href="https://www.instagram.com/hellokittycho.realtor_/" target="_blank" role="button">
-                        <svg width="32" height="32" color="white">
-                            <use xlink:href="/svg/instagram.svg#id"/>
-                        </svg>
-                    </a>
-                    <a class="btn btn-whatsapp btn-social" href="#" role="button">
-                        <svg width="32" height="32" color="white">
-                            <use xlink:href="/svg/whatsapp.svg#id"/>
-                        </svg>
-                    </a>
-                </div>
             </div>
             <%- include('../partials/location_card', {location: featured, isFeatured: true}); %>
         </div>
