@@ -15,34 +15,24 @@
     <div class="main">
         <%- include('../partials/background', {background: featured}); %>
         <div class="main-content">
-            <h1 class="header" id="southern_burnaby">Southern Burnaby<a href="#southern_burnaby"><svg width="30px" height="30px"><use xlink:href="/svg/link-45deg.svg#id"/></svg></a></h1>
+            <%
+                const locations_sorted = {};    
+                for (const [place, location] of Object.entries(locations)) {
+                if (locations_sorted[location.location] == undefined) {
+                    locations_sorted[location.location] = [location];
+                } else {
+                    locations_sorted[location.location].push(location);
+                }
+            } %>
+
+            <% for (const [place, location_list] of Object.entries(locations_sorted)) { %>
+            <h1 class="header" id="<%- place.replaceAll(' ','_') %>"><%- place %><a href="#<%- place.replaceAll(' ','_') %>"><svg width="30px" height="30px"><use xlink:href="/svg/link-45deg.svg#id"/></svg></a></h1>
             <div class="group d-flex flex-wrap justify-content-center">
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
+            <% for (location of location_list) { %>
+            <%- include('../partials/location_card', {location: location}); %>
+            <% } %>
             </div>
-            <h1 class="header" id="northern_burnaby">Northern Burnaby<a href="#northern_burnaby"><svg width="30px" height="30px"><use xlink:href="/svg/link-45deg.svg#id"/></svg></a></h1>
-            <div class="group d-flex flex-wrap justify-content-center">
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            </div>
-            <h1 class="header">Other Burnaby</h1>
-            <div class="group d-flex flex-wrap justify-content-center">
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            </div>
-            <h1 class="header">Maybe Vancouver</h1>
-            <div class="group d-flex flex-wrap justify-content-center">
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            <%- include('../partials/location_card', {location: locations['contour']}); %>
-            </div>
+            <% } %>
         </div>
     </div>
 </body>
