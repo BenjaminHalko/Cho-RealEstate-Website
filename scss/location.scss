@@ -3,55 +3,57 @@
     min-height: 100vh;
     overflow: hidden;
 
-    .main-background {
-        filter: none;
-    }
-
     .main-content {
         display: flex;
+        
 
         .floating-content {
-            display: flex;
-            flex-grow: 1;
-            padding-top: 80px;
-
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 30px;
-
+            --width: 640px;
+            --height: 360px;
             min-width: 550px;
             min-height: 600px;
-            height: 100vh;
+            flex-grow: 1;
 
-            transition: transform 0.5s var(--curve);
-            transform: translateX(0%);
+            .fixed {
+                display: flex;
+                position: fixed;
+                padding-top: 80px;
 
-            --width: 480px;
-            --height: 270px;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 30px;
 
-            iframe, #imageCarousel {
-                filter: var(--card-shadow);
-                width: var(--width);
-                height: var(--height);
-            }
+                min-width: 550px;
+                min-height: 600px;
+                height: 100vh;
 
-            #imageCarousel .carousel-item {
-                width: var(--width);
-                height: var(--height);
-                overflow: hidden;
+                transition: transform 0.5s var(--curve);
+                transform: translateX(0%);
 
-                img {
+                left: calc((100vw - min(850px, 100vw - 480px)) / 2 + min(850px, 100vw - 480px) - 640px / 2);
+
+                iframe, #imageCarousel {
+                    filter: var(--card-shadow);
                     width: var(--width);
                     height: var(--height);
+                }
+
+                #imageCarousel .carousel-item {
+                    width: var(--width);
+                    height: var(--height);
+                    overflow: hidden;
+
+                    img {
+                        width: var(--width);
+                        height: var(--height);
+                    }
                 }
             }
         }
 
         .panel {
             $angle: calc(17vw - 200px);
-
-            margin-left: auto;
 
             max-width: 850px;
             min-height: 100vh;
@@ -67,6 +69,11 @@
 
             transition: transform 0.5s var(--curve);
             transform: translateX(0%);
+
+            p {
+                text-align: justify;
+                text-justify: inter-word;
+            }
 
             .name {
                 font-size: 2rem;
@@ -116,7 +123,7 @@
             }
         }
 
-        @media screen and ((max-width: 1600px) or (max-height: 700px)) {
+        @media screen and (max-width: 1600px) {
             .floating-content {
                 --width: 400px;
                 --height: 225px;
@@ -127,13 +134,19 @@
             flex-direction: column;
 
             .floating-content {
-                padding: 40px;
-                flex-direction: row;
                 min-width: 0;
                 min-height: 0;
-                height: auto;
-                position: initial;
-                flex-wrap: wrap;
+
+                .fixed {
+                    padding: 40px;
+                    flex-direction: row;
+                    min-width: 0;
+                    min-height: 0;
+                    height: auto;
+                    position: initial;
+                    left: auto;
+                    flex-wrap: wrap;
+                }
             }
 
             .panel {
@@ -144,16 +157,11 @@
                 padding-left: 30px;
                 padding-right: 30px;
 
-                .buttons {
-                    justify-content: center;
-                }
-
                 .location {
                     margin-bottom: 30px;
                 }
 
                 * {
-                    text-align: center;
                     width: auto;
                     margin-right: 0px;
                 }

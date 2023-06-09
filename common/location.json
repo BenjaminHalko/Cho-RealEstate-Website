@@ -2,14 +2,21 @@
     "featured": "contour",
     "locations": {
         "contour": {
-            "id": "contour",
             "name": "Contour - Longer Name",
-            "short_desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
+            "desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
+            "catagory": "Test",
             "location": "Southern Burnaby",
             "card_image": "contour.png",
             "background": "main_background.jpeg",
-            "images": ["main_background.jpeg","contour.png"],
             "video_id": "C0DPdy98e4c"
+        },
+        "south-yards": {
+            "name": "South Yards",
+            "desc": "Anthem's highly anticipated South Yards in Brentwood offers 2,500 homes, retail space, and a one-acre park.",
+            "catagory": "Burnaby",
+            "location": "Burnaby - Brentwood",
+            "card_image": "brochure_Page_07_Image_0001.jpg",
+            "background": "brochure_Page_30_Image_0002.jpg"
         }
     }
 }

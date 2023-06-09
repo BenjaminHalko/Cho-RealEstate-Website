@@ -3,15 +3,19 @@
   min-height: 100vh;
   overflow: hidden;
 }
-.main .main-background {
-  filter: none;
-}
 .main .main-content {
   display: flex;
 }
 .main .main-content .floating-content {
-  display: flex;
+  --width: 640px;
+  --height: 360px;
+  min-width: 550px;
+  min-height: 600px;
   flex-grow: 1;
+}
+.main .main-content .floating-content .fixed {
+  display: flex;
+  position: fixed;
   padding-top: 80px;
   justify-content: center;
   align-items: center;
@@ -22,25 +26,23 @@
   height: 100vh;
   transition: transform 0.5s var(--curve);
   transform: translateX(0%);
-  --width: 480px;
-  --height: 270px;
+  left: calc((100vw - min(850px, 100vw - 480px)) / 2 + min(850px, 100vw - 480px) - 320px);
 }
-.main .main-content .floating-content iframe, .main .main-content .floating-content #imageCarousel {
+.main .main-content .floating-content .fixed iframe, .main .main-content .floating-content .fixed #imageCarousel {
   filter: var(--card-shadow);
   width: var(--width);
   height: var(--height);
 }
-.main .main-content .floating-content #imageCarousel .carousel-item {
+.main .main-content .floating-content .fixed #imageCarousel .carousel-item {
   width: var(--width);
   height: var(--height);
   overflow: hidden;
 }
-.main .main-content .floating-content #imageCarousel .carousel-item img {
+.main .main-content .floating-content .fixed #imageCarousel .carousel-item img {
   width: var(--width);
   height: var(--height);
 }
 .main .main-content .panel {
-  margin-left: auto;
   max-width: 850px;
   min-height: 100vh;
   overflow: hidden;
@@ -52,6 +54,10 @@
   clip-path: polygon(0 0, 0 100%, calc(100% - (17vw - 200px)) 100%, 100% 0);
   transition: transform 0.5s var(--curve);
   transform: translateX(0%);
+}
+.main .main-content .panel p {
+  text-align: justify;
+  text-justify: inter-word;
 }
 .main .main-content .panel .name {
   font-size: 2rem;
@@ -88,7 +94,7 @@
     margin-right: 0px;
   }
 }
-@media screen and ((max-width: 1600px) or (max-height: 700px)) {
+@media screen and (max-width: 1600px) {
   .main .main-content .floating-content {
     --width: 400px;
     --height: 225px;
@@ -99,12 +105,17 @@
     flex-direction: column;
   }
   .main .main-content .floating-content {
+    min-width: 0;
+    min-height: 0;
+  }
+  .main .main-content .floating-content .fixed {
     padding: 40px;
     flex-direction: row;
     min-width: 0;
     min-height: 0;
     height: auto;
     position: initial;
+    left: auto;
     flex-wrap: wrap;
   }
   .main .main-content .panel {
@@ -115,14 +126,10 @@
     padding-left: 30px;
     padding-right: 30px;
   }
-  .main .main-content .panel .buttons {
-    justify-content: center;
-  }
   .main .main-content .panel .location {
     margin-bottom: 30px;
   }
   .main .main-content .panel * {
-    text-align: center;
     width: auto;
     margin-right: 0px;
   }

@@ -54,8 +54,8 @@ body {
 }
 
 .location_card {
-  --height: 230px;
-  --width: 300px;
+  --height: 200px;
+  --width: 400px;
   --imgHeight: 160px;
   perspective: 600px;
   filter: var(--card-shadow);
@@ -216,17 +216,11 @@ body {
   background-size: cover;
   background-position: center;
   transform: scale(1.1);
-  filter: blur(3px);
+  filter: blur(3px) brightness(0.6);
 }
 
 .panel {
   background-color: var(--glass-white);
-  backdrop-filter: var(--glass-blur);
-}
-@media (pointer: none), (pointer: coarse) {
-  .panel {
-    backdrop-filter: none;
-  }
 }
 
 .btn-contact {
@@ -242,6 +236,15 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   width: 300px;
+}
+.btn-contact.tiny {
+  min-width: 200px;
+  font-size: 1.2em;
+}
+.btn-contact.tiny svg {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
 }
 .btn-contact::after {
   content: "";

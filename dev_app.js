@@ -75,7 +75,7 @@ app.get("/presales", (req, res) => {
 for (var location in locationData.locations) {
   app.get("/" + location, (req, res) => {
     res.render('pages/location', {
-      location: locationData.locations[location]
+      location: locationData.locations[req.url.substring(1)]
     }); 
   });
 }

@@ -26,7 +26,10 @@ function loadCommonData() {
     // Locations
     console.log("Loading location data");
     const locationData = require('./location.json');
-    for (let location in locationData.locations) { locationData.locations[location].id = location; }
+    for (let location in locationData.locations) {
+        locationData.locations[location].id = location;
+        locationData.locations[location].images = fs.readdirSync(path.resolve(__dirname, '..', 'public', 'images', 'locations', location));
+    }
     locationData.featured = locationData.locations[locationData.featured];
 
     // Reviews
