@@ -96,6 +96,12 @@
 }
 @media screen and (max-width: 1600px) {
   .main .main-content .floating-content {
+    --width: 500px;
+    --height: 292px;
+  }
+}
+@media screen and (max-width: 1420px) {
+  .main .main-content .floating-content {
     --width: 400px;
     --height: 225px;
   }

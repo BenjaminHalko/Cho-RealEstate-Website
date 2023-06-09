@@ -125,6 +125,13 @@
 
         @media screen and (max-width: 1600px) {
             .floating-content {
+                --width: 500px;
+                --height: 292px;
+            }
+        }
+
+        @media screen and (max-width: 1420px) {
+            .floating-content {
                 --width: 400px;
                 --height: 225px;
             }
