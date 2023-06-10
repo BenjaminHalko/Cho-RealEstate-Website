@@ -72,7 +72,6 @@ function loadCommonData() {
         })
     }
 
-    
     // Return data
     return {
         locationData: locationData,
