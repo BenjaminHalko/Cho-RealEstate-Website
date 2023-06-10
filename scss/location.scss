@@ -30,7 +30,7 @@
                 transition: transform 0.5s var(--curve);
                 transform: translateX(0%);
 
-                left: calc((100vw - min(750px, 100vw - 630px)) / 2 + min(750px, 100vw - 630px) - 500px / 2);
+                left: calc((100vw - min(800px, 100vw - 630px)) / 2 + min(800px, 100vw - 630px) - 500px / 2);
 
                 iframe, #imageCarousel {
                     filter: var(--card-shadow);
@@ -60,7 +60,7 @@
         .panel {
             $angle: calc(17vw - 200px);
 
-            max-width: 850px;
+            max-width: 900px;
             min-height: 100vh;
             overflow: hidden;
 
