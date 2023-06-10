@@ -7,6 +7,12 @@
             "catagory": "Vancouver",
             "location": "River District"
         },
+        "brentwood-tower": {
+            "name": "Amazing Brentwood Tower 6",
+            "desc": "With only 369 homes, Tower Six is our rarest and most exclusive home offering to date.",
+            "catagory": "North Burnaby",
+            "location": "Brentwood"
+        },
         "south-yards": {
             "name": "South Yards",
             "desc": "Anthem's highly anticipated South Yards in Brentwood offers 2,500 homes, retail space, and a one-acre park.",
