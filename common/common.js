@@ -28,7 +28,32 @@ function loadCommonData() {
     const locationData = require('./location.json');
     for (let location in locationData.locations) {
         locationData.locations[location].id = location;
-        locationData.locations[location].images = fs.readdirSync(path.resolve(__dirname, '..', 'public', 'images', 'locations', location));
+        
+        if (fs.existsSync(path.resolve(__dirname, '..', 'public', 'images', 'locations', location))) {
+            locationData.locations[location].images = fs.readdirSync(path.resolve(__dirname, '..', 'public', 'images', 'locations', location));
+            const cardPath = locationData.locations[location].images.find(filename => filename.match(/card.*/g));
+            const backgroundPath = locationData.locations[location].images.find(filename => filename.match(/background.*/g));
+            
+            if (cardPath) {
+                locationData.locations[location].card_image = cardPath;
+                locationData.locations[location].images.splice(locationData.locations[location].images.indexOf(cardPath), 1);
+                locationData.locations[location].images.push(cardPath);
+            }
+
+            if (backgroundPath) {
+                locationData.locations[location].background = backgroundPath;
+                locationData.locations[location].images.splice(locationData.locations[location].images.indexOf(backgroundPath), 1);
+                locationData.locations[location].images.push(backgroundPath);
+            }
+        }
+
+        locationData.locations[location].hasBrochure = fs.existsSync(path.resolve(__dirname, '..', 'public', 'files', location, location+'-brochure.pdf'));
+        locationData.locations[location].hasFloorPlan = fs.existsSync(path.resolve(__dirname, '..', 'public', 'files', location, location+'-floorplan.pdf'));
+        locationData.locations[location].hasInfoSheet = fs.existsSync(path.resolve(__dirname, '..', 'public', 'files', location, location+'-infosheet.pdf'));
+        
+        if (typeof locationData.locations[location].sold === 'undefined') {
+            locationData.locations[location].sold = false;
+        }
     }
     locationData.featured = locationData.locations[locationData.featured];
 

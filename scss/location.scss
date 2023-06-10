@@ -5,7 +5,6 @@
 
     .main-content {
         display: flex;
-        
 
         .floating-content {
             --width: 640px;
@@ -25,13 +24,13 @@
                 gap: 30px;
 
                 min-width: 550px;
-                min-height: 600px;
+                min-height: 400px;
                 height: 100vh;
 
                 transition: transform 0.5s var(--curve);
                 transform: translateX(0%);
 
-                left: calc((100vw - min(850px, 100vw - 480px)) / 2 + min(850px, 100vw - 480px) - 640px / 2);
+                left: calc((100vw - min(750px, 100vw - 630px)) / 2 + min(750px, 100vw - 630px) - 500px / 2);
 
                 iframe, #imageCarousel {
                     filter: var(--card-shadow);
@@ -49,6 +48,12 @@
                         height: var(--height);
                     }
                 }
+            }
+        }
+
+        .floating-content.has_video {
+            .fixed {
+                min-height: 600px;
             }
         }
 
@@ -130,10 +135,28 @@
             }
         }
 
-        @media screen and (max-width: 1420px) {
-            .floating-content {
+        @media screen and ((max-width: 1400px) or (max-height: 800px)) {
+            .floating-content.has_video {
                 --width: 400px;
                 --height: 225px;
+            }
+        }
+
+        @media screen and (max-height: 600px) {
+            .floating-content.has_video {
+                .fixed {
+                    position: initial;
+                    left: auto;
+                }
+            }
+        }
+
+        @media screen and (max-height: 390px) {
+            .floating-content {
+                .fixed {
+                    position: initial;
+                    left: auto;
+                }
             }
         }
 

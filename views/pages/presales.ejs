@@ -25,9 +25,9 @@
                 }
             }
             for (const [place, location_list] of Object.entries(locations_sorted).sort(function(a,b) { return a[0].localeCompare(b[0]); })) { %>
-            <h1 class="header" id="<%- place.replaceAll(' ','_') %>"><%- place %><a href="#<%- place.replaceAll(' ','_') %>"><svg width="30px" height="30px"><use xlink:href="/svg/link-45deg.svg#id"/></svg></a></h1>
+            <a class="header d-inline-flex" href="#<%- place.replaceAll(' ','_') %>"><h1 id="<%- place.replaceAll(' ','_') %>"><% for (var i = 0; i <= 8 - place.length/2; i++) { %>—<% } %> <%- place %></h1><svg width="32" height="32"><use xlink:href="/svg/link-45deg.svg#id"/></svg></a>
             <div class="group d-flex flex-wrap justify-content-center">
-            <% for (location of location_list) { %>
+            <% for (location of location_list.sort(function(a,b) { return a.sold - b.sold })) { %>
             <%- include('../partials/location_card', {location: location}); %>
             <% } %>
             </div>

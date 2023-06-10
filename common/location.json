@@ -1,22 +1,25 @@
 {
-    "featured": "contour",
+    "featured": "harlin",
     "locations": {
-        "contour": {
-            "name": "Contour - Longer Name",
-            "desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
-            "catagory": "Test",
-            "location": "Southern Burnaby",
-            "card_image": "contour.png",
-            "background": "main_background.jpeg",
-            "video_id": "C0DPdy98e4c"
+        "harlin": {
+            "name": "Harlin",
+            "desc": "???",
+            "catagory": "Vancouver",
+            "location": "River District"
         },
         "south-yards": {
             "name": "South Yards",
             "desc": "Anthem's highly anticipated South Yards in Brentwood offers 2,500 homes, retail space, and a one-acre park.",
-            "catagory": "Burnaby",
-            "location": "Burnaby - Brentwood",
-            "card_image": "brochure_Page_07_Image_0001.jpg",
-            "background": "brochure_Page_30_Image_0002.jpg"
+            "catagory": "North Burnaby",
+            "location": "Brentwood",
+            "sold": true 
+        },
+        "contour": {
+            "name": "Contour - Longer Name",
+            "desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
+            "catagory": "Test Land",
+            "location": "Southern Burnaby",
+            "video_id": "C0DPdy98e4c"
         }
     }
 }

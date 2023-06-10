@@ -15,27 +15,39 @@
         <%- include('../partials/background', {background: location}); %>
         <div class="main-content">
             <div class="panel">
-                <h1 class="name"><%= location.name %></h1>
-                <h2 class="location"><%= location.location %></h2>
-                <%- include(`../partials/location_descriptions/${location.id}.ejs`); %>
+                <h1 class="name"><%- location.name %></h1>
+                <h2 class="location"><%- location.catagory %> - <%- location.location %></h2>
+                <%- include(`../partials/descriptions/${location.id}.ejs`); %>
                 <div class=buttons>
-                    <a class="btn btn-primary d-inline-flex justify-content-center align-items-center" href="/files/<%= location.id %>/brochure.pdf" role="button" target="_blank">
-                        Brochure
+                    <% if (location.hasBrochure) { %>
+                    <a class="btn btn-primary d-inline-flex justify-content-center align-items-center" href="/files/<%= location.id %>/<%= location.id %>-brochure.pdf" role="button" target="_blank">
+                        Brochure<% if (! location.hasFloorPlan) { %>/Floorplan<% } %>
                         <svg width="20" height="20">
                             <use xlink:href="/svg/card-list.svg#id"/>
                         </svg>
                     </a>
-                    <a class="btn btn-primary d-inline-flex justify-content-center align-items-center" href="/files/<%= location.id %>/info_sheet.pdf" role="button" target="_blank">
+                    <% } %>
+                    <% if (location.hasFloorPlan) { %>
+                        <a class="btn btn-primary d-inline-flex justify-content-center align-items-center" href="/files/<%= location.id %>/<%= location.id %>-floorplan.pdf" role="button" target="_blank">
+                            Floorplan
+                            <svg width="20" height="20">
+                                <use xlink:href="/svg/building.svg#id"/>
+                            </svg>
+                        </a>
+                        <% } %>
+                    <% if (location.hasInfoSheet) { %>
+                    <a class="btn btn-primary d-inline-flex justify-content-center align-items-center" href="/files/<%= location.id %>/<%= location.id %>-infosheet.pdf" role="button" target="_blank">
                         Information Sheet
                         <svg width="20" height="20">
                             <use xlink:href="/svg/info-circle.svg#id"/>
                         </svg>
                     </a>
+                    <% } %>
                 </div>
                 <p style="margin-top: 20px"><b>If you have any questions or wish to see the price:</b></p>
                 <%- include('../partials/contact', {tiny: true, subject: 'Question about: '+location.name }); %>
             </div>
-            <div class="floating-content">
+            <div class="floating-content <%- (typeof location.video_id !== 'undefined') ? 'has_video' : '' %>">
                 <div class="spacing"></div>
                 <div class="fixed">
                     <% if (typeof location.video_id !== 'undefined') { %>

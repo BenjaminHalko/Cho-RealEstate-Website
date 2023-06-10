@@ -22,24 +22,29 @@
 }
 
 .main-content {
-  padding-top: 100px;
+  padding-top: 60px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 60px;
 }
 .main-content .header {
-  font-size: 30px;
-  font-weight: bold;
+  text-decoration: none;
+  align-items: center;
   margin-top: 50px;
   margin-bottom: 26px;
+  gap: 2px;
+}
+.main-content .header h1 {
+  font-size: 30px;
+  font-weight: bold;
   color: white;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5019607843);
 }
 .main-content .header svg {
   color: white;
-  margin-left: 2px;
   filter: drop-shadow(2px 5px 5px rgba(0, 0, 0, 0.8156862745));
   display: none;
+  margin-bottom: 4px;
 }
 .main-content .header:hover svg {
   display: initial;

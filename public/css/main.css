@@ -216,6 +216,7 @@ body {
   background-size: cover;
   background-position: center;
   transform: scale(1.1);
+  background-color: white;
   filter: blur(3px) brightness(0.6);
 }
 

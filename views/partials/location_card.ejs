@@ -4,13 +4,15 @@
             <img src="/images/locations/<%= location.id %>/<%= location.card_image %>" alt="<%= location.name %>">
             <% if(typeof isFeatured !== 'undefined') { %>
             <span class="overlay" style="--color: #3DDC84">Featured</span>
+            <% } else if (location.sold) { %>
+            <span class="overlay" style="--color: #801616">Sold</span>
             <% } %>
         </div>
         <div class="content">
             <div class="title">
                 <h1><%= location.name %></h1>
                 <% if(typeof isFeatured !== 'undefined') { %>
-                <p><%= location.location %></p>
+                <p><%- location.catagory %> - <%- location.location %></p>
                 <% } %>
             </div>
             <p class="desc"><%= location.desc %></p>
