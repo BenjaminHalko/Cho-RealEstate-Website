@@ -46,6 +46,7 @@
                     img {
                         width: var(--width);
                         height: var(--height);
+                        object-fit: cover;
                     }
                 }
             }

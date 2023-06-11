@@ -41,6 +41,7 @@
 .main .main-content .floating-content .fixed #imageCarousel .carousel-item img {
   width: var(--width);
   height: var(--height);
+  object-fit: cover;
 }
 .main .main-content .floating-content.has_video .fixed {
   min-height: 600px;

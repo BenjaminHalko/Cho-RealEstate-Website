@@ -198,7 +198,7 @@ body {
     height: 100px;
   }
   .location_card:not(.featured) .card_inner .content .title h1 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   .location_card:not(.featured) .card_inner .content p {
     font-size: 0.75rem;
