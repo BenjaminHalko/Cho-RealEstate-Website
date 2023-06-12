@@ -4,7 +4,7 @@
         "harlin": {
             "name": "Harlin",
             "desc": "A gateway tower to the Waterfront pathways of the River District, where luxury living meets unrivaled convenience.",
-            "catagory": "Vancouver",
+            "catagory": "Southeast Vancouver",
             "location": "River District"
         },
         "brentwood-tower": {
@@ -24,7 +24,7 @@
             "name": "Contour - Longer Name",
             "desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
             "catagory": "Test Land",
-            "location": "Southern Burnaby",
+            "location": "South Burnaby",
             "video_id": "C0DPdy98e4c"
         }
     }
