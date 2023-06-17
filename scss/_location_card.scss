@@ -1,7 +1,7 @@
 .location_card {
     // Variables
-    --height: 200px;
-    --width: 400px;
+    --height: 230px;
+    --width: 370px;
     --imgHeight: 160px;
 
     &.featured {
@@ -59,6 +59,8 @@
         .card_image {
             // Dimensions
             width: 100%;
+            height: var(--imgHeight);
+            background-color: white;
 
             // Set Overflow
             overflow: hidden;

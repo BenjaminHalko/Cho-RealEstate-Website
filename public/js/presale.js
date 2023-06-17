@@ -5,7 +5,7 @@ addEventListener("load", (event) => {
             const fade = document.createElement('span');
             mainBackground.appendChild(fade);
             fade.classList = 'main-background fading';
-            fade.style.setProperty("background-image",`url('/images/locations/${card.style.getPropertyValue('--background')}')`);
+            fade.style.setProperty("background-image",`url('/images/${card.style.getPropertyValue('--background')}')`);
             fade.addEventListener('animationend', (ev) => {
                 mainBackground.style.setProperty('background-image',fade.style.getPropertyValue('background-image'));
                 fade.remove();

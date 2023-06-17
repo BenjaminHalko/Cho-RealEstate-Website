@@ -3,36 +3,97 @@
     "locations": {
         "harlin": {
             "name": "Harlin",
+            "company": "Wesgroup",
             "desc": "A gateway tower to the Waterfront pathways of the River District, where luxury living meets unrivaled convenience.",
             "catagory": "Southeast Vancouver",
-            "location": "River District"
+            "location": "River District",
+            "website": "https://wesgroup.ca/residential/new-homes/harlin/"
+        },
+        "elmwood": {
+            "name": "Elmwood",
+            "desc": "Bold architecture, modern interiors and resort inspired amentities - home is alive with design and lifestyle.",
+            "catagory": "Coquitlam",
+            "location": "Burquitlam",
+            "website": "https://elmwood.marcon.ca"
+        },
+        "band": {
+            "name": "Band",
+            "company": "Townline",
+            "desc": "Townline presents a 45 storey tower that commands attention in vibrant West Coquitlam.",
+            "catagory": "Coquitlam",
+            "location": "Burquitlam",
+            "website": "https://band.townline.com"
+        },
+        "georgetown": {
+            "name": "Georgetown 2",
+            "company": "Anthem",
+            "desc": "Georgetown 2 is the second phase of Georgetown, A vibrant master planned community by Anthem located in the heart of Surrey City Centre.",
+            "catagory": "Surrey",
+            "location": "City Centre",
+            "website": "https://anthemgeorgetown.com/georgetown-2/"
+        },
+        "southgate": {
+            "name": "Southgate City",
+            "company": "Ledingham McAllister",
+            "desc": "A stunning blend of urban and aesthetic design, overlooking the slopes of South Burnaby.",
+            "catagory": "East Burnaby",
+            "location": "Edmonds",
+            "website": "https://southgatecity.com"
+        },
+        "contour": {
+            "name": "Contour",
+            "desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
+            "catagory": "South Burnaby",
+            "location": "Metrotown",
+            "website": "https://contourmetrotown.com"
+        },
+        "o2": {
+            "name": "O2",
+            "company": "Keltic",
+            "desc": "285 Studio to Three Bedroom Homes where health is at the fore front and wellness is integrated into every aspect of the design.",
+            "catagory": "South Burnaby",
+            "location": "Metrotown",
+            "website": "https://o2metrotown.com"
+        },
+        "perla": {
+            "name": "Perla",
+            "company": "Polygon",
+            "desc": "A 220-acre front yard for you to enjoy steps away from Perla, central park offers year-round beauty and lively spaces for fun events.",
+            "catagory": "South Burnaby",
+            "location": "Metrotown",
+            "website": "https://polyhomes.com/community/perla/"
+        },
+        "hamilton": {
+            "name": "Hamilton",
+            "company": "Mosaic",
+            "desc": "Hamilton is Mosaic's third community up at SFU and is made up of 115 concrete apartments in the heart of UniverCity.",
+            "catagory": "North Burnaby",
+            "location": "Burnaby Mountain - SFU",
+            "website": "https://mosaichomes.com/property/hamilton/",
+            "sold": true
         },
         "oasis": {
             "name": "Oasis",
             "company": "Concord Pacific",
             "desc": "Club Oasis is a unique recreational experience that provides the relaxing feel of an island resort within the comfort of your own home.",
             "catagory": "North Burnaby",
-            "location": "Brentwood"
+            "location": "Brentwood",
+            "website": "https://concordbrentwood.com/oasis"
         },
         "brentwood-tower": {
             "name": "Amazing Brentwood Tower 6",
             "desc": "With only 369 homes, Tower Six is our rarest and most exclusive home offering to date.",
             "catagory": "North Burnaby",
-            "location": "Brentwood"
+            "location": "Brentwood",
+            "website": "https://homes.theamazingbrentwood.com"
         },
         "south-yards": {
             "name": "South Yards",
             "company": "Anthem",
             "desc": "Anthem's highly anticipated South Yards in Brentwood offers 2,500 homes, retail space, and a one-acre park.",
             "catagory": "North Burnaby",
-            "location": "Brentwood"
-        },
-        "contour": {
-            "name": "Contour - Longer Name",
-            "desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
-            "catagory": "Test Land",
-            "location": "South Burnaby",
-            "video_id": "C0DPdy98e4c"
+            "location": "Brentwood",
+            "website": "https://southyardsbyanthem.com"
         }
     }
 }

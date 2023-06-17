@@ -54,8 +54,8 @@ body {
 }
 
 .location_card {
-  --height: 200px;
-  --width: 400px;
+  --height: 230px;
+  --width: 370px;
   --imgHeight: 160px;
   perspective: 600px;
   filter: var(--card-shadow);
@@ -99,6 +99,8 @@ body {
 }
 .location_card .card_inner .card_image {
   width: 100%;
+  height: var(--imgHeight);
+  background-color: white;
   overflow: hidden;
 }
 .location_card .card_inner .card_image img {
@@ -216,7 +218,7 @@ body {
   background-size: cover;
   background-position: center;
   transform: scale(1.1);
-  filter: blur(3px) brightness(0.6);
+  filter: blur(5px) brightness(0.6);
 }
 
 .panel {

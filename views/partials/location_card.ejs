@@ -1,8 +1,8 @@
 <a class="location_card <% if(typeof isFeatured !== 'undefined') { %> featured <% } %>" href="/<%= location.id %>" style="--background:<%= location.id %>/<%= location.background %>">
-    <div class="card_inner" style="--image: url('/images/locations/<%= location.id %>/<%= location.card_image %>');">
+    <div class="card_inner" style="--image: url('/images/<%= location.id %>/<%= location.card_image %>');">
         <div class="card_image">
-            <img src="/images/locations/<%= location.id %>/<%= location.card_image %>" alt="<%= location.name %>">
-            <% if(typeof isFeatured !== 'undefined') { %>
+            <img src="/images/<%= location.id %>/<%= location.card_image %>">
+            <% if(typeof isFeatured !== 'undefined' || partialFeature) { %>
             <span class="overlay" style="--color: #3DDC84">Featured</span>
             <% } else if (location.sold) { %>
             <span class="overlay" style="--color: #801616">Sold</span>

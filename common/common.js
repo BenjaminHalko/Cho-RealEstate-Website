@@ -30,8 +30,8 @@ function loadCommonData() {
         locationData.locations[location].id = location;
         
         // Load Images
-        if (fs.existsSync(path.resolve(__dirname, '..', 'public', 'images', 'locations', location))) {
-            locationData.locations[location].images = fs.readdirSync(path.resolve(__dirname, '..', 'public', 'images', 'locations', location));
+        if (fs.existsSync(path.resolve(__dirname, '..', 'public', 'images', location))) {
+            locationData.locations[location].images = fs.readdirSync(path.resolve(__dirname, '..', 'public', 'images', location));
             const cardPath = locationData.locations[location].images.find(filename => filename.match(/card.*/g));
             const backgroundPath = locationData.locations[location].images.find(filename => filename.match(/background.*/g));
             
@@ -50,39 +50,41 @@ function loadCommonData() {
 
 
         // Load PDFs
-        let brochureData = null;
-        let floorplanData = null;
         locationData.locations[location].pdfs = [];
-        for(let file of fs.readdirSync(path.resolve(__dirname, '..', 'public', 'files', location))) {
-            const pdfData = {
-                'file': file,
-                'name': file.replace(location+'-', '').replace('.pdf', '').split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
-            };
-            switch(pdfData.name) {
-                case 'Brochure':
-                    pdfData.icon = 'card-list';
-                    brochureData = pdfData;
-                    break;
-                case 'Floorplan':
-                    pdfData.icon = 'building';
-                    floorplanData = pdfData;
-                    break;
-                default:
-                    pdfData.icon = 'info-circle';
-                    locationData.locations[location].pdfs.push(pdfData);
-                    break;
+        if (fs.existsSync(path.resolve(__dirname, '..', 'public', 'files', location))) {
+            let brochureData = null;
+            let floorplanData = null;
+            for(let file of fs.readdirSync(path.resolve(__dirname, '..', 'public', 'files', location))) {
+                const pdfData = {
+                    'file': file,
+                    'name': file.replace(location+'-', '').replace('.pdf', '').split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+                };
+                switch(pdfData.name) {
+                    case 'Brochure':
+                        pdfData.icon = 'card-list';
+                        brochureData = pdfData;
+                        break;
+                    case 'Floorplan':
+                        pdfData.icon = 'building';
+                        floorplanData = pdfData;
+                        break;
+                    default:
+                        pdfData.icon = 'info-circle';
+                        locationData.locations[location].pdfs.push(pdfData);
+                        break;
+                }
             }
-        }
 
-        // Add brochure/floorplan
-        if (floorplanData) {
-            locationData.locations[location].pdfs.unshift(floorplanData);
-        }
-        if (brochureData) {
-            if (!floorplanData) {
-                brochureData.name = 'Brochure/Floorplan';
+            // Add brochure/floorplan
+            if (floorplanData) {
+                locationData.locations[location].pdfs.unshift(floorplanData);
             }
-            locationData.locations[location].pdfs.unshift(brochureData);
+            if (brochureData) {
+                if (!floorplanData) {
+                    brochureData.name = 'Brochure/Floorplan';
+                }
+                locationData.locations[location].pdfs.unshift(brochureData);
+            }
         }
 
         // Is sold

@@ -71,6 +71,12 @@
   font-size: 1.2rem;
   margin-bottom: 30px;
 }
+.main .main-content .panel .sold {
+  margin-bottom: 20px;
+}
+.main .main-content .panel .sold h2 {
+  font-size: 1.4rem;
+}
 .main .main-content .panel .buttons {
   display: flex;
   flex-wrap: wrap;

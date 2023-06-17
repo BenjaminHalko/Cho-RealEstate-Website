@@ -16,19 +16,23 @@
         <%- include('../partials/background', {background: featured}); %>
         <div class="main-content">
             <% 
-            const locations_sorted = {};    
+            const locations_sorted = {};
+            let featuredCatagory = null;  
             for (const [place, location] of Object.entries(locations)) {
                 if (locations_sorted[location.catagory] == undefined) {
                     locations_sorted[location.catagory] = [location];
                 } else {
                     locations_sorted[location.catagory].push(location);
                 }
+                if (place == featured.id) {
+                    featuredCatagory = location.catagory;
+                }
             }
-            for (const [place, location_list] of Object.entries(locations_sorted).sort(function(a,b) { return a[0].localeCompare(b[0]); })) { %>
-            <a class="header d-inline-flex" href="#<%- place.replaceAll(' ','-') %>"><h1 id="<%- place.replaceAll(' ','-') %>"><%- place %></h1><svg width="32" height="32"><use xlink:href="/svg/link-45deg.svg#id"/></svg></a>
+            for (const [place, location_list] of Object.entries(locations_sorted).reverse().sort(function(a,b) { return -Number(a[0] == featuredCatagory) })) { %>
+            <a class="header d-inline-flex" href="#<%- place.toLowerCase().replaceAll(' ','-') %>"><h1 id="<%- place.toLowerCase().replaceAll(' ','-') %>"><%- place %></h1><svg width="32" height="32"><use xlink:href="/svg/link-45deg.svg#id"/></svg></a>
             <div class="group d-flex flex-wrap justify-content-center">
-            <% for (location of location_list.sort(function(a,b) { return a.sold - b.sold })) { %>
-            <%- include('../partials/location_card', {location: location}); %>
+            <% for (location of location_list.sort(function(a,b) { return (a.sold - b.sold)*2 + (a.name.localeCompare(b.name)) - (a.id == featured.id)*3 })) { %>
+            <%- include('../partials/location_card', {location: location, partialFeature: (location.id == featured.id)}); %>
             <% } %>
             </div>
             <% } %>
