@@ -15,31 +15,15 @@
         <%- include('../partials/background', {background: location}); %>
         <div class="main-content">
             <div class="panel">
-                <h1 class="name"><%- location.name %></h1>
+                <h1 class="name"><%- location.name %><% if(typeof location.company !== 'undefined') { %><span style="font-size: 0.6em"> by <%= location.company %></span><% } %></h1>
                 <h2 class="location"><%- location.catagory %> - <%- location.location %></h2>
                 <%- include(`../partials/descriptions/${location.id}.ejs`); %>
                 <div class=buttons>
-                    <% if (location.hasBrochure) { %>
-                    <a class="btn btn-primary d-inline-flex justify-content-center align-items-center" href="/files/<%= location.id %>/<%= location.id %>-brochure.pdf" role="button" target="_blank">
-                        Brochure<% if (! location.hasFloorPlan) { %>/Floorplan<% } %>
+                    <% for(pdf of location.pdfs) { %>
+                    <a class="btn btn-primary d-inline-flex justify-content-center align-items-center" href="/files/<%= location.id %>/<%= pdf.file %>" role="button" target="_blank">
+                        <%= pdf.name %>
                         <svg width="20" height="20">
-                            <use xlink:href="/svg/card-list.svg#id"/>
-                        </svg>
-                    </a>
-                    <% } %>
-                    <% if (location.hasFloorPlan) { %>
-                        <a class="btn btn-primary d-inline-flex justify-content-center align-items-center" href="/files/<%= location.id %>/<%= location.id %>-floorplan.pdf" role="button" target="_blank">
-                            Floorplan
-                            <svg width="20" height="20">
-                                <use xlink:href="/svg/building.svg#id"/>
-                            </svg>
-                        </a>
-                        <% } %>
-                    <% if (location.hasInfoSheet) { %>
-                    <a class="btn btn-primary d-inline-flex justify-content-center align-items-center" href="/files/<%= location.id %>/<%= location.id %>-infosheet.pdf" role="button" target="_blank">
-                        Information Sheet
-                        <svg width="20" height="20">
-                            <use xlink:href="/svg/info-circle.svg#id"/>
+                            <use xlink:href="/svg/<%= pdf.icon %>.svg#id"/>
                         </svg>
                     </a>
                     <% } %>

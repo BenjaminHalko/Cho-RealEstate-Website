@@ -7,6 +7,13 @@
             "catagory": "Southeast Vancouver",
             "location": "River District"
         },
+        "oasis": {
+            "name": "Oasis",
+            "company": "Concord Pacific",
+            "desc": "Club Oasis is a unique recreational experience that provides the relaxing feel of an island resort within the comfort of your own home.",
+            "catagory": "North Burnaby",
+            "location": "Brentwood"
+        },
         "brentwood-tower": {
             "name": "Amazing Brentwood Tower 6",
             "desc": "With only 369 homes, Tower Six is our rarest and most exclusive home offering to date.",
@@ -15,10 +22,10 @@
         },
         "south-yards": {
             "name": "South Yards",
+            "company": "Anthem",
             "desc": "Anthem's highly anticipated South Yards in Brentwood offers 2,500 homes, retail space, and a one-acre park.",
             "catagory": "North Burnaby",
-            "location": "Brentwood",
-            "sold": true 
+            "location": "Brentwood"
         },
         "contour": {
             "name": "Contour - Longer Name",

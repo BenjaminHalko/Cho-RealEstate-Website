@@ -29,6 +29,7 @@ function loadCommonData() {
     for (let location in locationData.locations) {
         locationData.locations[location].id = location;
         
+        // Load Images
         if (fs.existsSync(path.resolve(__dirname, '..', 'public', 'images', 'locations', location))) {
             locationData.locations[location].images = fs.readdirSync(path.resolve(__dirname, '..', 'public', 'images', 'locations', location));
             const cardPath = locationData.locations[location].images.find(filename => filename.match(/card.*/g));
@@ -47,10 +48,44 @@ function loadCommonData() {
             }
         }
 
-        locationData.locations[location].hasBrochure = fs.existsSync(path.resolve(__dirname, '..', 'public', 'files', location, location+'-brochure.pdf'));
-        locationData.locations[location].hasFloorPlan = fs.existsSync(path.resolve(__dirname, '..', 'public', 'files', location, location+'-floorplan.pdf'));
-        locationData.locations[location].hasInfoSheet = fs.existsSync(path.resolve(__dirname, '..', 'public', 'files', location, location+'-infosheet.pdf'));
-        
+
+        // Load PDFs
+        let brochureData = null;
+        let floorplanData = null;
+        locationData.locations[location].pdfs = [];
+        for(let file of fs.readdirSync(path.resolve(__dirname, '..', 'public', 'files', location))) {
+            const pdfData = {
+                'file': file,
+                'name': file.replace(location+'-', '').replace('.pdf', '').split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+            };
+            switch(pdfData.name) {
+                case 'Brochure':
+                    pdfData.icon = 'card-list';
+                    brochureData = pdfData;
+                    break;
+                case 'Floorplan':
+                    pdfData.icon = 'building';
+                    floorplanData = pdfData;
+                    break;
+                default:
+                    pdfData.icon = 'info-circle';
+                    locationData.locations[location].pdfs.push(pdfData);
+                    break;
+            }
+        }
+
+        // Add brochure/floorplan
+        if (floorplanData) {
+            locationData.locations[location].pdfs.unshift(floorplanData);
+        }
+        if (brochureData) {
+            if (!floorplanData) {
+                brochureData.name = 'Brochure/Floorplan';
+            }
+            locationData.locations[location].pdfs.unshift(brochureData);
+        }
+
+        // Is sold
         if (typeof locationData.locations[location].sold === 'undefined') {
             locationData.locations[location].sold = false;
         }
