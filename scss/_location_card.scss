@@ -18,11 +18,11 @@
     filter: var(--card-shadow);
 
     &, .card_inner {
-        transition: transform 250ms var(--curve);
+        transition: all 100ms var(--curve), scale 250ms var(--curve);
     }
 
     &:hover {
-        transform: scale(1.15);
+        scale: 1.15;
         z-index: 10;
     }
 
@@ -37,7 +37,7 @@
         
         // More Styles
         border-radius: 20px;
-        transform: scale(1);
+        scale: 1;
         pointer-events: none;
         overflow: hidden;
         position: relative;
@@ -161,7 +161,7 @@
     @media screen and (max-width: 700px) {
         
         &:hover {
-            transform: scale(1.045);
+            scale: 1.045;
         }
 
         .card_inner {

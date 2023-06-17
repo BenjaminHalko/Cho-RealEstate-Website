@@ -66,10 +66,10 @@ body {
   --imgHeight: 250px;
 }
 .location_card, .location_card .card_inner {
-  transition: transform 250ms var(--curve);
+  transition: all 100ms var(--curve), scale 250ms var(--curve);
 }
 .location_card:hover {
-  transform: scale(1.15);
+  scale: 1.15;
   z-index: 10;
 }
 .location_card, .location_card:hover {
@@ -79,7 +79,7 @@ body {
 .location_card .card_inner {
   width: var(--width);
   border-radius: 20px;
-  transform: scale(1);
+  scale: 1;
   pointer-events: none;
   overflow: hidden;
   position: relative;
@@ -170,7 +170,7 @@ body {
 }
 @media screen and (max-width: 700px) {
   .location_card:hover {
-    transform: scale(1.045);
+    scale: 1.045;
   }
   .location_card .card_inner {
     width: 100%;
