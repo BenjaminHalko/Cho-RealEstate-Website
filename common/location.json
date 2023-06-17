@@ -9,6 +9,14 @@
             "location": "River District",
             "website": "https://wesgroup.ca/residential/new-homes/harlin/"
         },
+        "eminence": {
+            "name": "Eminence",
+            "company": "Meridian",
+            "desc": "Eminence offers a quiet, amenity-rich community bordering Kelowna's largest natural park area.",
+            "catagory": "Kelowna",
+            "location": "Knox Mountain",
+            "website": "https://eminenceliving.ca"
+        },
         "elmwood": {
             "name": "Elmwood",
             "desc": "Bold architecture, modern interiors and resort inspired amentities - home is alive with design and lifestyle.",
