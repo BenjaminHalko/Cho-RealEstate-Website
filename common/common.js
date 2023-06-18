@@ -53,31 +53,27 @@ function loadCommonData() {
         locationData.locations[location].pdfs = [];
         if (fs.existsSync(path.resolve(__dirname, '..', 'public', 'files', location))) {
             let brochureData = null;
-            let floorplanData = null;
+            let floorplanData = [];
             for(let file of fs.readdirSync(path.resolve(__dirname, '..', 'public', 'files', location))) {
                 const pdfData = {
                     'file': file,
                     'name': file.replace(location+'-', '').replace('.pdf', '').split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
                 };
-                switch(pdfData.name) {
-                    case 'Brochure':
-                        pdfData.icon = 'card-list';
-                        brochureData = pdfData;
-                        break;
-                    case 'Floorplan':
-                        pdfData.icon = 'building';
-                        floorplanData = pdfData;
-                        break;
-                    default:
-                        pdfData.icon = 'info-circle';
-                        locationData.locations[location].pdfs.push(pdfData);
-                        break;
+                if (pdfData.name === 'Brochure') {
+                    pdfData.icon = 'card-list';
+                    brochureData = pdfData;
+                } else if (pdfData.name.includes('Floorplan')) {
+                    pdfData.icon = 'building';
+                    floorplanData.push(pdfData);
+                } else {
+                    pdfData.icon = 'info-circle';
+                    locationData.locations[location].pdfs.push(pdfData);
                 }
             }
 
             // Add brochure/floorplan
-            if (floorplanData) {
-                locationData.locations[location].pdfs.unshift(floorplanData);
+            if (floorplanData !== []) {
+                locationData.locations[location].pdfs = floorplanData.concat(locationData.locations[location].pdfs);
             }
             if (brochureData) {
                 if (!floorplanData) {
