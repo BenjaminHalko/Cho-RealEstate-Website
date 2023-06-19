@@ -46,6 +46,9 @@
                 <p style="margin-top: 20px"><b>If you have any questions or wish to see the price:</b></p>
                 <%- include('../partials/contact', {tiny: true, subject: 'Question about '+location.name }); %>
                 <% } %>
+
+                <!-- Footer -->
+                <%- include('../partials/footer'); %>
             </div>
             <div class="floating-content <%- (typeof location.video_id !== 'undefined') ? 'has_video' : '' %>">
                 <div class="spacing"></div>
@@ -82,3 +85,4 @@
         </div>
     </div>
 </body>
+</html>

@@ -265,3 +265,17 @@ body {
   background-position: calc(100% + 5px) center;
   color: white;
 }
+
+footer {
+  font-size: xx-small;
+  margin-top: 30px;
+}
+
+body > footer {
+  background-color: rgba(255, 255, 255, 0.1647058824);
+  border-radius: 0;
+  padding: 5px;
+  color: black;
+  text-align: center;
+  margin-top: 0px;
+}
