@@ -7,101 +7,89 @@
             "desc": "A gateway tower to the Waterfront pathways of the River District, where luxury living meets unrivaled convenience.",
             "catagory": "Southeast Vancouver",
             "location": "River District",
-            "website": "https://wesgroup.ca/residential/new-homes/harlin/"
+            "state": "featured"
         },
         "eminence": {
             "name": "Eminence",
             "company": "Meridian",
             "desc": "Eminence offers a quiet, amenity-rich community bordering Kelowna's largest natural park area.",
             "catagory": "Kelowna",
-            "location": "Knox Mountain",
-            "website": "https://eminenceliving.ca"
+            "location": "Knox Mountain"
         },
         "elmwood": {
             "name": "Elmwood",
             "desc": "Bold architecture, modern interiors and resort inspired amentities - home is alive with design and lifestyle.",
-            "catagory": "Coquitlam",
-            "location": "Burquitlam",
-            "website": "https://elmwood.marcon.ca"
+            "catagory": "Burnaby",
+            "location": "Burquitlam"
         },
         "band": {
             "name": "Band",
             "company": "Townline",
             "desc": "Townline presents a 45 storey tower that commands attention in vibrant West Coquitlam.",
-            "catagory": "Coquitlam",
-            "location": "Burquitlam",
-            "website": "https://band.townline.com"
+            "catagory": "Burnaby",
+            "location": "Burquitlam"
         },
         "georgetown": {
             "name": "Georgetown 2",
             "company": "Anthem",
             "desc": "Georgetown 2 is the second phase of Georgetown, A vibrant master planned community by Anthem located in the heart of Surrey City Centre.",
             "catagory": "Surrey",
-            "location": "City Centre",
-            "website": "https://anthemgeorgetown.com/georgetown-2/"
+            "location": "City Centre"
         },
         "southgate": {
             "name": "Southgate City",
             "company": "Ledingham McAllister",
             "desc": "A stunning blend of urban and aesthetic design, overlooking the slopes of South Burnaby.",
-            "catagory": "East Burnaby",
-            "location": "Edmonds",
-            "website": "https://southgatecity.com"
+            "catagory": "Burnaby",
+            "location": "Byrne"
         },
         "contour": {
             "name": "Contour",
             "desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
-            "catagory": "South Burnaby",
-            "location": "Metrotown",
-            "website": "https://contourmetrotown.com"
+            "catagory": "Burnaby",
+            "location": "Metrotown"
         },
         "o2": {
             "name": "O2",
             "company": "Keltic",
             "desc": "285 Studio to Three Bedroom Homes where health is at the fore front and wellness is integrated into every aspect of the design.",
-            "catagory": "South Burnaby",
-            "location": "Metrotown",
-            "website": "https://o2metrotown.com"
+            "catagory": "Burnaby",
+            "location": "Metrotown"
         },
         "perla": {
             "name": "Perla",
             "company": "Polygon",
             "desc": "A 220-acre front yard for you to enjoy steps away from Perla, central park offers year-round beauty and lively spaces for fun events.",
-            "catagory": "South Burnaby",
-            "location": "Metrotown",
-            "website": "https://polyhomes.com/community/perla/"
+            "catagory": "Burnaby",
+            "location": "Metrotown"
         },
         "hamilton": {
             "name": "Hamilton",
             "company": "Mosaic",
             "desc": "Hamilton is Mosaic's third community up at SFU and is made up of 115 concrete apartments in the heart of UniverCity.",
-            "catagory": "North Burnaby",
-            "location": "Burnaby Mountain - SFU",
-            "website": "https://mosaichomes.com/property/hamilton/",
-            "sold": true
+            "catagory": "Burnaby",
+            "location": "SFU",
+            "state": "sold"
         },
         "oasis": {
             "name": "Oasis",
             "company": "Concord Pacific",
             "desc": "Club Oasis is a unique recreational experience that provides the relaxing feel of an island resort within the comfort of your own home.",
-            "catagory": "North Burnaby",
-            "location": "Brentwood",
-            "website": "https://concordbrentwood.com/oasis"
+            "catagory": "Burnaby",
+            "location": "Brentwood"
         },
         "brentwood-tower": {
             "name": "Amazing Brentwood Tower 6",
             "desc": "With only 369 homes, Tower Six is our rarest and most exclusive home offering to date.",
-            "catagory": "North Burnaby",
-            "location": "Brentwood",
-            "website": "https://homes.theamazingbrentwood.com"
+            "catagory": "Burnaby",
+            "location": "Brentwood"
         },
         "south-yards": {
             "name": "South Yards",
             "company": "Anthem",
             "desc": "Anthem's highly anticipated South Yards in Brentwood offers 2,500 homes, retail space, and a one-acre park.",
-            "catagory": "North Burnaby",
-            "location": "Brentwood",
-            "website": "https://southyardsbyanthem.com"
+            "catagory": "Burnaby",
+            "location": "Brentwood"
         }
     }
 }

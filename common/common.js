@@ -83,9 +83,9 @@ function loadCommonData() {
             }
         }
 
-        // Is sold
-        if (typeof locationData.locations[location].sold === 'undefined') {
-            locationData.locations[location].sold = false;
+        // State
+        if (typeof locationData.locations[location].state === 'undefined') {
+            locationData.locations[location].state = "default";
         }
     }
     locationData.featured = locationData.locations[locationData.featured];

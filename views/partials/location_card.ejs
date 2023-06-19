@@ -2,9 +2,9 @@
     <div class="card_inner" style="--image: url('/images/<%= location.id %>/<%= location.card_image %>');">
         <div class="card_image">
             <img src="/images/<%= location.id %>/<%= location.card_image %>">
-            <% if(typeof isFeatured !== 'undefined' || partialFeature) { %>
+            <% if(location.state == "featured") { %>
             <span class="overlay" style="--color: #3DDC84">Featured</span>
-            <% } else if (location.sold) { %>
+            <% } else if (location.state == "sold") { %>
             <span class="overlay" style="--color: #801616">Sold Out</span>
             <% } %>
         </div>
