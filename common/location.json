@@ -89,7 +89,8 @@
             "company": "Anthem",
             "desc": "Anthem's highly anticipated South Yards in Brentwood offers 2,500 homes, retail space, and a one-acre park.",
             "catagory": "Burnaby",
-            "location": "Brentwood"
+            "location": "Brentwood",
+            "state": "featured"
         }
     }
 }

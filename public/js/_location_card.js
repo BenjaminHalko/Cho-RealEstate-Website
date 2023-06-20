@@ -7,7 +7,7 @@ addEventListener("load", (event) => {
 
     function PresaleCard_MouseMove(card, ev) {
         const inner = card.querySelector('.card_inner');
-        if (window.innerWidth >= 700) {
+        if (window.innerWidth >= 840) {
             let cardWidth = card.offsetWidth;
             let cardHeight = card.offsetHeight;
             let mouseX = ev.offsetX;

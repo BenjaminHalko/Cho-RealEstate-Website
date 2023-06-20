@@ -4,6 +4,10 @@
     --width: 370px;
     --imgHeight: 160px;
 
+    &.subFeatured {
+        --height: 280px;
+    }
+
     &.featured {
         --height: 300px;
         --width: 500px;
@@ -65,12 +69,12 @@
             // Set Overflow
             overflow: hidden;
 
-            img {
+            .img {
                 width: var(--width);
                 height: var(--imgHeight);
-                object-fit: cover;
-                object-position: center;
-                transform: scale(1.1);
+                background-size: cover;
+                background-position: center;
+                transform: scale(1);
             }
 
             .overlay {
@@ -158,7 +162,7 @@
         }
     }
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 840px) {
         
         &:hover {
             scale: 1.045;
@@ -181,34 +185,37 @@
         }
 
         &:not(.featured) {
+            width: 100%;
             .card_inner {
-                $height: 100px;
-
-                width: auto;
-                height: $height;
-
+                width: 100%;
+                height: auto;
+                min-height: 100px;
                 display: flex;
 
                 .card_image {
-                    height: $height;
-
-                    img {
+                    height: auto;
+                    .img {
                         width: 100%;
-                        height: $height;
+                        height: 100%;
                     }
                 }
 
                 .content {
-                    width: auto;
-                    height: $height;
+                    width: 130%;
+                    height: auto;
 
                     .title {
                         h1 {
                             font-size: 1.1rem;
                         }
+
+                        p {
+                            margin-top: auto;
+                        }
                     }
     
                     p {
+                        margin-top: 10px;
                         font-size: 0.75rem;
                         line-height: 1rem;
                         margin-bottom: 0px;
