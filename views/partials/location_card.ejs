@@ -11,7 +11,7 @@
         <div class="content">
             <div class="title">
                 <h1><%= location.name %></h1>
-                <% if(typeof partialFeature !== 'undefined') { %>
+                <% if(typeof partialFeature !== 'undefined' || typeof isFeatured !== 'undefined') { %>
                 <p><%- location.catagory %> - <%- location.location %></p>
                 <% } %>
             </div>
