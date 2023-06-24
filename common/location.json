@@ -47,8 +47,7 @@
             "name": "Contour",
             "desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
             "catagory": "Burnaby",
-            "location": "Metrotown",
-            "state": "sold"
+            "location": "Metrotown"
         },
         "o2": {
             "name": "O2",
