@@ -67,7 +67,7 @@ app.get("/newsletter", (req, res) => {
 app.get("/presales", (req, res) => {
   res.render('pages/presales',{
     featured: locationData.featured,
-    locations: locationData.locations
+    locations: locationData.sortedLocations
   });
 });
 

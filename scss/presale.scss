@@ -20,37 +20,95 @@
 }
 
 .main-content {
-    padding-top: 60px;
+    padding-top: 100px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 60px;
 
-    .header {
-        text-decoration: none;
+    .catagories {
+        display: flex;
+        gap: 20px;
         align-items: center;
-        margin-top: 50px;
-        margin-bottom: 26px;
-        gap: 2px;
+        flex-wrap: wrap;
+        justify-content: center;
 
-        h1 {
-            font-size: 30px;
-            font-weight: bold;
-            
-            color: white;
-            text-shadow: 5px 5px 5px #00000080;
-            
+        .catagoryButton {
+            height: 50px;
+            background-color: black;
+            border-radius: 50px;
+            border: 0px solid white;
+            display: flex;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s var(--curve);
+            padding-left: 30px;
+            padding-right: 30px;
+
+            h1 {
+                transition: all 0.2s var(--curve);
+                font-size: large;
+                color: white;
+                text-shadow: 5px 5px 5px #00000080;
+                margin: auto;
+                text-align: center;
+            }
+
+            &:hover {
+                h1 {
+                    scale: 1.1;
+                }
+            }
+
+            &.selected {
+                border-width: 4px;
+                h1 {
+                    scale: 1.2;
+                }
+            }
         }
 
-        svg {
-            color: white;
-            filter: drop-shadow(2px 5px 5px #000000d0);
-            display: none;
-            margin-bottom: 4px;
-        }
+        @media screen and (max-width: 840px) {
+            gap: 10px;
 
-        &:hover {
-            svg {
-                display: initial;
+            .catagoryButton {
+                height: 40px;
+                padding-left: 20px;
+                padding-right: 20px;
+
+                h1 {
+                    font-size: medium;
+                }
+
+                &:hover {
+                    h1 {
+                        scale: 1.06;
+                    }
+                }
+
+                &.selected {
+                    border-width: 3px;
+                    h1 {
+                        scale: 1.15;
+                    }
+                }
+            }
+        }
+    }
+
+    .header {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: bold;
+        
+        color: white;
+        text-shadow: 5px 5px 5px #00000080;
+
+        text-align: center;
+
+        @media screen and (max-width: 600px) {
+            .deco {
+                display: none;
             }
         }
     }

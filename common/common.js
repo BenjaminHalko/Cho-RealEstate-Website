@@ -90,6 +90,37 @@ function loadCommonData() {
     }
     locationData.featured = locationData.locations[locationData.featured];
 
+    // Sorted locations
+    locationData.sortedLocations = {'Featured': []};
+    for (let [name,location] of Object.entries(locationData.locations)) {
+        if (location.state == 'featured') {
+            locationData.sortedLocations['Featured'].push(location);
+        }
+
+        if (typeof locationData.sortedLocations[location.catagory] === 'undefined') {
+            locationData.sortedLocations[location.catagory] = {};
+        }
+
+        if (typeof locationData.sortedLocations[location.catagory][location.location] === 'undefined') {
+            locationData.sortedLocations[location.catagory][location.location] = [location];
+        } else {
+            locationData.sortedLocations[location.catagory][location.location].push(location);
+        }
+    }
+    
+    
+    for (let name of Object.keys(locationData.sortedLocations)) {
+        if (name == 'Featured') {
+            locationData.sortedLocations[name] = locationData.sortedLocations[name].sort((a,b) => { return a.name.localeCompare(b.name) });
+            continue;
+        }
+        for(let location of Object.keys(locationData.sortedLocations[name])) {
+            locationData.sortedLocations[name][location] = locationData.sortedLocations[name][location].sort((a,b) => { return a.name.localeCompare(b.name) + ((a.state == "sold") - (b.state == "sold"))*2 + ((b.state == "featured") - (a.state == "featured"))*3 });
+        }
+        locationData.sortedLocations[name] = Object.entries(locationData.sortedLocations[name]).sort((a,b) => { return a[0].localeCompare(b[0]) });
+    }
+    locationData.sortedLocations = Object.entries(locationData.sortedLocations).sort((a,b) => { return (b[1].length - a[1].length) * (b[0] != 'Featured') });
+
     // Reviews
     console.log("Loading review data");
     const reviews = require('./reviews.json');

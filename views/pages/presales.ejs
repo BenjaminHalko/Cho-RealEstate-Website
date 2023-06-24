@@ -15,26 +15,37 @@
     <div class="main">
         <%- include('../partials/background', {background: featured}); %>
         <div class="main-content">
-            <% 
-            const locations_sorted = {"Featured": []};
-            for (const [place, location] of Object.entries(locations)) {
-                if (location.state == "featured") {
-                    locations_sorted["Featured"].push(location);
-                } else {
-                    let area = `${location.catagory} - ${location.location}`;
-                    if (locations_sorted[area] == undefined) {
-                        locations_sorted[area] = [location];
-                    } else {
-                        locations_sorted[area].push(location);
-                    }
-                }
-            }
-            for (const [place, location_list] of Object.entries(locations_sorted).sort(function(a,b) { return (b[0] === "Featured") ? 1 : a[0].localeCompare(b[0]); })) { %>
-            <a class="header d-inline-flex" href="#<%- place.toLowerCase().replaceAll(' - ','-').replaceAll(' ','-') %>"><h1 id="<%- place.toLowerCase().replaceAll(' - ','-').replaceAll(' ','-') %>"><%- place %></h1><svg width="32" height="32"><use xlink:href="/svg/link-45deg.svg#id"/></svg></a>
-            <div class="group d-flex flex-wrap justify-content-center">
-            <% for (location of location_list.sort(function(a,b) { return (a.state == "sold" - b.state == "sold")*2 + (a.name.localeCompare(b.name)) })) { %>
-            <%- include('../partials/location_card', {location: location, partialFeature: (location.id == featured.id)}); %>
-            <% } %>
+            <div class="catagories">
+                <% for(const [catagoryName, catagoryData] of locations) {
+                    let catagoryID = catagoryName.replace(' ', '-').toLowerCase();
+                %>
+                    <a class="catagoryButton" id="<%= catagoryID %>_button">
+                        <h1><%= catagoryName %></h1>
+                    </a>
+                <% } %>
+            </div>
+
+            <% for(const [catagoryName, catagoryData] of locations) {
+                let catagoryID = catagoryName.replace(' ', '-').toLowerCase();
+            %>
+            <div class="catagory collapse" id="<%= catagoryID %>">
+                <% if(catagoryName == 'Featured') { %>
+                    <h1 class="header"><span class="deco">————</span>— Featured —<span class="deco">————</span></h1>
+                    <div class="group d-flex flex-wrap justify-content-center">
+                        <% for (location of catagoryData) { %>
+                        <%- include('../partials/location_card', {location: location, partialFeature: true}); %>
+                        <% } %>
+                    </div>
+                <% } else {
+                    for (const [subCatagory, locationList] of catagoryData) { %>
+                        <h1 class="header"><span class="deco">————</span>— <%= subCatagory %> —<span class="deco">————</span></h1>
+                        <div class="group d-flex flex-wrap justify-content-center">
+                            <% for (location of locationList) { %>
+                            <%- include('../partials/location_card', {location: location}); %>
+                            <% } %>
+                        </div>
+                    <% }
+                } %>
             </div>
             <% } %>
         </div>

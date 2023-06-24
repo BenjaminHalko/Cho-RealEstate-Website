@@ -47,7 +47,8 @@
             "name": "Contour",
             "desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
             "catagory": "Burnaby",
-            "location": "Metrotown"
+            "location": "Metrotown",
+            "state": "sold"
         },
         "o2": {
             "name": "O2",
@@ -61,7 +62,8 @@
             "company": "Polygon",
             "desc": "A 220-acre front yard for you to enjoy steps away from Perla, central park offers year-round beauty and lively spaces for fun events.",
             "catagory": "Burnaby",
-            "location": "Metrotown"
+            "location": "Metrotown",
+            "state": "featured"
         },
         "hamilton": {
             "name": "Hamilton",

@@ -1,4 +1,4 @@
-<a class="location_card <% if(typeof isFeatured !== 'undefined') { %> featured <% } else if (location.state == 'featured') { %>subFeatured<% } %>" href="/<%= location.id %>" style="--background:<%= location.id %>/<%= location.background %>">
+<a class="location_card <% if(typeof isFeatured !== 'undefined') { %> featured <% } else if (typeof partialFeature !== 'undefined') { %>subFeatured<% } %>" href="/<%= location.id %>" style="--background:<%= location.id %>/<%= location.background %>">
     <div class="card_inner" style="--image: url('/images/<%= location.id %>/<%= location.card_image %>');">
         <div class="card_image">
             <div class="img" style="background-image: url('/images/<%= location.id %>/<%= location.card_image %>')"></div>
@@ -11,7 +11,7 @@
         <div class="content">
             <div class="title">
                 <h1><%= location.name %></h1>
-                <% if(location.state == "featured") { %>
+                <% if(typeof partialFeature !== 'undefined') { %>
                 <p><%- location.catagory %> - <%- location.location %></p>
                 <% } %>
             </div>
