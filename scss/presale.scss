@@ -62,7 +62,7 @@
             &.selected {
                 border-width: 4px;
                 h1 {
-                    scale: 1.2;
+                    scale: 1.1;
                 }
             }
         }
@@ -79,17 +79,8 @@
                     font-size: medium;
                 }
 
-                &:hover {
-                    h1 {
-                        scale: 1.06;
-                    }
-                }
-
                 &.selected {
                     border-width: 3px;
-                    h1 {
-                        scale: 1.15;
-                    }
                 }
             }
         }
