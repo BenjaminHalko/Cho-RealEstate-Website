@@ -34,23 +34,23 @@
 
         .catagoryButton {
             height: 50px;
-            background-color: black;
+            background-color: white;
             border-radius: 50px;
-            border: 0px solid white;
             display: flex;
             text-decoration: none;
             cursor: pointer;
             transition: all 0.2s var(--curve);
             padding-left: 30px;
             padding-right: 30px;
+            filter: var(--card-shadow);
 
             h1 {
                 transition: all 0.2s var(--curve);
                 font-size: large;
-                color: white;
-                text-shadow: 5px 5px 5px #00000080;
+                color: black;
                 margin: auto;
                 text-align: center;
+                font-weight: bold;
             }
 
             &:hover {
@@ -60,9 +60,10 @@
             }
 
             &.selected {
-                border-width: 4px;
+                background-color: #161616;
                 h1 {
                     scale: 1.1;
+                    color: white
                 }
             }
         }
@@ -77,10 +78,6 @@
 
                 h1 {
                     font-size: medium;
-                }
-
-                &.selected {
-                    border-width: 3px;
                 }
             }
         }
