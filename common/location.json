@@ -62,8 +62,7 @@
             "company": "Polygon",
             "desc": "A 220-acre front yard for you to enjoy steps away from Perla, central park offers year-round beauty and lively spaces for fun events.",
             "catagory": "Burnaby",
-            "location": "Metrotown",
-            "state": "featured"
+            "location": "Metrotown"
         },
         "hamilton": {
             "name": "Hamilton",
@@ -91,8 +90,7 @@
             "company": "Anthem",
             "desc": "Anthem's highly anticipated South Yards in Brentwood offers 2,500 homes, retail space, and a one-acre park.",
             "catagory": "Burnaby",
-            "location": "Brentwood",
-            "state": "featured"
+            "location": "Brentwood"
         }
     }
 }
