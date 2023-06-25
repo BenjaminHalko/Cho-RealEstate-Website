@@ -5,8 +5,10 @@
     <link rel="stylesheet" href="/css/location.css">
     <script src="/js/location.js"></script>
     <title><%- location.name %> - Kitty Cho | PREC</title>
+    <meta name="description" content="<%= location.desc %>">
     <meta property="og:title" content="<%= location.name %>"/>
     <meta property="og:description" content="<%= location.desc %>"/>
+    <meta property="og:url" content="https://kittycho.ca/<%= location.id %>/">
     <meta property="og:image" content="https://kittycho.ca/images/<%= location.id %>/<%= location.card_image %>"/>
 </head>
 <body>
