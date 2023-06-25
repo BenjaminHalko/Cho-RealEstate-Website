@@ -5,7 +5,7 @@
             "name": "Komo",
             "company": "Strand",
             "desc": "Experience a harmonious blend of effortless connectivity & tranquil repose with breathtaking mountain views from Burquitlam.",
-            "catagory": "Burnaby",
+            "catagory": "Coquitlam",
             "location": "Burquitlam",
             "state": "featured"
         },
@@ -27,14 +27,14 @@
         "elmwood": {
             "name": "Elmwood",
             "desc": "Bold architecture, modern interiors and resort inspired amentities - home is alive with design and lifestyle.",
-            "catagory": "Burnaby",
+            "catagory": "Coquitlam",
             "location": "Burquitlam"
         },
         "band": {
             "name": "Band",
             "company": "Townline",
             "desc": "Townline presents a 45 storey tower that commands attention in vibrant West Coquitlam.",
-            "catagory": "Burnaby",
+            "catagory": "Coquitlam",
             "location": "Burquitlam"
         },
         "georgetown": {
