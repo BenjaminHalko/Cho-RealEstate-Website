@@ -1,6 +1,14 @@
 {
     "featured": "harlin",
     "locations": {
+        "komo": {
+            "name": "Komo",
+            "company": "Strand",
+            "desc": "Experience a harmonious blend of effortless connectivity & tranquil repose with breathtaking mountain views from Burquitlam.",
+            "catagory": "Burnaby",
+            "location": "Burquitlam",
+            "state": "featured"
+        },
         "harlin": {
             "name": "Harlin",
             "company": "Wesgroup",

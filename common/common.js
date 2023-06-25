@@ -62,7 +62,7 @@ function loadCommonData() {
                 if (pdfData.name === 'Brochure') {
                     pdfData.icon = 'card-list';
                     brochureData = pdfData;
-                } else if (pdfData.name.includes('Floorplan')) {
+                } else if (pdfData.name.includes('Floorplan') || pdfData.name == 'Floorplate') {
                     pdfData.icon = 'building';
                     floorplanData.push(pdfData);
                 } else {
