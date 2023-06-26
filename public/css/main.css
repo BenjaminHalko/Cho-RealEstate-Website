@@ -178,10 +178,11 @@ body {
   .location_card .card_inner {
     width: 100%;
   }
-  .location_card .card_inner .card_image img {
+  .location_card .card_inner .card_image .img {
     width: 100%;
   }
   .location_card.featured {
+    max-width: var(--width);
     width: calc(100% - 40px);
     --imgHeight: 150px;
     --height: 340px;

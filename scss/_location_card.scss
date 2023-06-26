@@ -172,14 +172,15 @@
             width: 100%;
 
             .card_image {
-                img {
+                .img {
                     width: 100%;
                 }
             }
         }
 
         &.featured {
-            width: calc(100% - 40px);  
+            max-width: var(--width);
+            width: calc(100% - 40px);
             --imgHeight: 150px;
             --height: 340px;
         }
