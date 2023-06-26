@@ -22,7 +22,7 @@
             <div class="panel">
                 <h1 class="name"><%- location.name %><% if(typeof location.company !== 'undefined') { %> <span style="font-size: 0.6em">by <%= location.company %></span><% } %></h1>
                 <h2 class="location"><%- location.catagory %> - <%- location.location %></h2>
-                <% if(location.sold) { %>
+                <% if(location.state == "sold") { %>
                 <div class="sold">
                     <h2><b>SOLD OUT - CONTACT ME FOR ASSIGNMENTS</b></h2>
                     <%- include('../partials/contact', {tiny: true, subject: 'Question about '+location.name }); %>
@@ -39,7 +39,7 @@
                     </a>
                     <% } %>
                 </div>
-                <% if(!location.sold) { %>
+                <% if(location.state != "sold") { %>
                 <p style="margin-top: 20px"><b>If you have any questions or wish to see the price:</b></p>
                 <%- include('../partials/contact', {tiny: true, subject: 'Question about '+location.name }); %>
                 <% } %>
