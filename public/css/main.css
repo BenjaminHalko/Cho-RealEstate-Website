@@ -71,7 +71,7 @@ body {
 .location_card.sharedFeature {
   --width: 420px;
   --height: 300px;
-  --imgHeight: 160px;
+  --imgHeight: 200px;
 }
 .location_card, .location_card .card_inner {
   transition: all 100ms var(--curve), scale 250ms var(--curve);
