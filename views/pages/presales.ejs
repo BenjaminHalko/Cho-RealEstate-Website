@@ -5,9 +5,9 @@
     <link rel="stylesheet" href="/css/presale.css">
     <script src="/js/_location_card.js"></script>
     <script src="/js/presale.js"></script>
-    <title>Presales - Kitty Cho | PREC</title>
-    <meta property="og:title" content="Presales"/>
-    <meta property="og:url" content="https://kittycho.ca/presales/">
+    <title>Locations - Kitty Cho | PREC</title>
+    <meta property="og:title" content="Locations"/>
+    <meta property="og:url" content="https://kittycho.ca/locations/">
     <meta property="og:image" content="https://kittycho.ca/images/<%= featured.id %>/<%= featured.card_image %>"/>
 </head>
 <body>
@@ -23,7 +23,7 @@
                     let catagoryID = catagoryName.replace(' ', '-').toLowerCase();
                 %>
                     <a class="catagoryButton" id="<%= catagoryID %>_button">
-                        <h1><%= catagoryName %></h1>
+                        <h1><%= (catagoryName == 'Featured') ? "New & Featured" : catagoryName %></h1>
                     </a>
                 <% } %>
             </div>
@@ -33,10 +33,10 @@
             %>
             <div class="catagory collapse" id="<%= catagoryID %>">
                 <% if(catagoryName == 'Featured') { %>
-                    <h1 class="header"><span class="deco">————</span>— Featured —<span class="deco">————</span></h1>
+                    <h1 class="header"><span class="deco">————</span>— New & Featured —<span class="deco">————</span></h1>
                     <div class="group d-flex flex-wrap justify-content-center">
                         <% for (location of catagoryData) { %>
-                        <%- include('../partials/location_card', {location: location, partialFeature: true}); %>
+                        <%- include('../partials/location_card', {location: location, isFeatured: true, type: "subFeature"}); %>
                         <% } %>
                     </div>
                 <% } else {
@@ -44,7 +44,7 @@
                         <h1 class="header"><span class="deco">————</span>— <%= subCatagory %> —<span class="deco">————</span></h1>
                         <div class="group d-flex flex-wrap justify-content-center">
                             <% for (location of locationList) { %>
-                            <%- include('../partials/location_card', {location: location}); %>
+                            <%- include('../partials/location_card', {location: location, isFeatured: true, type: ""}); %>
                             <% } %>
                         </div>
                     <% }

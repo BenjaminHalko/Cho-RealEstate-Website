@@ -1,6 +1,16 @@
 {
-    "featured": "harlin",
+    "featured": "akimbo",
+    "secondary": "harlin",
     "locations": {
+        "akimbo": {
+            "name": "Akimbo",
+            "company": "IMANI",
+            "desc": "Akimbo's bold exterior will define the Brentwood skyline with its unique angled architecture and offset balconies.",
+            "catagory": "Burnaby",
+            "location": "Brentwood",
+            "state": "featured",
+            "isListing": true
+        },
         "komo": {
             "name": "Komo",
             "company": "Strand",

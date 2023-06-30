@@ -60,13 +60,18 @@ body {
   perspective: 600px;
   filter: var(--card-shadow);
 }
-.location_card.subFeatured {
+.location_card.subFeature {
   --height: 280px;
 }
-.location_card.featured {
-  --height: 300px;
-  --width: 500px;
+.location_card.mainFeature {
+  --width: 460px;
+  --height: auto;
   --imgHeight: 250px;
+}
+.location_card.sharedFeature {
+  --width: 420px;
+  --height: 300px;
+  --imgHeight: 160px;
 }
 .location_card, .location_card .card_inner {
   transition: all 100ms var(--curve), scale 250ms var(--curve);
@@ -105,6 +110,7 @@ body {
   height: var(--imgHeight);
   background-color: white;
   overflow: hidden;
+  position: relative;
 }
 .location_card .card_inner .card_image .img {
   width: var(--width);
@@ -135,6 +141,28 @@ body {
   border-bottom: 0px solid transparent;
   border-left: 0px solid transparent;
 }
+.location_card .card_inner .card_image .overlay-bottom {
+  background-color: var(--color, black);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  padding-left: 0;
+  padding-right: 15px;
+}
+.location_card .card_inner .card_image .overlay-bottom::after {
+  content: "";
+  position: absolute;
+  left: -34px;
+  bottom: 0px;
+  border-top: 0px solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 34px solid var(--color, black);
+  border-left: 34px solid transparent;
+}
 .location_card .card_inner .content {
   background-color: var(--glass-white);
   width: 100%;
@@ -158,18 +186,20 @@ body {
   padding: 0;
   color: black;
 }
+.location_card .card_inner .content .title p {
+  margin-bottom: 10px;
+}
+.location_card .card_inner .content .link {
+  margin-top: 10px;
+}
 .location_card .card_inner .content p {
   font-size: 0.92rem;
   line-height: 1.3rem;
-  margin-bottom: 0;
-}
-.location_card .card_inner .content .link {
   margin-bottom: 0px;
 }
-.location_card.featured .content p {
+.location_card.mainFeature .content p, .location_card.subFeature .content p {
   font-size: initial;
   line-height: initial;
-  margin-bottom: 14px;
 }
 @media screen and (max-width: 840px) {
   .location_card:hover {
@@ -177,47 +207,41 @@ body {
   }
   .location_card .card_inner {
     width: 100%;
+    height: auto;
+    min-height: 100px;
   }
   .location_card .card_inner .card_image .img {
     width: 100%;
   }
-  .location_card.featured {
-    max-width: var(--width);
-    width: calc(100% - 40px);
-    --imgHeight: 150px;
-    --height: 340px;
-  }
-  .location_card:not(.featured) {
-    width: 100%;
-  }
-  .location_card:not(.featured) .card_inner {
-    width: 100%;
+  .location_card .card_inner .content {
     height: auto;
-    min-height: 100px;
+  }
+  .location_card.mainFeature, .location_card.sharedFeature {
+    max-width: calc(var(--width) + 40px);
+    width: calc(100% - 40px);
+    --imgHeight: 120px;
+  }
+  .location_card:not(.mainFeature):not(.sharedFeature) {
+    width: 100%;
+  }
+  .location_card:not(.mainFeature):not(.sharedFeature) .card_inner {
     display: flex;
   }
-  .location_card:not(.featured) .card_inner .card_image {
+  .location_card:not(.mainFeature):not(.sharedFeature) .card_inner .card_image {
     height: auto;
   }
-  .location_card:not(.featured) .card_inner .card_image .img {
-    width: 100%;
+  .location_card:not(.mainFeature):not(.sharedFeature) .card_inner .card_image .img {
     height: 100%;
   }
-  .location_card:not(.featured) .card_inner .content {
+  .location_card:not(.mainFeature):not(.sharedFeature) .card_inner .content {
     width: 130%;
-    height: auto;
   }
-  .location_card:not(.featured) .card_inner .content .title h1 {
+  .location_card:not(.mainFeature):not(.sharedFeature) .card_inner .content .title h1 {
     font-size: 1.1rem;
   }
-  .location_card:not(.featured) .card_inner .content .title p {
-    margin-top: auto;
-  }
-  .location_card:not(.featured) .card_inner .content p {
-    margin-top: 10px;
+  .location_card:not(.mainFeature):not(.sharedFeature) .card_inner .content p {
     font-size: 0.75rem;
     line-height: 1rem;
-    margin-bottom: 0px;
   }
 }
 

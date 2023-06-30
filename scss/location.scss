@@ -76,6 +76,9 @@
             transition: transform 0.5s var(--curve);
             transform: translateX(0%);
 
+            display: flex;
+            flex-direction: column;
+
             p {
                 text-align: justify;
                 text-justify: inter-word;
@@ -112,6 +115,11 @@
             & > * {
                 margin-right: calc($angle * var(--dist, 0.5));
                 padding-right: 0px;
+            }
+
+            footer {
+                padding-top: 20px;
+                margin-top: auto;
             }
         }
 

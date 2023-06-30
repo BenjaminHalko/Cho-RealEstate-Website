@@ -42,8 +42,8 @@ addEventListener("load", (event) => {
             document.getElementById(url+'_button').classList.add('selected');
             document.getElementById(url).classList.add('show');
         } else {
-            document.getElementById('featured_button').classList.add('selected');
-            document.getElementById('featured').classList.add('show');
+            document.querySelector('.catagoryButton').classList.add('selected');
+            document.querySelector('.catagory').classList.add('show');
         }
     }
 

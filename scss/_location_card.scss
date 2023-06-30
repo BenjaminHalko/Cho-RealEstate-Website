@@ -4,14 +4,20 @@
     --width: 370px;
     --imgHeight: 160px;
 
-    &.subFeatured {
+    &.subFeature {
         --height: 280px;
     }
 
-    &.featured {
-        --height: 300px;
-        --width: 500px;
+    &.mainFeature {
+        --width: 460px;
+        --height: auto;
         --imgHeight: 250px;
+    }
+
+    &.sharedFeature {
+        --width: 420px;
+        --height: 300px;
+        --imgHeight: 160px;
     }
     
 
@@ -68,6 +74,7 @@
 
             // Set Overflow
             overflow: hidden;
+            position: relative;
 
             .img {
                 width: var(--width);
@@ -106,6 +113,34 @@
                 }
             }
 
+            .overlay-bottom {
+                // Colors
+                background-color: var(--color, black);
+                color: white;
+
+                // Text
+                font-weight: bold;
+                font-size: 16px;
+
+                // Positioning
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                padding: 5px;
+                padding-left: 0;
+                padding-right: 15px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: -34px;
+                    bottom: 0px;
+                    border-top: 0px solid transparent;
+                    border-right: 0px solid transparent;
+                    border-bottom: 34px solid var(--color, black);
+                    border-left: 34px solid transparent;
+                }
+            }
             
         }
 
@@ -129,6 +164,8 @@
             transform: translateY(0px);
 
             .title {
+                height: 100%;
+
                 h1 {
                     white-space: nowrap;
                     font-size: 1.4rem;
@@ -137,27 +174,29 @@
                     padding: 0;
                     color: black;
                 }
-                height: 100%;
+
+                p {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .link {
+                margin-top: 10px;
             }
 
             p {
                 font-size: 0.92rem;
                 line-height: 1.3rem;
-                margin-bottom: 0;
-            }
-
-            .link {
                 margin-bottom: 0px;
             }
         }
     }
 
-    &.featured {
+    &.mainFeature, &.subFeature {
         .content {
             p {
                 font-size: initial;
                 line-height: initial;
-                margin-bottom: 14px;
             }
         }
     }
@@ -170,56 +209,50 @@
 
         .card_inner {
             width: 100%;
+            height: auto;
+            min-height: 100px;
 
             .card_image {
                 .img {
                     width: 100%;
                 }
             }
+
+            .content {
+                height: auto;
+            }
         }
 
-        &.featured {
-            max-width: var(--width);
+        &.mainFeature, &.sharedFeature {
+            max-width: calc(var(--width) + 40px);
             width: calc(100% - 40px);
-            --imgHeight: 150px;
-            --height: 340px;
+            --imgHeight: 120px;
         }
 
-        &:not(.featured) {
+        &:not(.mainFeature):not(.sharedFeature) {
             width: 100%;
             .card_inner {
-                width: 100%;
-                height: auto;
-                min-height: 100px;
                 display: flex;
 
                 .card_image {
                     height: auto;
                     .img {
-                        width: 100%;
                         height: 100%;
                     }
                 }
 
                 .content {
                     width: 130%;
-                    height: auto;
 
                     .title {
                         h1 {
                             font-size: 1.1rem;
                         }
-
-                        p {
-                            margin-top: auto;
-                        }
                     }
     
                     p {
-                        margin-top: 10px;
                         font-size: 0.75rem;
                         line-height: 1rem;
-                        margin-bottom: 0px;
                     }
                 }
             }

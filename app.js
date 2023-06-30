@@ -9,6 +9,7 @@ app.get("/", (req, res) => {
     loadInstagramData().then(instagramData => {
         res.render('pages/home',{
             featured: locationData.featured,
+            secondary: locationData.secondary,
             instagramData: instagramData
         });
     });

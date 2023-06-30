@@ -10,6 +10,7 @@ app.get("/", (req, res) => {
   loadInstagramData().then(instagramData => {
     res.render('pages/home',{
       featured: locationData.featured,
+      secondary: locationData.secondary,
       instagramData: instagramData
     });
   });
@@ -64,7 +65,7 @@ app.get("/newsletter", (req, res) => {
   res.render('pages/newsletter',{ featured: locationData.featured, newsletters: newsletters });
 });
 
-app.get("/presales", (req, res) => {
+app.get("/locations", (req, res) => {
   res.render('pages/presales',{
     featured: locationData.featured,
     locations: locationData.sortedLocations

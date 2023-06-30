@@ -1,22 +1,27 @@
-<a class="location_card <% if(typeof isFeatured !== 'undefined') { %> featured <% } else if (typeof partialFeature !== 'undefined') { %>subFeatured<% } %>" href="/<%= location.id %>" style="--background:<%= location.id %>/<%= location.background %>">
+<a class="location_card <%= type %><% if(type != '') { %> featured<% }%>" href="/<%= location.id %>" style="--background:<%= location.id %>/<%= location.background %>">
     <div class="card_inner" style="--image: url('/images/<%= location.id %>/<%= location.card_image %>');">
         <div class="card_image">
             <div class="img" style="background-image: url('/images/<%= location.id %>/<%= location.card_image %>')"></div>
             <% if(location.state == "featured") { %>
-            <span class="overlay" style="--color: #3DDC84">Featured</span>
+            <span class="overlay" style="--color: #3DDC84"><%= (location.isListing) ? "New" : "Featured" %></span>
             <% } else if (location.state == "sold") { %>
             <span class="overlay" style="--color: #801616">Sold Out</span>
+            <% } %>
+            <% if(location.isListing) { %>
+            <span class="overlay-bottom" style="--color: #9A0063">Listing</span>
+            <% } else { %>
+            <span class="overlay-bottom" style="--color: #063970">Presale</span>
             <% } %>
         </div>
         <div class="content">
             <div class="title">
                 <h1><%= location.name %></h1>
-                <% if(typeof partialFeature !== 'undefined' || typeof isFeatured !== 'undefined') { %>
+                <% if(location.state == 'featured') { %>
                 <p><%- location.catagory %> - <%- location.location %></p>
                 <% } %>
             </div>
             <p class="desc"><%= location.desc %></p>
-            <% if(typeof isFeatured !== 'undefined') { %>
+            <% if(type == 'mainFeature' || type == 'sharedFeature') { %>
             <p class="link">View Sale →</p>
             <% } %>
         </div>
