@@ -36,6 +36,7 @@
         },
         "elmwood": {
             "name": "Elmwood",
+            "company": "Marcon",
             "desc": "Bold architecture, modern interiors and resort inspired amentities - home is alive with design and lifestyle.",
             "catagory": "Coquitlam",
             "location": "Burquitlam"
@@ -63,6 +64,7 @@
         },
         "contour": {
             "name": "Contour",
+            "company": "SVM Developments and Kirpal Group",
             "desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
             "catagory": "Burnaby",
             "location": "Metrotown"
@@ -98,6 +100,7 @@
         },
         "brentwood-tower": {
             "name": "Amazing Brentwood Tower 6",
+            "company": "Shape Properties",
             "desc": "With only 369 homes, Tower Six is our rarest and most exclusive home offering to date.",
             "catagory": "Burnaby",
             "location": "Brentwood"

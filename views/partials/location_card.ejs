@@ -16,7 +16,7 @@
         <div class="content">
             <div class="title">
                 <h1><%= location.name %></h1>
-                <% if(location.state == 'featured') { %>
+                <% if(type != '') { %>
                 <p><%- location.catagory %> - <%- location.location %></p>
                 <% } %>
             </div>
