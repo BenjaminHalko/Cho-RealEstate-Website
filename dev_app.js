@@ -81,6 +81,15 @@ for (var location in locationData.locations) {
   });
 }
 
+// 404
+app.get("*", (req, res) => {
+  res.status(404).render('pages/error', {
+    featured: locationData.featured,
+    code: 404,
+    message: "This page no longer exists."
+  });
+});
+
 // Start server
 app.listen(5000, () => {
   console.log('Listening on port ' + 5000);

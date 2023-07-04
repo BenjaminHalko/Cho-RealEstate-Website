@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+    <link rel="stylesheet" href="/css/error.css">
+    <title><%= code %> - Kitty Cho | PREC</title>
+    <meta property="og:title" content="Kitty Cho | Personal Real Estate Corporation"/>
+    <meta property="og:url" content="https://kittycho.ca/">
+    <meta property="og:image" content="https://kittycho.ca/images/common/logoBig.png"/>
+</head>
+<body>
+    <!-- Navbar -->
+    <%- include('../partials/navbar'); %>
+
+    <!-- Main -->
+    <div class="main">
+        <%- include('../partials/background', {background: featured}); %>
+        <div class="main-content">
+            <h1 class="code"><%= code %></h1>
+            <p class="message"><%= message %></p>
+        </div>
+    <div

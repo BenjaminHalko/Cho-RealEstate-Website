@@ -6,13 +6,17 @@ const ejs = require('ejs');
 const { locationData, reviews, newsletters } = require('./common/common.js').loadCommonData();
 
 // Function to compile ejs templates
-const compile = function (filename, options, buildFolder) {
+const compile = function (filename, options, buildFolder, error=false) {
     console.log("Compiling " + buildFolder + " template");
     const templatePath = path.resolve(__dirname, './views/pages/', filename + '.ejs');
     const templateStr = fs.readFileSync(templatePath, 'utf8');
     const htmlString = ejs.compile(templateStr, {filename: templatePath})(options);
-    fs.mkdirSync(path.resolve(__dirname,"build",buildFolder), {recursive: true});
-    fs.writeFileSync(path.resolve(__dirname,"build",buildFolder,'index.html'), htmlString);
+    if (error) {
+        fs.writeFileSync(path.resolve(__dirname,"build",buildFolder+".shtml"), htmlString);
+    } else {
+        fs.mkdirSync(path.resolve(__dirname,"build",buildFolder), {recursive: true});
+        fs.writeFileSync(path.resolve(__dirname,"build",buildFolder,'index.html'), htmlString);
+    }
 }
 
 // Clear build folder
@@ -40,7 +44,11 @@ compile('presales', {featured: locationData.featured, locations: locationData.so
 for (let location in locationData.locations) {
     compile('location', {location: locationData.locations[location]}, location);
 }
-
+//errors
+errorList = [["403","The server could not process the request, it is probably rebooting."],["404","This page no longer exists."]];
+for (let error of errorList) {
+    compile('error', {code: error[0], message: error[1]}, error[0], true);
+}
 // Create copy of Bootstrap
 console.log("Creating copy of Bootstrap");
 fs.mkdirSync(path.resolve(__dirname,"build","js"), {recursive: true});
