@@ -47,7 +47,7 @@ for (let location in locationData.locations) {
 //errors
 errorList = [["403","The server could not process the request, it is probably rebooting."],["404","This page no longer exists."]];
 for (let error of errorList) {
-    compile('error', {code: error[0], message: error[1]}, error[0], true);
+    compile('error', {code: error[0], message: error[1], featured: locationData.featured}, error[0], true);
 }
 // Create copy of Bootstrap
 console.log("Creating copy of Bootstrap");
