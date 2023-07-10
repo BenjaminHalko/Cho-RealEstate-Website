@@ -2,6 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const ejs = require('ejs');
 
+// Pages
+const pages = [['',  path.resolve(__dirname, './views/pages/home.ejs')]];
+
 // Load data
 const { locationData, reviews, newsletters } = require('./common/common.js').loadCommonData();
 
@@ -16,7 +19,15 @@ const compile = function (filename, options, buildFolder, error=false) {
     } else {
         fs.mkdirSync(path.resolve(__dirname,"build",buildFolder), {recursive: true});
         fs.writeFileSync(path.resolve(__dirname,"build",buildFolder,'index.html'), htmlString);
+        
+        pages.push([buildFolder+'/', templatePath]);
     }
+}
+
+// Function to get date of file
+const getFileDate = function (filename) {
+    const stats = fs.statSync(path.resolve(__dirname, filename));
+    return stats.mtime.toISOString().split('T')[0];
 }
 
 // Clear build folder
@@ -53,3 +64,18 @@ for (let error of errorList) {
 console.log("Creating copy of Bootstrap");
 fs.mkdirSync(path.resolve(__dirname,"build","js"), {recursive: true});
 fs.copyFileSync(path.resolve(__dirname,"node_modules","bootstrap","dist","js","bootstrap.bundle.min.js"), path.resolve(__dirname,"build","js","bootstrap.bundle.min.js"));
+
+// Create XML sitemap
+console.log("Creating XML sitemap");
+let xmlString = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+for (let page of pages) {
+    xmlString += `
+    <url>
+        <loc>https://kittycho.ca/${page[0]}</loc>
+        <lastmod>${getFileDate(page[1])}</lastmod>
+    </url>`;
+}
+xmlString += `
+</urlset>`;
+fs.writeFileSync(path.resolve(__dirname,"build","sitemap.xml"), xmlString);
