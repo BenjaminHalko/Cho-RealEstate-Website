@@ -1,6 +1,7 @@
 :root {
   --shadow: drop-shadow(10px 10px 5px #00000080);
   --card-shadow: drop-shadow(0 0 10px black);
+  --text-shadow: 5px 5px 5px #00000080;
   --curve: cubic-bezier(0.39, 0.575, 0.565, 1);
   --glass-white: #ffffffba;
   --glass-blur: blur(10px);
