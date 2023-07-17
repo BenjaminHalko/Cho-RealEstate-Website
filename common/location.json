@@ -2,6 +2,14 @@
     "featured": "akimbo",
     "secondary": "harlin",
     "locations": {
+        "citizen": {
+            "name": "Citizen",
+            "company": "Anthem",
+            "desc": "The highest tower in Metrotown, Citizen is a 66-story tower with unparalleled views.",
+            "catagory": "Burnaby",
+            "location": "Metrotown",
+            "state": "featured"
+        },
         "akimbo": {
             "name": "Akimbo",
             "company": "IMANI",
