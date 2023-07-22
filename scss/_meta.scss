@@ -5,8 +5,11 @@
     --text-shadow: 5px 5px 5px #00000080;
     --curve: cubic-bezier(0.39, 0.575, 0.565, 1);
 
-    --glass-white: #ffffffba;
+    --glass-white: #ffffffd0;
     --glass-blur: blur(10px);
+
+    --solid-shadow: drop-shadow(5px 5px 0px #00000080);
+    --solid-border: 2px solid black;
 }
 
 

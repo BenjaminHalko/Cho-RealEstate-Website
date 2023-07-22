@@ -11858,24 +11858,3 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-/*
-.btn-youtube {
-    $color: #c70b1c;
-    @include button-variant($color, darken($color, 7.5%), darken($color, 10%), lighten($color,5%), lighten($color, 5%), darken($color,30%));
-}
-
-.btn-facebook {
-    $color: #3c5a96;
-    @include button-variant($color, darken($color, 7.5%), darken($color, 10%), lighten($color,5%), lighten($color, 5%), darken($color,30%));
-}
-
-.btn-instagram {
-    $color: #bb2e82;
-    @include button-variant($color, darken($color, 7.5%), darken($color, 10%), lighten($color,5%), lighten($color, 5%), darken($color,30%));
-}
-
-.btn-whatsapp {
-    $color: #48d46d;
-    @include button-variant($color, darken($color, 7.5%), darken($color, 10%), lighten($color,5%), lighten($color, 5%), darken($color,30%));
-}
-*/

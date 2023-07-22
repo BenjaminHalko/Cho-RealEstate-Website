@@ -40,13 +40,34 @@
         
             .main-content__left {
                 img {
-                    height: 350px;
+                    height: 320px;
                     object-fit: contain;
                     margin-bottom: 20px;
                 }
         
                 img, a {
                     filter: var(--shadow);
+                }
+
+                .phone {
+                    margin-top: 20px;
+                    display: flex;
+                    gap: 12px;
+                    justify-content: center;
+                    align-items: center;
+                    svg {
+                        color: white;
+                        filter: var(--shadow);
+                    }
+                    a {
+                        color: white;
+                        text-decoration: none;
+                        font-size: 1.2em;
+                        transition: all 0.2s var(--curve);
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
                 }
             }
         }
@@ -82,6 +103,8 @@
 
         img {
             border-radius: 50%;
+            border: var(--solid-border);
+            filter: var(--solid-shadow);
         }
 
         .user_info {

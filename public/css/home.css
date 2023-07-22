@@ -36,12 +36,32 @@
   opacity: 1;
 }
 .main .main-content .notSlogan .main-content__left img {
-  height: 350px;
+  height: 320px;
   object-fit: contain;
   margin-bottom: 20px;
 }
 .main .main-content .notSlogan .main-content__left img, .main .main-content .notSlogan .main-content__left a {
   filter: var(--shadow);
+}
+.main .main-content .notSlogan .main-content__left .phone {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+.main .main-content .notSlogan .main-content__left .phone svg {
+  color: white;
+  filter: var(--shadow);
+}
+.main .main-content .notSlogan .main-content__left .phone a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: all 0.2s var(--curve);
+}
+.main .main-content .notSlogan .main-content__left .phone a:hover {
+  text-decoration: underline;
 }
 .main .main-content.intro .logo {
   transform: translateY(-100px);
@@ -66,6 +86,8 @@
 }
 .instagram .instagram_header img {
   border-radius: 50%;
+  border: var(--solid-border);
+  filter: var(--solid-shadow);
 }
 .instagram .instagram_header .user_info .username {
   font-weight: 300;

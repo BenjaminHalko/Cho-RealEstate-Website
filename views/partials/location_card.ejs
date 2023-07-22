@@ -3,7 +3,7 @@
         <div class="card_image">
             <div class="img" style="background-image: url('/images/<%= location.id %>/<%= location.card_image %>')"></div>
             <% if(location.state == "featured") { %>
-            <span class="overlay" style="--color: #3DDC84"><%= (location.isListing) ? "New" : "Featured" %></span>
+            <span class="overlay" style="--color: #00BA54"><%= (location.isListing) ? "New" : "Featured" %></span>
             <% } else if (location.state == "sold") { %>
             <span class="overlay" style="--color: #801616">Sold Out</span>
             <% } %>
