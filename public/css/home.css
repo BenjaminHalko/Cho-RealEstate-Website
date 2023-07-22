@@ -44,7 +44,7 @@
   filter: var(--shadow);
 }
 .main .main-content .notSlogan .main-content__left .phone {
-  margin-top: 20px;
+  margin-top: 12px;
   display: flex;
   gap: 12px;
   justify-content: center;
