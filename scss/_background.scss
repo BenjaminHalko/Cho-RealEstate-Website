@@ -1,6 +1,7 @@
 .main-background {
-    width: 100%;
-    height: 100%;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
     z-index: -1;
     background-repeat: no-repeat;
