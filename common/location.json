@@ -32,7 +32,13 @@
             "desc": "A gateway tower to the Waterfront pathways of the River District, where luxury living meets unrivaled convenience.",
             "catagory": "Vancouver",
             "location": "River District",
-            "state": "featured"
+            "state": "featured",
+            "video_id": "9Pp0N8cJkzc",
+            "info": {
+                "Type": "Condo",
+                "Units / Floors": "334 / 30",
+                "Bedrooms": "1, 2, 3, Studio"
+            }
         },
         "eminence": {
             "name": "Eminence",
