@@ -12,14 +12,13 @@ footer {
     font-size: xx-small;
     margin-top: 30px;
     flex-shrink: 0;
-}
-
-body > footer {
-    background-color: #ffffff2a;
-    border-radius: 0;
     padding: 5px;
     color: black;
     text-align: center;
     margin-top: 0px;
+    border-radius: 0;
 }
 
+body > footer {
+    background-color: #ffffff2a;
+}
