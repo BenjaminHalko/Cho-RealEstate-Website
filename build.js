@@ -10,7 +10,7 @@ const { locationData, reviews, newsletters } = require('./common/common.js').loa
 
 // Function to compile ejs templates
 const compile = function (filename, options, buildFolder, error=false) {
-    console.log("Compiling " + buildFolder + " template");
+    console.log("Compiling " + (buildFolder == '' ? 'root' : buildFolder) + " template");
     const templatePath = path.resolve(__dirname, './views/pages/', filename + '.ejs');
     const templateStr = fs.readFileSync(templatePath, 'utf8');
     const htmlString = ejs.compile(templateStr, {filename: templatePath})(options);
@@ -37,6 +37,8 @@ if (fs.existsSync(path.resolve(__dirname,"build"))) {
 }
 
 // Compile templates
+//backup homepage
+compile('home', {featured: locationData.featured, secondary: locationData.secondary, instagramData: undefined}, '');
 //about
 compile('about/bio', {featured: locationData.featured}, 'bio');
 compile('about/testimonials', {featured: locationData.featured, reviews: reviews}, 'testimonials');
