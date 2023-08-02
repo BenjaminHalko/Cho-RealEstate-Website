@@ -36,7 +36,9 @@
             "info": {
                 "Type": "Condo",
                 "Units / Floors": "334 / 30",
-                "Bedrooms": "1, 2, 3, Studio"
+                "Bedrooms": "1, 2, 3, Studio",
+                "SqFt": "485 - 995",
+                "Est. Compl.": "Sept 2027"
             }
         },
         "eminence": {
