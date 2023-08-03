@@ -1,5 +1,6 @@
 {
     "featured": "citizen",
+    "secondary": "harlin",
     "locations": {
         "citizen": {
             "name": "Citizen",
