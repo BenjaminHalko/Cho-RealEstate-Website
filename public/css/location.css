@@ -101,6 +101,7 @@
     flex-direction: column-reverse;
   }
   .main .main-content .content .columns .media {
+    width: auto;
     min-width: initial;
   }
   .main .main-content .content .columns .media .single-img {

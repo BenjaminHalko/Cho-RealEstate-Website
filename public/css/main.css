@@ -52,9 +52,6 @@ body {
   background-color: rgba(255, 255, 255, 0.6509803922);
   color: black;
 }
-.navbar .navbar-brand img {
-  height: 30px;
-}
 
 .location_card {
   --height: 230px;
