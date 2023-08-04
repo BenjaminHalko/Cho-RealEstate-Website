@@ -1,5 +1,5 @@
-const user_id = process.env.user_id;
-const access_token = process.env.access_token;
+const user_id = process.env.instagram_user_id;
+const access_token = process.env.instagram_access_token;
 
 // Functions
 function initApp() {
@@ -73,7 +73,7 @@ function loadCommonData() {
             }
 
             // Add brochure/floorplan
-            if (floorplanData !== []) {
+            if (floorplanData != []) {
                 locationData.locations[location].pdfs = floorplanData.concat(locationData.locations[location].pdfs);
             }
             if (brochureData) {
