@@ -31,8 +31,7 @@ body {
 .navbar {
   padding: 16px;
   transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
-  background-color: var(--glass-white);
-  backdrop-filter: var(--glass-blur);
+  background-color: white;
 }
 .navbar .nav-link {
   font-size: medium;
@@ -40,8 +39,7 @@ body {
   color: black;
 }
 .navbar .dropdown-menu {
-  background-color: var(--glass-white);
-  border: 1px solid rgba(75, 75, 75, 0.6509803922);
+  background-color: white;
 }
 .navbar .dropdown-menu .dropdown-item {
   color: black;
@@ -49,7 +47,7 @@ body {
   transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
 }
 .navbar .dropdown-menu .dropdown-item:hover {
-  background-color: rgba(255, 255, 255, 0.6509803922);
+  background-color: white;
   color: black;
 }
 

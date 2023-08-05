@@ -51,7 +51,7 @@ compile('sell/thinking_of_selling',{featured: locationData.featured}, 'thinking-
 compile('sell/unique_approach',{featured: locationData.featured}, 'my-unique-approach');
 //other
 compile('newsletter', {featured: locationData.featured, newsletters: newsletters}, 'newsletter');
-compile('presales', {featured: locationData.featured, locations: locationData.sortedLocations}, 'locations');
+compile('presales', {featured: locationData.featured, locations: locationData.sortedLocations}, 'properties');
 for (let location in locationData.locations) {
     compile('location', {location: locationData.locations[location]}, location);
 }

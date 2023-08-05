@@ -1,5 +1,5 @@
 require('dotenv').config('.env');
-const { initApp, loadCommonData, loadInstagramData } = require('./common/common.js');
+const { initApp, loadCommonData, loadHomePageData } = require('./common/common.js');
 
 // Load components
 const app = initApp();
@@ -7,11 +7,12 @@ const { locationData, reviews, newsletters } = loadCommonData();
 
 // Load routes
 app.get("/", (req, res) => {
-  loadInstagramData().then(instagramData => {
+  loadHomePageData().then(data => {
     res.render('pages/home',{
       featured: locationData.featured,
       secondary: locationData.secondary,
-      instagramData: instagramData
+      instagramData: data.instagramData,
+      youtubeData: data.youtubeData
     });
   });
 });
@@ -65,7 +66,7 @@ app.get("/newsletter", (req, res) => {
   res.render('pages/newsletter',{ featured: locationData.featured, newsletters: newsletters });
 });
 
-app.get("/locations", (req, res) => {
+app.get("/properties", (req, res) => {
   res.render('pages/presales',{
     featured: locationData.featured,
     locations: locationData.sortedLocations

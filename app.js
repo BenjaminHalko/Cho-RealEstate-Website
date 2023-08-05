@@ -1,4 +1,4 @@
-const { initApp, loadCommonData, loadInstagramData } = require('./common/common.js');
+const { initApp, loadCommonData, loadHomePageData } = require('./common/common.js');
 
 // Load components
 const app = initApp();
@@ -6,11 +6,12 @@ const locationData = loadCommonData().locationData;
 
 // Load routes
 app.get("/", (req, res) => {
-    loadInstagramData().then(instagramData => {
+    loadHomePageData().then(data => {
         res.render('pages/home',{
             featured: locationData.featured,
             secondary: locationData.secondary,
-            instagramData: instagramData
+            instagramData: data.instagramData,
+            youtubeData: data.youtubeData
         });
     });
 });

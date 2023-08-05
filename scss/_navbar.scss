@@ -5,8 +5,7 @@
     // Constants
     padding: 16px;
     transition: $transition;
-    background-color: var(--glass-white);
-    backdrop-filter: var(--glass-blur);
+    background-color: white;
 
     .nav-link {
         font-size: medium;
@@ -16,8 +15,7 @@
 
     // Navbar Dropdown
     .dropdown-menu {
-        background-color: var(--glass-white);
-        border: 1px solid #4b4b4ba6;
+        background-color: white;
 
         .dropdown-item {
             color: black;
@@ -25,7 +23,7 @@
             transition: $transition;
 
             &:hover {
-                background-color: #ffffffa6;
+                background-color: white;
                 color: black;
             }
         }

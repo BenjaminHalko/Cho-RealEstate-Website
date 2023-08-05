@@ -93,6 +93,37 @@
     }
 }
 
+.youtube {
+    padding: 20px;
+    background-color: black;
+
+    .youtube_videos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+
+        .outer_wrapper {
+            width: min(360px, 27vw);
+
+            .inner_wrapper {
+                position: relative;
+                padding-bottom: 56.25%;
+
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
 .instagram {
     padding: 20px;
     background-color: white;

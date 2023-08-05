@@ -1,5 +1,7 @@
-const user_id = process.env.instagram_user_id;
-const access_token = process.env.instagram_access_token;
+const instagram_access_token = process.env.instagram_access_token;
+const instagram_user_id = process.env.instagram_user_id;
+const youtube_access_token = process.env.youtube_access_token;
+const youtube_channel_id = process.env.youtube_channel_id;
 
 // Functions
 function initApp() {
@@ -156,7 +158,7 @@ function loadCommonData() {
 }
 
 async function loadInstagramData() {
-    const res = await fetch(`https://graph.facebook.com/${user_id}?access_token=${access_token}&fields=
+    const res = await fetch(`https://graph.facebook.com/${instagram_user_id}?access_token=${instagram_access_token}&fields=
         username,name,biography,media_count,followers_count,follows_count,profile_picture_url,
         media{caption,media_url,media_type,thumbnail_url,permalink,like_count,comments_count}`)
     .then(res => res.json());
@@ -169,9 +171,30 @@ async function loadInstagramData() {
     return await res;
 }
 
+async function loadYouTubeData() {
+    const res = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${youtube_access_token}&channelId=${youtube_channel_id}&part=id&order=date&maxResults=3`).then(res => res.json());
+
+    if (res.error) {
+        console.log(res.error);
+        return undefined;
+    }
+
+    return await res.items.map(item => item.id.videoId).filter(id => id != undefined);
+}
+
+async function loadHomePageData() {
+    const instagramData = await loadInstagramData();
+    const youtubeData = undefined;//await loadYouTubeData();
+
+    return {
+        instagramData: instagramData,
+        youtubeData: youtubeData
+    };
+}
+
 // Export functions
 module.exports = {
     initApp,
     loadCommonData,
-    loadInstagramData
+    loadHomePageData
 };
