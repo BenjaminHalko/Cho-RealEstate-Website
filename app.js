@@ -1,4 +1,4 @@
-const { initApp, loadCommonData, loadHomePageData } = require('./common/common.js');
+const { initApp, loadCommonData, loadHomePageData } = require('./common/loadData.js');
 
 // Load components
 const app = initApp();
