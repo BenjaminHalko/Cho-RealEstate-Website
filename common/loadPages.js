@@ -38,7 +38,8 @@ function getPages(data) {
     //errors
     const errors = [
         addPage('404','error', {message: "This page no longer exists.", code: "404"}),
-        addPage('403','error', {message: "The server could not process the request, it is probably rebooting.", code: "403"})
+        addPage('403','error', {message: "The server could not process the request, it is probably rebooting.", code: "403"}),
+        addPage('503','error', {message: "For some reason, the server is busy... Try again later.", code: "503"})
     ]
 
     return {
