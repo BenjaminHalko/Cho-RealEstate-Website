@@ -2,6 +2,21 @@
     "featured": "citizen",
     "secondary": "harlin",
     "locations": {
+        "marco-polo": {
+            "name": "Marco Polo",
+            "company": "Gryphon",
+            "desc": "Marco Polo redefines work-life balance with state-of-the-art amenities and flexible spaces for inspired productivity.",
+            "catagory": "Vancouver",
+            "location": "Oakridge",
+            "state": "featured",
+            "video_id": "41cE9PNst90",
+            "info": {
+                "Type": "Mixed-use mid-rise",
+                "Units / Floors": "173 / 10",
+                "Sqft": "423 - 1381",
+                "Est. Compl.": "June 2025"
+            }
+        },
         "citizen": {
             "name": "Citizen",
             "company": "Anthem",
