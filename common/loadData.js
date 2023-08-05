@@ -51,7 +51,6 @@ function loadCommonData() {
             }
         }
 
-
         // Load PDFs
         locationData.locations[location].pdfs = [];
         if (fs.existsSync(path.resolve(__dirname, '..', 'public', 'files', location))) {
@@ -101,7 +100,6 @@ function loadCommonData() {
     // Sorted locations
     locationData.sortedLocations = {};
     for (let [name,location] of Object.entries(locationData.locations)) {
-
         if (location.state == 'featured') {
             if (typeof locationData.sortedLocations['Featured'] === 'undefined') {
                 locationData.sortedLocations['Featured'] = [location];
