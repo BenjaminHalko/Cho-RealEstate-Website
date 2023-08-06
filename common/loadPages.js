@@ -21,7 +21,7 @@ function getPages(data) {
         addPage('testimonials','about/testimonials', {reviews: data.reviews}),
         //buy
         addPage('thinking-of-buying','buy/thinking_of_buying'),
-        addPage('first-time-buyers','buy/first_time_buyers'),
+        addPage('first-time-home-buyers','buy/first_time_buyers'),
         addPage('cost-in-buying-a-home','buy/home_cost'),
         addPage('mortgage-payment-calculator','buy/mortgage_calc'),
         addPage('top-5-reasons-for-using-a-realtor','buy/reasons_for_realtor'),
