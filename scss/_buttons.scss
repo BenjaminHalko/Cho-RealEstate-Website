@@ -13,10 +13,13 @@
     width: 300px;
     border: var(--solid-border);
     filter: var(--solid-shadow);
+    font-size: 1.2em;
+    font-weight: bold;
 
     &.tiny {
         min-width: 200px;
         font-size: 1.2em;
+        font-weight: normal;
 
         svg {
             width: 24px;
