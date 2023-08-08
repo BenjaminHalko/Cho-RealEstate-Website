@@ -9,6 +9,7 @@
   padding-right: 20px;
 }
 .main .main-content .panel {
+  background-color: var(--glass-white);
   color: black;
   padding: 20px;
   max-width: 1000px;
