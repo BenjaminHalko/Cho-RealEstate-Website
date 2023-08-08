@@ -18,8 +18,7 @@ addEventListener("load", (event) => {
         const request = new XMLHttpRequest();
         request.open('POST', '/php/newsletter.php', true);
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-        request.send('name=' + name);
-        request.send('email=' + email);
+        request.send(`name=${name}&email=${email}`); 
         return false;
     }
 });
