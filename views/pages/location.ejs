@@ -4,9 +4,9 @@
     <%- include('../partials/header'); %>
     <link rel="stylesheet" href="/css/location.css">
     <script src="/js/location.js"></script>
-    <title><%- location.name %> - Kitty Cho | PREC</title>
+    <title><%= location.name %> by <%= location.company %> - Kitty Cho | PREC</title>
     <meta name="description" content="<%= location.desc %>">
-    <meta property="og:title" content="<%= location.name %>"/>
+    <meta property="og:title" content="<%= location.name %> by <%= location.company %>"/>
     <meta property="og:description" content="<%= location.desc %>"/>
     <meta property="og:url" content="https://kittycho.ca/<%= location.id %>/">
     <meta property="og:image" content="https://kittycho.ca/images/<%= location.id %>/<%= location.card_image %>"/>
@@ -20,8 +20,8 @@
         <%- include('../partials/background', {background: location}); %>
         <div class="title">
             <div class="contain">
-                <h1 class="name"><%- location.name %></h1>
-                <% if(typeof location.company !== 'undefined') { %><p class="company"> by <%= location.company %></p><% } %>
+                <h1 class="name"><%= location.name %></h1>
+                <p class="company">by <%= location.company %></p>
             </div>
         </div>
         <div class="main-content">
