@@ -1,7 +1,7 @@
 const instagram_access_token = process.env.instagram_access_token;
 const instagram_user_id = process.env.instagram_user_id;
 const youtube_access_token = process.env.youtube_access_token;
-const youtube_channel_id = process.env.youtube_channel_id;
+const youtube_playlist_id = process.env.youtube_playlist_id;
 
 // Functions
 function initApp() {
@@ -170,14 +170,14 @@ async function loadInstagramData() {
 }
 
 async function loadYouTubeData() {
-    const res = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${youtube_access_token}&channelId=${youtube_channel_id}&part=id&order=date&maxResults=3`).then(res => res.json());
+    const res = await fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=3&fields=items(contentDetails(videoId))&playlistId=${youtube_playlist_id}&key=${youtube_access_token}`).then(res => res.json());
 
     if (res.error) {
         console.log(res.error);
         return undefined;
     }
-
-    return await res.items.map(item => item.id.videoId).filter(id => id != undefined);
+    
+    return await res.items.map(item => item.contentDetails.videoId);
 }
 
 async function loadHomePageData() {
