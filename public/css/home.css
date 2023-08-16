@@ -82,14 +82,14 @@
 }
 .youtube .youtube_videos {
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
 }
 .youtube .youtube_videos .outer_wrapper {
-  width: min(360px, 27vw);
+  width: min(400px, 27vw);
 }
 .youtube .youtube_videos .outer_wrapper .inner_wrapper {
   position: relative;
@@ -101,6 +101,15 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+@media screen and (max-width: 900px) {
+  .youtube .youtube_videos {
+    flex-direction: column;
+  }
+  .youtube .youtube_videos .outer_wrapper {
+    width: 100%;
+    max-width: 400px;
+  }
 }
 
 .instagram {

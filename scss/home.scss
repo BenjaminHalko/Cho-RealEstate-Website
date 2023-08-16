@@ -99,14 +99,14 @@
 
     .youtube_videos {
         display: flex;
-        flex-wrap: wrap;
         gap: 20px;
         justify-content: center;
+        align-items: center;
         margin-left: auto;
         margin-right: auto;
 
         .outer_wrapper {
-            width: min(360px, 27vw);
+            width: min(400px, 27vw);
 
             .inner_wrapper {
                 position: relative;
@@ -119,6 +119,15 @@
                     width: 100%;
                     height: 100%;
                 }
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            flex-direction: column;
+
+            .outer_wrapper {
+                width: 100%;
+                max-width: 400px;
             }
         }
     }
