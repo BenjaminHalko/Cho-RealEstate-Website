@@ -181,12 +181,12 @@ async function loadYouTubeData() {
 }
 
 async function loadHomePageData() {
-    const instagramData = await loadInstagramData();
-    const youtubeData = await loadYouTubeData();
+    const instagramData = loadInstagramData();
+    const youtubeData = loadYouTubeData();
 
     return {
-        instagramData: instagramData,
-        youtubeData: youtubeData
+        instagramData: await instagramData,
+        youtubeData: await youtubeData
     };
 }
 
