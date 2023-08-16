@@ -166,7 +166,7 @@ async function loadInstagramData() {
         return undefined;
     }
 
-    return await res;
+    return res;
 }
 
 async function loadYouTubeData() {
@@ -177,7 +177,7 @@ async function loadYouTubeData() {
         return undefined;
     }
     
-    return await res.items.map(item => item.contentDetails.videoId);
+    return res.items.map(item => item.contentDetails.videoId);
 }
 
 async function loadHomePageData() {
