@@ -182,7 +182,7 @@ async function loadYouTubeData() {
 
 async function loadHomePageData() {
     const instagramData = await loadInstagramData();
-    const youtubeData = undefined;//await loadYouTubeData();
+    const youtubeData = await loadYouTubeData();
 
     return {
         instagramData: instagramData,
