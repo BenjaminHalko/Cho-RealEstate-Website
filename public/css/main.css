@@ -29,25 +29,35 @@ body {
 }
 
 .navbar {
-  padding: 16px;
+  padding: 8px;
   transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.3215686275);
+}
+.navbar svg, .navbar .nav-link {
+  color: white;
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
 }
 .navbar .nav-link {
   font-size: medium;
   font-weight: bold;
-  color: black;
 }
 .navbar .dropdown-menu {
-  background-color: white;
+  background-color: black;
 }
 .navbar .dropdown-menu .dropdown-item {
-  color: black;
+  backdrop-filter: blur(20px);
+  color: white;
   padding: 8px 16px;
   transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
 }
 .navbar .dropdown-menu .dropdown-item:hover {
   background-color: white;
+  color: black;
+}
+.navbar {
+  background-color: white;
+}
+.navbar svg, .navbar .nav-link {
   color: black;
 }
 
@@ -66,36 +76,32 @@ body {
 
 .btn-contact {
   border-radius: 50px;
+  background-color: white;
+  border: none;
+  transition: all 0.2s var(--curve);
+  filter: var(--card-shadow);
+  padding: 5px;
+}
+.btn-contact .inner {
+  font-size: x-large;
+  gap: 10px;
   color: black;
-  background: linear-gradient(to right, #22ff00 0%, #00ffff 51%, #ae00ff 100%);
-  background-repeat: no-repeat;
-  transition: all 0.3s var(--curve);
-  background-size: 400% auto;
-  background-position: -5px center;
-  position: relative;
-  z-index: 2;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 300px;
-  border: var(--solid-border);
-  filter: var(--solid-shadow);
-  font-size: 1.2em;
+  margin: 0px;
+  text-align: center;
   font-weight: bold;
+  padding: 0px;
+  transition: all 0.2s var(--curve);
 }
 .btn-contact.tiny {
   min-width: 200px;
-  font-size: 1.2em;
-  font-weight: normal;
-}
-.btn-contact.tiny svg {
-  width: 24px;
-  height: 24px;
-  margin-bottom: 4px;
 }
 .btn-contact:hover {
-  background-position: calc(100% + 5px) center;
+  background-color: #161616;
+}
+.btn-contact:hover .inner {
+  scale: 1.1;
   color: white;
-  border: 2px solid black;
+  fill: white;
 }
 
 .btn {

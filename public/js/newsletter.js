@@ -1,4 +1,4 @@
-addEventListener("load", (event) => {
+(function() {
     const form = document.querySelector('form')
     form.onsubmit = function(event) {
         event.preventDefault();
@@ -21,4 +21,4 @@ addEventListener("load", (event) => {
         request.send(`name=${name}&email=${email}`); 
         return false;
     }
-});
+})();

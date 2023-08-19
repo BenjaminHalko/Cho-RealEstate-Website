@@ -1,4 +1,4 @@
-addEventListener("load", (event) => {
+(function() {
     const mainBackground = document.querySelector('.main-background');
     document.querySelectorAll('.location_card').forEach((card) => {
         card.addEventListener('mouseenter', (ev) => {
@@ -48,4 +48,4 @@ addEventListener("load", (event) => {
     }
 
     hashUpdate();
-});
+})();

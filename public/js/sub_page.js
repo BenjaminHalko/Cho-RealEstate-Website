@@ -1,4 +1,4 @@
-addEventListener("load", (event) => {
+(function() {
     const panels = document.querySelectorAll('.panel, .floating-btn, .floating-img');
 
     for (let i = 0; i < panels.length; i++) {
@@ -6,4 +6,4 @@ addEventListener("load", (event) => {
     }
     
     document.querySelector('.intro').classList.remove('intro');
-});
+})();

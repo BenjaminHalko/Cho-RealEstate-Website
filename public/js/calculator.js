@@ -1,4 +1,4 @@
-addEventListener("load", (event) => {
+(function() {
     const form = document.querySelector('form');
     const result = document.querySelector('#results');
     const resultText = result.querySelector('p');
@@ -35,4 +35,4 @@ addEventListener("load", (event) => {
         result.classList.remove('hidden');
         return false;
     };
-});
+})();

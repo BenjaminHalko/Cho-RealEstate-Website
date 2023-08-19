@@ -1,4 +1,4 @@
-addEventListener("load", (event) => {
+(function() {
     const cards = document.querySelectorAll('.location_card');
 
     function map(val, minA, maxA, minB, maxB) {
@@ -35,4 +35,4 @@ addEventListener("load", (event) => {
             inner.style.filter = 'brightness(1)';
         });
     });
-});
+})();
