@@ -1,4 +1,4 @@
-<a class="floating-btn btn btn-contact <%- (typeof tiny === 'undefined') ? '' : 'tiny' %>" href="mailto:kittychosutton@gmail.com<%- (typeof subject !== 'undefined') ? '?subject='+subject : '' %>" role="button" style="<%- (typeof fullWidth === 'undefined') ? '' : 'width: 100%' %>">
+<a class="floating-btn btn btn-contact <%= (typeof tiny === 'undefined') ? '' : 'tiny' %>" href="mailto:kittychosutton@gmail.com<%- (typeof subject !== 'undefined') ? '?subject='+subject : '' %>" role="button" style="<%= (typeof fullWidth === 'undefined') ? '' : 'width: 100%' %>">
     <div class="inner d-flex justify-content-center align-items-center">
         <svg width="32" height="32">
             <use xlink:href="/svg/envelope.svg#id"/>

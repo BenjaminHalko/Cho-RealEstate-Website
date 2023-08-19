@@ -158,7 +158,7 @@ function loadCommonData() {
 async function loadInstagramData() {
     const res = await fetch(`https://graph.facebook.com/${instagram_user_id}?access_token=${instagram_access_token}&fields=
         username,name,biography,media_count,followers_count,follows_count,profile_picture_url,
-        media{caption,media_url,media_type,thumbnail_url,permalink,like_count,comments_count}`)
+        media{media_type,thumbnail_url,permalink,like_count,comments_count}`)
     .then(res => res.json());
 
     if (res.error) {

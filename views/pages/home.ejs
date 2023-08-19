@@ -89,7 +89,7 @@
         <% if (instagramData != undefined) { %>
         <div class="instagram_cards">
         <% for(post of instagramData.media.data.slice(0,12)) { %>
-        <a class="instagram_card" href="<%- post.permalink %>" target="_blank" style="background-image: url('<%- (post.media_type == `VIDEO`) ? post.thumbnail_url : post.media_url %>')">
+        <a class="instagram_card" href="<%- post.permalink %>" target="_blank" style="background-image: url('<%- (post.media_type == `VIDEO`) ? post.thumbnail_url : `${post.permalink}media?size=m` %>')">
             <% if (post.media_type == `VIDEO`) { %>
             <div class="video_icon">
                 <svg class="video_icon" width="64px" height="64px">
