@@ -9,6 +9,19 @@
     background-color: $background;
     //border-bottom: solid 2px #ffffff52;
 
+    // Navbar Brand
+    .navbar-brand svg{
+        height: 42px;
+    }
+
+    @media screen and (max-width: 1000px) {
+
+        .navbar-brand svg{
+            width: 206px;
+            height: 30px;
+        }
+    }
+
     svg, .nav-link {
         color: white;
         transition: $transition;

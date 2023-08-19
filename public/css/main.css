@@ -33,6 +33,15 @@ body {
   transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
   background-color: rgba(0, 0, 0, 0.3215686275);
 }
+.navbar .navbar-brand svg {
+  height: 42px;
+}
+@media screen and (max-width: 1000px) {
+  .navbar .navbar-brand svg {
+    width: 206px;
+    height: 30px;
+  }
+}
 .navbar svg, .navbar .nav-link {
   color: white;
   transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
