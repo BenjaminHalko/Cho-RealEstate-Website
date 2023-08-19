@@ -44,7 +44,7 @@ for(let error of pageList.errors) {
 
 // Create copy of Bootstrap
 console.log("Creating copy of Bootstrap");
-fs.mkdirSync(path.resolve(__dirname,"build","js"), {recursive: true});
+fs.mkdirSync(path.resolve(__dirname,"build","js","components"), {recursive: true});
 fs.copyFileSync(path.resolve(__dirname,"node_modules","bootstrap","dist","js","bootstrap.bundle.min.js"), path.resolve(__dirname,"build","js","components","bootstrap.bundle.min.js"));
 
 // Create XML sitemap
