@@ -54,5 +54,12 @@
         svg, .nav-link {
             color: black;
         }
+
+        .dropdown-menu {
+            background-color: white;
+            .dropdown-item {
+                color: black;
+            }
+        }
     }
 }

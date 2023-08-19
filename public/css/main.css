@@ -69,6 +69,12 @@ body {
 .navbar svg, .navbar .nav-link {
   color: black;
 }
+.navbar .dropdown-menu {
+  background-color: white;
+}
+.navbar .dropdown-menu .dropdown-item {
+  color: black;
+}
 
 .main-background {
   overflow: hidden;
