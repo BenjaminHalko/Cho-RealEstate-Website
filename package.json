@@ -5,15 +5,18 @@
     "express": "^4.18.2",
     "nodemon": "^3.0.1",
     "npm-run-all2": "^6.0.6",
+    "purgecss": "^5.0.0",
     "sass": "^1.65.1"
   },
   "scripts": {
-    "build": "npm-run-all --parallel sass-build app-build",
-    "dev": "npm-run-all --parallel sass-watch app-dev",
-    "app-dev": "nodemon dev_app.js",
-    "sass-watch": "sass --watch --no-source-map scss:public/css",
-    "sass-build": "sass --no-source-map --style=compressed scss:public/css",
-    "app-build": "node build.js"
+    "build": "npm-run-all --parallel build-app build-css",
+    "dev": "npm-run-all --parallel dev-app dev-sass",
+    "build-app": "node build.js",
+    "build-css": "npm-run-all build-sass purgecss",
+    "build-sass": "sass --no-source-map --style=compressed scss:public/css",
+    "purgecss": "purgecss --css ./public/css/*.css --content ./views/**/*.ejs --output ./public/css/",
+    "dev-app": "nodemon dev_app.js",
+    "dev-sass": "sass --watch --no-source-map scss:public/css"
   },
   "devDependencies": {
     "dotenv": "^16.3.1"

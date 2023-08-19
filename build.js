@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const ejs = require('ejs');
+const PurgeCSS = require('purgecss').PurgeCSS;
 
 const loadCommonData = require('./common/loadData.js').loadCommonData;
 const getPages = require('./common/loadPages.js').getPages;
@@ -9,7 +10,7 @@ const getPages = require('./common/loadPages.js').getPages;
 const pageList = getPages(loadCommonData());
 
 // Function to compile ejs templates
-const compile = function (filename, options, buildFolder, error=false) {
+function compile(filename, options, buildFolder, error=false) {
     console.log("Compiling " + buildFolder + " template");
     const templatePath = path.resolve(__dirname, './views/pages/', filename + '.ejs');
     const templateStr = fs.readFileSync(templatePath, 'utf8');
@@ -23,9 +24,20 @@ const compile = function (filename, options, buildFolder, error=false) {
 }
 
 // Function to get date of file
-const getFileDate = function (templateName) {
+function getFileDate(templateName) {
     const stats = fs.statSync(path.resolve(__dirname, `./views/pages/${templateName}.ejs`));
     return stats.mtime.toISOString().split('T')[0];
+}
+
+// Purge CSS
+async function minifyBootstrap() {
+    console.log("Minifying Bootstrap CSS");
+    const purgecssResult = await new PurgeCSS().purge({
+        content: ['./views/**/*.ejs'],
+        css: ['./public/css/bootstrap.css']
+    });
+
+    fs.writeFileSync(path.resolve(__dirname,"public","css","bootstrap.css"), purgecssResult[0].css);
 }
 
 // Clear build folder
@@ -43,9 +55,9 @@ for(let error of pageList.errors) {
 }
 
 // Create copy of Bootstrap
-console.log("Creating copy of Bootstrap");
+console.log("Creating copy of Bootstrap.js");
 fs.mkdirSync(path.resolve(__dirname,"build","js","components"), {recursive: true});
-fs.copyFileSync(path.resolve(__dirname,"node_modules","bootstrap","dist","js","bootstrap.bundle.min.js"), path.resolve(__dirname,"build","js","components","bootstrap.bundle.min.js"));
+fs.copyFileSync(path.resolve(__dirname,"node_modules","bootstrap","dist","js","bootstrap.min.js"), path.resolve(__dirname,"build","js","components","bootstrap.min.js"));
 
 // Create XML sitemap
 console.log("Creating XML sitemap");
