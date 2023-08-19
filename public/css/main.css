@@ -134,7 +134,7 @@ body .main {
 }
 
 footer {
-  font-size: xx-small;
+  font-size: 12px;
   margin-top: 30px;
   flex-shrink: 0;
   padding: 5px;
