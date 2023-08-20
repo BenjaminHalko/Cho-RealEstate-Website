@@ -27,7 +27,7 @@ function loadCommonData() {
 
     // Locations
     console.log("Loading location data");
-    const locationData = require('./location.json');
+    const locationData = require('../data/location.json');
     for (let location in locationData.locations) {
         locationData.locations[location].id = location;
         if (!locationData.locations[location].isListing) { locationData.locations[location].isListing = false; }
@@ -134,7 +134,7 @@ function loadCommonData() {
     
     // Reviews
     console.log("Loading review data");
-    const reviews = require('./reviews.json');
+    const reviews = require('../data/reviews.json');
     
     // News
     console.log("Loading news data");

@@ -3,8 +3,8 @@ const path = require('path');
 const ejs = require('ejs');
 const PurgeCSS = require('purgecss').PurgeCSS;
 
-const loadCommonData = require('./common/loadData.js').loadCommonData;
-const getPages = require('./common/loadPages.js').getPages;
+const loadCommonData = require('./helper/loadData.js').loadCommonData;
+const getPages = require('./helper/loadPages.js').getPages;
 
 // Load Pages
 const pageList = getPages(loadCommonData());
