@@ -29,17 +29,6 @@ function getFileDate(templateName) {
     return stats.mtime.toISOString().split('T')[0];
 }
 
-// Purge CSS
-async function minifyBootstrap() {
-    console.log("Minifying Bootstrap CSS");
-    const purgecssResult = await new PurgeCSS().purge({
-        content: ['./views/**/*.ejs'],
-        css: ['./public/css/bootstrap.css']
-    });
-
-    fs.writeFileSync(path.resolve(__dirname,"public","css","bootstrap.css"), purgecssResult[0].css);
-}
-
 // Clear build folder
 if (fs.existsSync(path.resolve(__dirname,"build"))) {
     console.log("Clearing build folder");

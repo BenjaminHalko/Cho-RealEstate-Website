@@ -9,7 +9,7 @@
     "sass": "^1.65.1"
   },
   "scripts": {
-    "build": "npm-run-all --parallel build-app build-css",
+    "build": "npm-run-all --parallel build-app build-sass",
     "dev": "npm-run-all --parallel dev-app dev-sass",
     "build-app": "node build.js",
     "build-css": "npm-run-all build-sass purgecss",
