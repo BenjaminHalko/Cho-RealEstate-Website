@@ -126,11 +126,20 @@ function loadCommonData() {
             continue;
         }
         for(let location of Object.keys(locationData.sortedLocations[name])) {
-            locationData.sortedLocations[name][location] = locationData.sortedLocations[name][location].sort((a,b) => { return a.name.localeCompare(b.name) + ((a.state == "sold") - (b.state == "sold"))*2 + ((b.state == "featured") - (a.state == "featured"))*3 });
+            locationData.sortedLocations[name][location] = locationData.sortedLocations[name][location].sort((a,b) => { return a.name.localeCompare(b.name) + ((a.state == "sold") - (b.state == "sold"))*2 + ((a.state == "rented") - (b.state == "rented"))*3 + ((b.state == "featured") - (a.state == "featured"))*4 });
         }
         locationData.sortedLocations[name] = Object.entries(locationData.sortedLocations[name]).sort((a,b) => { return a[0].localeCompare(b[0]) });
     }
-    locationData.sortedLocations = Object.entries(locationData.sortedLocations).sort((a,b) => { return (b[1].length - a[1].length) * (b[0] != 'Featured') });
+    locationData.sortedLocations = Object.entries(locationData.sortedLocations).sort((a,b) => {
+        if (b[0] == 'Featured') return 0;
+        const aLength = a[1].reduce((acc, cur) => {
+            return acc + cur[1].length;
+        }, 0);
+        const bLength = b[1].reduce((acc, cur) => {
+            return acc + cur[1].length;
+        }, 0);
+        return bLength - aLength;
+    });
     
     // Reviews
     console.log("Loading review data");
