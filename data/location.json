@@ -2,21 +2,28 @@
     "featured": "citizen",
     "secondary": "harlin",
     "locations": {
+        "marco-polo": {
+            "name": "Marco Polo",
+            "company": "Gryphon",
+            "desc": "Marco Polo redefines work-life balance with state-of-the-art amenities and flexible spaces for inspired productivity.",
+            "catagory": "Vancouver",
+            "location": "Oakridge",
+            "state": "featured",
+            "video_id": "41cE9PNst90",
+            "info": {
+                "Type": "Mixed-use mid-rise",
+                "Units / Floors": "173 / 10",
+                "Sqft": "423 - 1381",
+                "Est. Compl.": "June 2025"
+            }
+        },
         "citizen": {
             "name": "Citizen",
             "company": "Anthem",
             "desc": "The highest tower in Metrotown, Citizen is a 66-story tower with unparalleled views.",
             "catagory": "Burnaby",
             "location": "Metrotown",
-            "state": "featured",
-            "video_id": "J4v_rscUhfA",
-            "info": {
-                "Type": "Mixed-Use",
-                "Units / Floors": "372 / 66",
-                "Bedrooms": "1, 2, 3, Studio",
-                "Sqft": "400 - 1200",
-                "Est. Compl.": "2025"
-            }
+            "state": "featured"
         },
         "akimbo": {
             "name": "Akimbo",
