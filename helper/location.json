@@ -1,0 +1,147 @@
+{
+    "featured": "citizen",
+    "secondary": "harlin",
+    "locations": {
+        "marco-polo": {
+            "name": "Marco Polo",
+            "company": "Gryphon",
+            "desc": "Marco Polo redefines work-life balance with state-of-the-art amenities and flexible spaces for inspired productivity.",
+            "catagory": "Vancouver",
+            "location": "Oakridge",
+            "state": "featured",
+            "video_id": "41cE9PNst90",
+            "info": {
+                "Type": "Mixed-use mid-rise",
+                "Units / Floors": "173 / 10",
+                "Sqft": "423 - 1381",
+                "Est. Compl.": "June 2025"
+            }
+        },
+        "citizen": {
+            "name": "Citizen",
+            "company": "Anthem",
+            "desc": "The highest tower in Metrotown, Citizen is a 66-story tower with unparalleled views.",
+            "catagory": "Burnaby",
+            "location": "Metrotown",
+            "state": "featured"
+        },
+        "akimbo": {
+            "name": "Akimbo",
+            "company": "IMANI",
+            "desc": "Akimbo's bold exterior will define the Brentwood skyline with its unique angled architecture and offset balconies.",
+            "catagory": "Burnaby",
+            "location": "Brentwood",
+            "state": "featured",
+            "isListing": true
+        },
+        "komo": {
+            "name": "Komo",
+            "company": "Strand",
+            "desc": "Experience a harmonious blend of effortless connectivity & tranquil repose with breathtaking mountain views from Burquitlam.",
+            "catagory": "Coquitlam",
+            "location": "Burquitlam",
+            "state": "featured"
+        },
+        "harlin": {
+            "name": "Harlin",
+            "company": "Wesgroup",
+            "desc": "A gateway tower to the Waterfront pathways of the River District, where luxury living meets unrivaled convenience.",
+            "catagory": "Vancouver",
+            "location": "River District",
+            "state": "featured",
+            "video_id": "wYNOTirhiqg",
+            "info": {
+                "Type": "Condo",
+                "Units / Floors": "334 / 30",
+                "Bedrooms": "1, 2, 3, Studio",
+                "Sqft": "485 - 995",
+                "Est. Compl.": "Sept 2027"
+            }
+        },
+        "eminence": {
+            "name": "Eminence",
+            "company": "Meridian",
+            "desc": "Eminence offers a quiet, amenity-rich community bordering Kelowna's largest natural park area.",
+            "catagory": "Kelowna",
+            "location": "Knox Mountain"
+        },
+        "elmwood": {
+            "name": "Elmwood",
+            "company": "Marcon",
+            "desc": "Bold architecture, modern interiors and resort inspired amentities - home is alive with design and lifestyle.",
+            "catagory": "Coquitlam",
+            "location": "Burquitlam"
+        },
+        "band": {
+            "name": "Band",
+            "company": "Townline",
+            "desc": "Townline presents a 45 storey tower that commands attention in vibrant West Coquitlam.",
+            "catagory": "Coquitlam",
+            "location": "Burquitlam"
+        },
+        "georgetown": {
+            "name": "Georgetown 2",
+            "company": "Anthem",
+            "desc": "Georgetown 2 is the second phase of Georgetown, A vibrant master planned community by Anthem located in the heart of Surrey City Centre.",
+            "catagory": "Surrey",
+            "location": "City Centre"
+        },
+        "southgate": {
+            "name": "Southgate City",
+            "company": "Ledingham McAllister",
+            "desc": "A stunning blend of urban and aesthetic design, overlooking the slopes of South Burnaby.",
+            "catagory": "Burnaby",
+            "location": "Byrne"
+        },
+        "contour": {
+            "name": "Contour",
+            "company": "SVM Developments and Kirpal Group",
+            "desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
+            "catagory": "Burnaby",
+            "location": "Metrotown"
+        },
+        "o2": {
+            "name": "O2",
+            "company": "Keltic",
+            "desc": "285 Studio to Three Bedroom Homes where health is at the fore front and wellness is integrated into every aspect of the design.",
+            "catagory": "Burnaby",
+            "location": "Metrotown"
+        },
+        "perla": {
+            "name": "Perla",
+            "company": "Polygon",
+            "desc": "A 220-acre front yard for you to enjoy steps away from Perla, central park offers year-round beauty and lively spaces for fun events.",
+            "catagory": "Burnaby",
+            "location": "Metrotown"
+        },
+        "hamilton": {
+            "name": "Hamilton",
+            "company": "Mosaic",
+            "desc": "Hamilton is Mosaic's third community up at SFU and is made up of 115 concrete apartments in the heart of UniverCity.",
+            "catagory": "Vancouver",
+            "location": "SFU",
+            "state": "sold"
+        },
+        "oasis": {
+            "name": "Oasis",
+            "company": "Concord Pacific",
+            "desc": "Club Oasis is a unique recreational experience that provides the relaxing feel of an island resort within the comfort of your own home.",
+            "catagory": "Burnaby",
+            "location": "Brentwood"
+        },
+        "brentwood-tower": {
+            "name": "Amazing Brentwood Tower 6",
+            "company": "Shape Properties",
+            "desc": "With only 369 homes, Tower Six is our rarest and most exclusive home offering to date.",
+            "catagory": "Burnaby",
+            "location": "Brentwood"
+        },
+        "south-yards": {
+            "name": "South Yards",
+            "company": "Anthem",
+            "desc": "Anthem's highly anticipated South Yards in Brentwood offers 2,500 homes, retail space, and a one-acre park.",
+            "catagory": "Burnaby",
+            "location": "Brentwood"
+        }
+    }
+}
