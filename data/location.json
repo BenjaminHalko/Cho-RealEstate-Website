@@ -23,7 +23,15 @@
             "desc": "The highest tower in Metrotown, Citizen is a 66-story tower with unparalleled views.",
             "catagory": "Burnaby",
             "location": "Metrotown",
-            "state": "featured"
+            "state": "featured",
+            "video_id": "J4v_rscUhfA",
+            "info": {
+                "Type": "Mixed-Use",
+                "Units / Floors": "372 / 66",
+                "Bedrooms": "1, 2, 3, Studio",
+                "Sqft": "400 - 1200",
+                "Est. Compl.": "2025"
+            }
         },
         "akimbo": {
             "name": "Akimbo",
