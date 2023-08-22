@@ -1,9 +1,10 @@
 .btn-contact {
     border-radius: 50px;
     background-color: white;
-    border: none;
+    border: none !important;
     transition: all 0.2s var(--curve);
     filter: var(--card-shadow);
+    min-width: 200px;
 
     padding: 5px;
 
@@ -18,12 +19,8 @@
         transition: all 0.2s var(--curve);
     }
 
-    &.tiny {
-        min-width: 200px;
-    }
-
-    &:hover {
-        background-color: #161616;
+    &:hover, &:active {
+        background-color: #161616 !important;
         
         .inner {
             scale: 1.1;
