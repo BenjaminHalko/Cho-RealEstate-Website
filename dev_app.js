@@ -1,6 +1,6 @@
 require('dotenv').config('.env');
-const { initApp, loadCommonData, loadHomePageData } = require('./src/loadData.js');
-const getPages = require('./src/loadPages.js').getPages;
+const { initApp, loadCommonData, loadHomePageData } = require('./helper/loadData.js');
+const getPages = require('./helper/loadPages.js').getPages;
 
 // Load components
 const app = initApp();

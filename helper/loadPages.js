@@ -7,7 +7,6 @@ function addPage(name, template, options={}) {
         template: template,
         options: options
     }
-
 }
 
 function getPages(data) {
