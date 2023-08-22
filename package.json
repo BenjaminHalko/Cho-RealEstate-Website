@@ -6,15 +6,18 @@
     "nodemon": "^3.0.1",
     "npm-run-all2": "^6.0.6",
     "purgecss": "^5.0.0",
-    "sass": "^1.64.2"
+    "sass": "^1.64.2",
+    "webpack": "^5.88.2"
   },
   "scripts": {
-    "build": "npm-run-all --parallel build-app build-sass",
+    "build": "npm-run-all build-app-and-sass purgecss",
     "dev": "npm-run-all --parallel dev-app dev-sass",
+
+    "build-app-and-sass": "npm-run-all --parallel build-app build-sass",
     "build-app": "node build.js",
-    "build-css": "npm-run-all build-sass purgecss",
     "build-sass": "sass --no-source-map --style=compressed scss:public/css",
-    "purgecss": "purgecss --css ./public/css/*.css --content ./views/**/*.ejs --output ./public/css/",
+    "purgecss": "purgecss --css ./public/css/*.css --content ./views/**/*.ejs ./build/js/components/bootstrap.js --output ./public/css/",
+    
     "dev-app": "nodemon dev_app.js",
     "dev-sass": "sass --watch --no-source-map scss:public/css",
     "webp": "node helper/convertWebp.js"

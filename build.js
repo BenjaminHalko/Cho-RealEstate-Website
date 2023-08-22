@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const ejs = require('ejs');
-const PurgeCSS = require('purgecss').PurgeCSS;
+const webpack = require('webpack');
 
-const loadCommonData = require('./helper/loadData.js').loadCommonData;
-const getPages = require('./helper/loadPages.js').getPages;
+const loadCommonData = require('./src/loadData.js').loadCommonData;
+const getPages = require('./src/loadPages.js').getPages;
 
 // Load Pages
 const pageList = getPages(loadCommonData());
@@ -29,6 +29,24 @@ function getFileDate(templateName) {
     return stats.mtime.toISOString().split('T')[0];
 }
 
+// Compile JS
+function compileJS(input, output) {
+    console.log("Compiling " + output + " JS");
+    webpack({
+        entry: path.resolve(__dirname, input),
+        output: {
+            filename: output + '.js',
+            path: path.resolve(__dirname, 'build', 'js', 'components')
+        },
+        mode: 'production'
+    }, (err, stats) => {
+        if (err || stats.hasErrors()) {
+            console.log(err);
+            console.log(stats);
+        }
+    });
+}
+
 // Clear build folder
 if (fs.existsSync(path.resolve(__dirname,"build"))) {
     console.log("Clearing build folder");
@@ -44,9 +62,7 @@ for(let error of pageList.errors) {
 }
 
 // Create copy of Bootstrap
-console.log("Creating copy of Bootstrap.js");
-fs.mkdirSync(path.resolve(__dirname,"build","js","components"), {recursive: true});
-fs.copyFileSync(path.resolve(__dirname,"node_modules","bootstrap","dist","js","bootstrap.bundle.min.js"), path.resolve(__dirname,"build","js","components","bootstrap.bundle.min.js"));
+compileJS('./src/bootstrap.js', 'bootstrap');
 
 // Create XML sitemap
 console.log("Creating XML sitemap");

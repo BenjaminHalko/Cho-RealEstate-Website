@@ -14,7 +14,7 @@ function initApp() {
     app.set('view engine', 'ejs');
 
     // Load static files
-    app.use('/js/components', express.static(path.resolve(__dirname, '..', 'node_modules/bootstrap/dist/js')));
+    app.use('/js/components/bootstrap.js', express.static(path.resolve(__dirname, '..', 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')));
     app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
 
     // Return app
