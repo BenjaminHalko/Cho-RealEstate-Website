@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const ejs = require('ejs');
-const webpack = require('webpack');
 
 const loadCommonData = require('./helper/loadData.js').loadCommonData;
 const getPages = require('./helper/loadPages.js').getPages;
