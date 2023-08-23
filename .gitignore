@@ -1,4 +1,8 @@
-node_modules/
 build/
 public/css/
+node_modules
 .env
+
+# cpanel specific
+tmp/
+stderr.log
