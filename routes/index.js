@@ -1,4 +1,5 @@
 // Config
+const { getStaticPages, getErrorPages } = require('../utils/getStaticPages');
 const { processLocations, processReviews, processNewsletters } = require('../utils/processConfig');
 const locations = processLocations();
 
@@ -21,7 +22,7 @@ function dynamicRoutes(router) {
 function staticRoutes(router) {
     const reviews = processReviews();
     const newsletters = processNewsletters();
-    const staticPages = require('../utils/getStaticPages').getStaticPages(locations, reviews, newsletters);
+    const staticPages = getStaticPages(locations, reviews, newsletters);
 
     for (let page of staticPages) {
         router.get(`/${page.name}`, (req, res) => {
@@ -31,7 +32,7 @@ function staticRoutes(router) {
 }
 
 function errorRoutes(router) {
-    const staticErrors = require('../utils/getStaticPages').getErrorPages(locations);
+    const staticErrors = getErrorPages(locations);
     const page = staticErrors.find(page => page.name === '404');
 
     router.get('*', (req, res) => {
