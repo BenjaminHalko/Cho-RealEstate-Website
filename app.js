@@ -2,11 +2,11 @@
 const express = require('express');
 
 // Load .env in development mode
-const developMode = process.env.NODE_ENV !== 'production';
-if (developMode) require('dotenv').config();
+const development = process.env.NODE_ENV !== 'production';
+if (development) require('dotenv').config();
 
 // Load routes
-const router = require('./routes/index.js')(developMode);
+const router = require('./routes/index.js')(development);
 
 // Setup app
 const app = express();

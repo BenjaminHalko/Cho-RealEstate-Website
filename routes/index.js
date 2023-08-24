@@ -41,17 +41,14 @@ function errorRoutes(router) {
 }
 
 // Load All Routes
-function getRoutes(developMode) {
+function getRoutes(development) {
     const express = require('express');
     const router = express.Router();
 
     dynamicRoutes(router);
+    errorRoutes(router);
 
-    if (developMode) {
-        staticRoutes(router);
-    } else {
-        errorRoutes(router);
-    }
+    if (development) staticRoutes(router);
 
     return router;
 }
