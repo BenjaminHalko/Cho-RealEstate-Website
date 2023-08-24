@@ -1,33 +1,12 @@
-const instagram_access_token = process.env.instagram_access_token;
-const instagram_user_id = process.env.instagram_user_id;
-const youtube_access_token = process.env.youtube_access_token;
-const youtube_playlist_id = process.env.youtube_playlist_id;
+// Import modules
+const fs = require('fs');
+const path = require('path');
 
-// Functions
-function initApp() {
-    console.log("Initializing app");
-    const express = require('express');
-    const path = require('path');
+function processLocations() {
+    console.log("Processing locations");
+    const locationData = require('../config/location.json');
 
-    // Init app
-    const app = express();
-    app.set('view engine', 'ejs');
-
-    // Load static files
-    app.use('/js/components/bootstrap.bundle.min.js', express.static(path.resolve(__dirname, '..', 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')));
-    app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
-
-    // Return app
-    return app;
-}
-
-function loadCommonData() {
-    const fs = require('fs');
-    const path = require('path');
-
-    // Locations
-    console.log("Loading location data");
-    const locationData = require('../data/location.json');
+    // Loop through locations
     for (let location in locationData.locations) {
         locationData.locations[location].id = location;
         if (!locationData.locations[location].isListing) { locationData.locations[location].isListing = false; }
@@ -90,6 +69,8 @@ function loadCommonData() {
             locationData.locations[location].state = "default";
         }
     }
+
+    // Set featured location
     locationData.featured = locationData.locations[locationData.featured];
     if (typeof locationData.secondary !== 'undefined') {
         locationData.secondary = locationData.locations[locationData.secondary];
@@ -97,9 +78,9 @@ function loadCommonData() {
         locationData.secondary = null;
     }
 
-    // Sorted locations
+    // Set up sorted locations
     locationData.sortedLocations = {};
-    for (let [name,location] of Object.entries(locationData.locations)) {
+    for (let location of Object.values(locationData.locations)) {
         if (location.state == 'featured') {
             if (typeof locationData.sortedLocations['Featured'] === 'undefined') {
                 locationData.sortedLocations['Featured'] = [location];
@@ -118,8 +99,8 @@ function loadCommonData() {
             locationData.sortedLocations[location.catagory][location.location].push(location);
         }
     }
-    
-    
+
+    // Sort locations
     for (let name of Object.keys(locationData.sortedLocations)) {
         if (name == 'Featured') {
             locationData.sortedLocations[name] = locationData.sortedLocations[name].sort((a,b) => { return a.name.localeCompare(b.name) });
@@ -140,13 +121,19 @@ function loadCommonData() {
         }, 0);
         return bLength - aLength;
     });
-    
-    // Reviews
-    console.log("Loading review data");
-    const reviews = require('../data/reviews.json');
-    
-    // News
-    console.log("Loading news data");
+
+    // Return data
+    return locationData;
+}
+
+function processReviews() {
+    console.log("Processing reviews");
+    const reviews = require('../config/reviews.json');
+    return reviews;
+}
+
+function processNewsletters() {
+    console.log("Processing newsletters");
     const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
     const newsletters = [];
     for (file of fs.readdirSync(path.resolve(__dirname, '..', 'public', 'files', 'newsletters')).reverse()) {
@@ -156,52 +143,12 @@ function loadCommonData() {
         })
     }
 
-    // Return data
-    return {
-        locationData: locationData,
-        reviews: reviews,
-        newsletters: newsletters
-    };
-}
-
-async function loadInstagramData() {
-    const res = await fetch(`https://graph.facebook.com/${instagram_user_id}?access_token=${instagram_access_token}&fields=
-        username,name,biography,media_count,followers_count,follows_count,profile_picture_url,
-        media{media_type,thumbnail_url,permalink,like_count,comments_count}`)
-    .then(res => res.json());
-
-    if (res.error) {
-        console.log(res.error);
-        return undefined;
-    }
-
-    return res;
-}
-
-async function loadYouTubeData() {
-    const res = await fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=3&fields=items(contentDetails(videoId))&playlistId=${youtube_playlist_id}&key=${youtube_access_token}`).then(res => res.json());
-
-    if (res.error) {
-        console.log(res.error);
-        return undefined;
-    }
-    
-    return res.items.map(item => item.contentDetails.videoId);
-}
-
-async function loadHomePageData() {
-    const instagramData = loadInstagramData();
-    const youtubeData = loadYouTubeData();
-
-    return {
-        instagramData: await instagramData,
-        youtubeData: await youtubeData
-    };
+    return newsletters;
 }
 
 // Export functions
 module.exports = {
-    initApp,
-    loadCommonData,
-    loadHomePageData
+    processLocations,
+    processReviews,
+    processNewsletters
 };

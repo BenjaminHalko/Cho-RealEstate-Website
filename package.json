@@ -16,7 +16,7 @@
     "build-sass": "sass --no-source-map --style=compressed scss:public/css",
     "purgecss": "purgecss --css ./public/css/*.css --content .views/**/*.ejs ./build/**/*.html ./build/*.shtml ./public/js/*.js ./public/js/**/.js ./build/js/components/bootstrap.bundle.min.js --output ./public/css/",
     
-    "dev-app": "nodemon dev_app.js",
+    "dev-app": "nodemon app.js",
     "dev-sass": "sass --watch --no-source-map scss:public/css",
     "webp": "node helper/convertWebp.js"
   },

@@ -1,29 +1,23 @@
-const { initApp, loadCommonData, loadHomePageData } = require('./helper/loadData.js');
+// Import modules
+const express = require('express');
 
-// Load components
-const app = initApp();
-const locationData = loadCommonData().locationData;
+// Load .env in development mode
+const developMode = process.env.NODE_ENV !== 'production';
+if (developMode) require('dotenv').config();
 
 // Load routes
-app.get("/", (req, res) => {
-    loadHomePageData().then(data => {
-        res.render('pages/home',{
-            featured: locationData.featured,
-            secondary: locationData.secondary,
-            instagramData: data.instagramData,
-            youtubeData: data.youtubeData
-        });
-    });
-});
+const router = require('./routes/index.js')(developMode);
 
-// 404
-app.get("*", (req, res) => {
-    res.status(404).render('pages/error', {
-      featured: locationData.featured,
-      code: 404,
-      message: "This page no longer exists."
-    });
-});
+// Setup app
+const app = express();
+app.set('view engine', 'ejs');
+
+// Load static files
+app.use('/js/components/bootstrap.bundle.min.js', express.static('./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'));
+app.use('/', express.static('./public'));
+
+// Load routes
+app.use('/', router);
 
 // Start server
 app.listen(5000, () => {

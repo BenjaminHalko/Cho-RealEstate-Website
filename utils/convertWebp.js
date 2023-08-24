@@ -2,9 +2,6 @@ const webp = require("webp-converter");
 const fs = require('fs');
 const path = require('path');
 
-// Convert images
-// loop through images folder, go in subfolders, convert all images to webp
-
 // Get all folders in images folder
 async function convertImages(folder) {
     // Get all files and subfolders in the current folder
