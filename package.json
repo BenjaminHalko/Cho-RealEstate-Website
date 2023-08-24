@@ -8,6 +8,10 @@
     "purgecss": "^5.0.0",
     "sass": "^1.64.2"
   },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "webp-converter": "^2.3.3"
+  },
   "scripts": {
     "build": "npm-run-all --parallel build-app build-sass",
     "dev": "npm-run-all --parallel dev-app dev-sass",
@@ -18,10 +22,6 @@
     
     "dev-app": "nodemon app.js",
     "dev-sass": "sass --watch --no-source-map scss:public/css",
-    "webp": "node helper/convertWebp.js"
-  },
-  "devDependencies": {
-    "dotenv": "^16.3.1",
-    "webp-converter": "^2.3.3"
+    "webp": "node utils/convertWebp.js"
   }
 }
