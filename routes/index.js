@@ -46,9 +46,8 @@ function getRoutes(development) {
     const router = express.Router();
 
     dynamicRoutes(router);
-    errorRoutes(router);
-
     if (development) staticRoutes(router);
+    errorRoutes(router);
 
     return router;
 }
