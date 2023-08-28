@@ -3,13 +3,13 @@
     "bootstrap": "^5.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "nodemon": "^3.0.1",
     "npm-run-all2": "^6.0.6",
     "purgecss": "^5.0.0",
     "sass": "^1.64.2"
   },
   "devDependencies": {
     "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1",
     "webp-converter": "^2.3.3"
   },
   "scripts": {
