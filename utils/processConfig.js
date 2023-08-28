@@ -112,6 +112,7 @@ function processLocations() {
         locationData.sortedLocations[name] = Object.entries(locationData.sortedLocations[name]).sort((a,b) => { return a[0].localeCompare(b[0]) });
     }
     locationData.sortedLocations = Object.entries(locationData.sortedLocations).sort((a,b) => {
+        if (a[0] == 'Featured') return -1;
         if (b[0] == 'Featured') return 0;
         const aLength = a[1].reduce((acc, cur) => {
             return acc + cur[1].length;
