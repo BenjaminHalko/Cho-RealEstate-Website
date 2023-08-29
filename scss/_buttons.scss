@@ -1,7 +1,6 @@
 .btn-contact {
     border-radius: 50px;
-    background-color: white;
-    border: none !important;
+    background-color: #54ff95;
     transition: all 0.2s var(--curve);
     filter: var(--card-shadow);
     min-width: 200px;
@@ -20,7 +19,7 @@
     }
 
     &:hover, &:active {
-        background-color: #161616 !important;
+        background-color: black !important;
         
         .inner {
             scale: 1.1;

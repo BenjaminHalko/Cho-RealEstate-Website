@@ -1,4 +1,19 @@
 {
+    "icon": {
+        "name": "Icon",
+        "company": "Ledingham McAllister",
+        "desc": "Icon is a masterpiece of fine living in Burnaby, where you can enjoy spacious homes with park views, high-end features, and amenities.",
+        "catagory": "Burnaby",
+        "location": "Byrne",
+        "state": "featured",
+        "info": {
+            "Type": "Condo",
+            "Units / Floors": "352 / 46",
+            "Bedrooms": "1, 2, 3",
+            "Sqft": "613 - 1097",
+            "Est. Compl.": "Summer 2025"
+        }
+    },
     "talistar": {
         "name": "Talistar",
         "company": "Polygon",
@@ -25,7 +40,7 @@
     "citizen": {
         "name": "Citizen",
         "company": "Anthem",
-        "desc": "The highest tower in Metrotown, Citizen is a 66-story tower with unparalleled views.",
+        "desc": "Ascend to the sky residences of Citizen, the highest tower in Metrotown. 66 stories with unparalleled views.",
         "catagory": "Burnaby",
         "location": "Metrotown",
         "state": "featured",

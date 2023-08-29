@@ -40,9 +40,9 @@
                             <% } %>
                         </table>
                         <% if(location.state == "sold") { %>
-                            <div class="sold" style="margin-bottom: 20px">
+                            <div class="sold" style="margin-bottom: 20px; text-align: center">
                                 <h3>SOLD OUT - CONTACT ME FOR ASSIGNMENTS</h3>
-                                <%- include('../partials/contact', {tiny: true, subject: 'Question about '+location.name }); %>
+                                <%- include('../partials/contact', {fullWidth: true, subject: 'Question about '+location.name }); %>
                             </div>
                             <% } %>
                         <%- include(`../partials/locations/${location.id}.ejs`); %>
@@ -57,8 +57,8 @@
                             <% } %>
                         </div>
                         <% if(location.state != "sold") { %>
-                        <p style="margin-top: 20px"><b>If you have any questions or wish to see the price:</b></p>
-                        <%- include('../partials/contact', {tiny: true, subject: 'Question about '+location.name }); %>
+                        <p style="margin-top: 20px; text-align: center;"><b>If you have any questions or wish to see the price:</b></p>
+                        <%- include('../partials/contact', {fullWidth: true, subject: 'Question about '+location.name }); %>
                         <% } %>
                     </div>
                     <div class="media">
