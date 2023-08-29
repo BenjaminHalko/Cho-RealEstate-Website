@@ -16,7 +16,7 @@
     "build": "npm-run-all --parallel build:*",
     "dev": "npm-run-all --parallel dev:*",
     "build:app": "node build.js",
-    "build:css": "npm-run-all build-css:*",
+    "build:css": "npm-run-all -s build-css:*",
     "build-css:sass": "sass --no-source-map --style=compressed scss:public/css",
     "build-css:purgecss": "purgecss --css ./public/css/*.css --content .views/**/*.ejs ./views/**/**/*.ejs ./public/js/*.js ./public/js/**/.js ./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js --output ./public/css/",
     "dev:app": "nodemon app.js",
