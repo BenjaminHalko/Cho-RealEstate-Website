@@ -2,6 +2,14 @@
     "featured": "citizen",
     "secondary": "harlin",
     "locations": {
+        "talistar": {
+            "name": "Talistar",
+            "company": "Polygon",
+            "desc": "Richmond's most-anticipated masterplanned community of the year. Ideally situated in the Richmond City Centre.",
+            "catagory": "Richmond",
+            "location": "City Centre",
+            "state": "featured"
+        },
         "marco-polo": {
             "name": "Marco Polo",
             "company": "Gryphon",
