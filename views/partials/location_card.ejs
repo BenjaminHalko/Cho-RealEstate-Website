@@ -9,10 +9,13 @@
             <% } else if (location.state == "rented") { %>
             <span class="overlay" style="--color: #801616">Rented</span>
             <% } %>
-            <% if(location.isListing) { %>
-            <span class="overlay-bottom" style="--color: #9A0063">Listing</span>
-            <% } else { %>
-            <span class="overlay-bottom" style="--color: #063970">Presale</span>
+
+            <% if(location.state != "sold" and location.state != "rented") { %>
+                <% if(location.isListing) { %>
+                <span class="overlay-bottom" style="--color: #9A0063">Listing</span>
+                <% } else { %>
+                <span class="overlay-bottom" style="--color: #063970">Presale</span>
+                <% } %>
             <% } %>
         </div>
         <div class="content">
