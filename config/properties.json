@@ -1,4 +1,17 @@
 {
+    "debut": {
+        "name": "Debut",
+        "company": "Beedie Living",
+        "desc": "Beedie Living presents Fraser Mills, a 96-acre waterfront neighbourhood with various homes and facilities. Debut is the first opportunity to buy.",
+        "catagory": "Coquitlam",
+        "location": "Fraser Mills",
+        "state": "featured",
+        "info": {
+            "Type": "Condo & Townhouse",
+            "Units / Floors": "318 / 36",
+            "Bedrooms": "1, 2, 3"
+        }
+    },
     "icon": {
         "name": "Icon",
         "company": "Ledingham McAllister",
