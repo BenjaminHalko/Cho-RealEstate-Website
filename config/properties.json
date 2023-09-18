@@ -1,4 +1,16 @@
 {
+    "burquitlam-park-district": {
+        "name": "Burquitlam Park District",
+        "company": "Intragulf",
+        "desc": "Burquitlam Park District reaches 40 storeys and comprises of 364 homes including studios, 1, 2 & 3 bedroom residences.",
+        "catagory": "Coquitlam",
+        "location": "Burquitlam",
+        "state": "featured",
+        "info": {
+            "Maintenance Fee": "$0.59 / sqft",
+            "Est. Compl.": "Summer 2028"
+        }
+    },
     "debut": {
         "name": "Debut",
         "company": "Beedie Living",

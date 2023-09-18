@@ -17,10 +17,10 @@ async function convertImages(folder) {
         } else {
             // If the file is an image, convert it to WebP format
             if (path.extname(filePath).toLowerCase() === '.jpg' || path.extname(filePath).toLowerCase() === '.jpeg' || path.extname(filePath).toLowerCase() === '.png') {
+                console.log('Converting ' + filePath)
                 const webpPath = filePath.replace(/\.[^/.]+$/, ".webp");
                 await webp.cwebp(filePath, webpPath, "-q 80");
                 fs.rmSync(filePath);
-                console.log('Converted ' + filePath)
             }
         }
     }

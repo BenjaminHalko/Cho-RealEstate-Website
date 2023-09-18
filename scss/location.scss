@@ -19,7 +19,7 @@
             color: white;
 
             .name {
-                font-size: min(8em,calc(100vw * 0.15));
+                font-size: calc(min(8em,calc(100vw * 0.15)) * var(--size-multiplier, 1));
             }
 
             .company {

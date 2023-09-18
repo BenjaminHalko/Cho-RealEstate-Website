@@ -19,7 +19,7 @@
         <%- include('../partials/background', {background: location}); %>
         <div class="title">
             <div class="contain">
-                <h1 class="name"><%= location.name %></h1>
+                <h1 class="name" style="--size-multiplier: <%= (location.name.length > 10) ? '0.8' : '1' %>"><%= location.name %></h1>
                 <p class="company"> by <%= location.company %></p>
             </div>
         </div>
