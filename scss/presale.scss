@@ -2,21 +2,6 @@
     overflow: hidden;
     width: 100vw;
     height: 100vh;
-
-    & .fading {
-        filter: none;
-        transform: scale(1);
-        opacity: 0;
-        animation: fade 1s;
-        animation-direction: normal;
-        animation-timing-function: var(--curve);
-        animation-fill-mode: forwards;
-    }
-
-    @keyframes fade {
-        0% {opacity: 0;}
-        100% {opacity: 1;}
-    }
 }
 
 .main-content {
