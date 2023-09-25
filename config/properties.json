@@ -1,4 +1,18 @@
 {
+    "solhouse": {
+        "name": "Solhouse",
+        "company": "Bosa Properties",
+        "desc": "This 50-story residential tower offers views of Central Park, Downtown Vancouver, and the North Shore",
+        "catagory": "Burnaby",
+        "location": "Metrotown",
+        "state": "featured",
+        "info": {
+            "Type": "Condo",
+            "Units / Floors": "411 / 50",
+            "Bedrooms": "Studios, 1, 2, 3",
+            "Sqft": "446 - 2035"
+        }
+    },
     "burquitlam-park-district": {
         "name": "Burquitlam Park District",
         "company": "Intragulf",
@@ -68,7 +82,6 @@
         "desc": "Ascend to the sky residences of Citizen, the highest tower in Metrotown. 66 stories with unparalleled views.",
         "catagory": "Burnaby",
         "location": "Metrotown",
-        "state": "featured",
         "video_id": "J4v_rscUhfA",
         "info": {
             "Type": "Mixed-Use",
@@ -92,8 +105,7 @@
         "company": "Strand",
         "desc": "Experience a harmonious blend of effortless connectivity & tranquil repose with breathtaking mountain views from Burquitlam.",
         "catagory": "Coquitlam",
-        "location": "Burquitlam",
-        "state": "featured"
+        "location": "Burquitlam"
     },
     "harlin": {
         "name": "Harlin",
@@ -101,7 +113,6 @@
         "desc": "A gateway tower to the Waterfront pathways of the River District, where luxury living meets unrivaled convenience.",
         "catagory": "Vancouver",
         "location": "River District",
-        "state": "featured",
         "video_id": "wYNOTirhiqg",
         "info": {
             "Type": "Condo",
