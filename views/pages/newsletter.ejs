@@ -60,7 +60,7 @@
                 <h3>Monthly Newsletters</h3>
                 <ul>
                     <% for (newsletter of newsletters) { %>
-                        <li><a href="/files/newsletters/<%- newsletter.file %>" target="_blank"><%- newsletter.name %></a></li>
+                        <li><a href="/files/newsletters/<%= newsletter.file %>" target="_blank"><%= newsletter.name %></a></li>
                     <% } %>
                 </ul>
             </div>

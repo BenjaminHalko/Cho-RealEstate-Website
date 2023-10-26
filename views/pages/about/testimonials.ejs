@@ -24,12 +24,12 @@
             <% for (review of reviews) { %>
             <div class="panel">
                 <div class="d-inline-flex align-items-center" style="gap: 10px">
-                    <img src="<%- review.profile_pic %>" width="40" height="40" alt="<%- review.name %> Profile Picture">
+                    <img src="<%= review.profile_pic %>" width="40" height="40" alt="<%= review.name %> Profile Picture">
                     <div>
-                        <p><b><%- review.name %></b><br>★★★★★</p>
+                        <p><b><%= review.name %></b><br>★★★★★</p>
                     </div>
                 </div>
-                <p><%- review.review %></p>
+                <p><%= review.review %></p>
             </div>
             <% } %>
         </div>

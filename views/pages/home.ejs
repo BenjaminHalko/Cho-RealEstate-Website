@@ -68,27 +68,27 @@
     <% if(instagramData != undefined) { %>
     <div class="instagram">
         <div class="instagram_header">
-            <a href="https://www.instagram.com/<%- instagramData.username %>/" target="_blank">
-                <img src="<%- instagramData.profile_picture_url %>" alt="profile_picture" width="86px" height="86px">
+            <a href="https://www.instagram.com/<%= instagramData.username %>/" target="_blank">
+                <img src="<%= instagramData.profile_picture_url %>" alt="profile_picture" width="86px" height="86px">
             </a>
             <div class="user_info">
                 <div class="d-inline-flex flex-wrap align-items-center" style="gap: 10px">
-                    <a class="username" href="https://www.instagram.com/<%- instagramData.username %>/" target="_blank">@<%- instagramData.username %></a>
-                    <a class="follow_button btn btn-primary d-inline-flex justify-content-center align-items-center" style="margin-top: 6px; margin-bottom: auto; gap: 6px" href="https://www.instagram.com/<%- instagramData.username %>/" target="_blank" role="button">
+                    <a class="username" href="https://www.instagram.com/<%= instagramData.username %>/" target="_blank">@<%= instagramData.username %></a>
+                    <a class="follow_button btn btn-primary d-inline-flex justify-content-center align-items-center" style="margin-top: 6px; margin-bottom: auto; gap: 6px" href="https://www.instagram.com/<%= instagramData.username %>/" target="_blank" role="button">
                         Follow
                         <svg width="18" height="18">
                             <use xlink:href="/svg/instagram.svg#id"/>
                         </svg>
                     </a>
                 </div>
-                <p class="info"><b><%- instagramData.media_count %></b> posts • <b><%- instagramData.followers_count %></b> followers • <b><%- instagramData.follows_count %></b> following</p>
-                <p class="bio"><%- instagramData.biography %></p>
+                <p class="info"><b><%= instagramData.media_count %></b> posts • <b><%= instagramData.followers_count %></b> followers • <b><%= instagramData.follows_count %></b> following</p>
+                <p class="bio"><%= instagramData.biography %></p>
             </div>
         </div>
         <% if (instagramData != undefined) { %>
         <div class="instagram_cards">
         <% for(post of instagramData.media.data.slice(0,12)) { %>
-        <a class="instagram_card" href="<%- post.permalink %>" target="_blank" rel="noopener" style="background-image: url('<%- (post.media_type == `VIDEO`) ? post.thumbnail_url : `${post.permalink}media?size=m` %>')">
+        <a class="instagram_card" href="<%= post.permalink %>" target="_blank" rel="noopener" style="background-image: url('<%= (post.media_type == `VIDEO`) ? post.thumbnail_url : `${post.permalink}media?size=m` %>')">
             <% if (post.media_type == `VIDEO`) { %>
             <div class="video_icon">
                 <svg class="video_icon" width="64px" height="64px">
@@ -97,8 +97,8 @@
             </div>
             <% } %>
             <div class="overlay">
-                <span><svg width="20" height="20" style='margin-right: 6px'><use xlink:href="/svg/suit-heart-fill.svg#id"/></svg><%- post.like_count %></span>
-                <span><svg width="20" height="20" style='margin-right: 6px'><use xlink:href="/svg/chat-fill.svg#id"/></svg><%- post.comments_count %></span>
+                <span><svg width="20" height="20" style='margin-right: 6px'><use xlink:href="/svg/suit-heart-fill.svg#id"/></svg><%= post.like_count %></span>
+                <span><svg width="20" height="20" style='margin-right: 6px'><use xlink:href="/svg/chat-fill.svg#id"/></svg><%= post.comments_count %></span>
             </div>
         </a>
         <% } %>
