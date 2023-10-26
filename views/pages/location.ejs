@@ -30,11 +30,11 @@
                         <table class="table">
                             <tr>
                                 <td>Location</td>
-                                <td><%- location.catagory %> - <%- location.location %></td>
+                                <td><%= location.catagory %> - <%= location.location %></td>
                             </tr>
                             <% for(let info in location.info) { %>
                             <tr>
-                                <td><%= info %></td>
+                                <td><%- info %></td>
                                 <td><%= location.info[info] %></td>
                             </tr>
                             <% } %>

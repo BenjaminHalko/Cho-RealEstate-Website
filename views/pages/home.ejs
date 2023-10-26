@@ -88,7 +88,7 @@
         <% if (instagramData != undefined) { %>
         <div class="instagram_cards">
         <% for(post of instagramData.media.data.slice(0,12)) { %>
-        <a class="instagram_card" href="<%- post.permalink %>" target="_blank" rel="noopener" style="background-image: url('<%- (post.media_type == `VIDEO`) ? post.thumbnail_url : `${post.permalink}media?size=m` %>')">
+        <a class="instagram_card" href="<%= post.permalink %>" target="_blank" rel="noopener" style="background-image: url('<%= (post.media_type == `VIDEO`) ? post.thumbnail_url : `${post.permalink}media?size=m` %>')">
             <% if (post.media_type == `VIDEO`) { %>
             <div class="video_icon">
                 <svg class="video_icon" width="64px" height="64px">
@@ -97,8 +97,8 @@
             </div>
             <% } %>
             <div class="overlay">
-                <span><svg width="20" height="20" style='margin-right: 6px'><use xlink:href="/svg/suit-heart-fill.svg#id"/></svg><%- post.like_count %></span>
-                <span><svg width="20" height="20" style='margin-right: 6px'><use xlink:href="/svg/chat-fill.svg#id"/></svg><%- post.comments_count %></span>
+                <span><svg width="20" height="20" style='margin-right: 6px'><use xlink:href="/svg/suit-heart-fill.svg#id"/></svg><%= post.like_count %></span>
+                <span><svg width="20" height="20" style='margin-right: 6px'><use xlink:href="/svg/chat-fill.svg#id"/></svg><%= post.comments_count %></span>
             </div>
         </a>
         <% } %>
