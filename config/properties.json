@@ -1,4 +1,12 @@
 {
+    "etoile-gold": {
+        "name": "Étoile Gold",
+        "company": "Millennium",
+        "desc": "A Paris-inspired luxury tower in the exciting Brentwood neighbourhood.",
+        "catagory": "Burnaby",
+        "location": "Brentwood",
+        "state": "featured"
+    },
     "solhouse": {
         "name": "Solhouse",
         "company": "Bosa Properties",

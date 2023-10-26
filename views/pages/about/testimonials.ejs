@@ -9,7 +9,6 @@
     <meta property="og:title" content="Testimonials"/>
     <meta property="og:description" content="Testimonials from Google Reviews"/>
     <meta property="og:url" content="https://kittycho.ca/testimonials/">
-    <meta property="og:image" content="https://kittycho.ca/images/misc/google_reviews.webp"/>
 </head>
 <body>
     <!-- Navbar -->
@@ -25,7 +24,7 @@
             <% for (review of reviews) { %>
             <div class="panel">
                 <div class="d-inline-flex align-items-center" style="gap: 10px">
-                    <img src="<%- review.profile_pic %>" width="40" height="40" alt="<%= review.name %> Profile Picture">
+                    <img src="<%- review.profile_pic %>" width="40" height="40" alt="<%- review.name %> Profile Picture">
                     <div>
                         <p><b><%- review.name %></b><br>★★★★★</p>
                     </div>

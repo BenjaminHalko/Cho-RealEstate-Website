@@ -11,7 +11,6 @@
     <meta property="og:title" content="Kitty Cho | Personal Real Estate Corporation"/>
     <meta property="og:description" content="Choose Kitty: Your Trusted Realtor for Life's Biggest Investments"/>
     <meta property="og:url" content="https://kittycho.ca/">
-    <meta property="og:image" content="https://kittycho.ca/images/common/logoBig.webp"/>
 </head>
 <body>
     <!-- Navbar -->
@@ -89,7 +88,7 @@
         <% if (instagramData != undefined) { %>
         <div class="instagram_cards">
         <% for(post of instagramData.media.data.slice(0,12)) { %>
-        <a class="instagram_card" href="<%- post.permalink %>" target="_blank" style="background-image: url('<%- (post.media_type == `VIDEO`) ? post.thumbnail_url : `${post.permalink}media?size=m` %>')">
+        <a class="instagram_card" href="<%- post.permalink %>" target="_blank" rel="noopener" style="background-image: url('<%- (post.media_type == `VIDEO`) ? post.thumbnail_url : `${post.permalink}media?size=m` %>')">
             <% if (post.media_type == `VIDEO`) { %>
             <div class="video_icon">
                 <svg class="video_icon" width="64px" height="64px">

@@ -3,9 +3,9 @@
     "bootstrap": "^5.3.2",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "npm-run-all2": "^6.0.6",
+    "npm-run-all2": "^6.1.1",
     "purgecss": "^5.0.0",
-    "sass": "^1.67.0"
+    "sass": "^1.69.4"
   },
   "devDependencies": {
     "dotenv": "^16.3.1",
