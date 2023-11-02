@@ -5,6 +5,7 @@ deployment:
     - cloudlinux-selector run-script --json --interpreter nodejs --app-root repository --script-name build
     - cloudlinux-selector run-script --json --interpreter nodejs --app-root repository --script-name purgecss
     - rsync --delete -acv --exclude=".*" ~/repository/build/ ~/repository/public/ ~/public_html
-    - kill -9 $(pgrep -f node)
+    - cloudlinux-selector stop --json --interpreter nodejs --app-root repository
+    - pkill -9 node
     - cloudlinux-selector start --json --interpreter nodejs --app-root repository
     - rm -rf ~/repository/build/
