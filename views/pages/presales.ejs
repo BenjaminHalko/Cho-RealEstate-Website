@@ -22,29 +22,29 @@
         <%- include('../partials/background', {background: featured}); %>
         <div class="main-content">
             <div class="catagories">
-                <% for(const [catagoryName, catagoryData] of locations) {
-                    let catagoryID = catagoryName.replace(' ', '-').toLowerCase();
+                <% for(const [categoryName, categoryData] of locations) {
+                    let categoryID = categoryName.replace(' ', '-').toLowerCase();
                 %>
-                    <a class="catagoryButton" id="<%= catagoryID %>_button">
-                        <h1><%= (catagoryName == 'Featured') ? "New & Featured" : catagoryName %></h1>
+                    <a class="categoryButton" id="<%= categoryID %>_button">
+                        <h1><%= (categoryName == 'Featured') ? "New & Featured" : categoryName %></h1>
                     </a>
                 <% } %>
             </div>
 
-            <% for(const [catagoryName, catagoryData] of locations) {
-                let catagoryID = catagoryName.replace(' ', '-').toLowerCase();
+            <% for(const [categoryName, categoryData] of locations) {
+                let categoryID = categoryName.replace(' ', '-').toLowerCase();
             %>
-            <div class="catagory collapse" id="<%= catagoryID %>">
-                <% if(catagoryName == 'Featured') { %>
+            <div class="category collapse" id="<%= categoryID %>">
+                <% if(categoryName == 'Featured') { %>
                     <h1 class="header"><span class="deco">————</span>— New & Featured —<span class="deco">————</span></h1>
                     <div class="group d-flex flex-wrap justify-content-center">
-                        <% for (location of catagoryData) { %>
+                        <% for (location of categoryData) { %>
                         <%- include('../partials/location_card', {location: location, isFeatured: true, type: "subFeature"}); %>
                         <% } %>
                     </div>
                 <% } else {
-                    for (const [subCatagory, locationList] of catagoryData) { %>
-                        <h1 class="header"><span class="deco">————</span>— <%= subCatagory %> —<span class="deco">————</span></h1>
+                    for (const [subcategory, locationList] of categoryData) { %>
+                        <h1 class="header"><span class="deco">————</span>— <%= subcategory %> —<span class="deco">————</span></h1>
                         <div class="group d-flex flex-wrap justify-content-center">
                             <% for (location of locationList) { %>
                             <%- include('../partials/location_card', {location: location, isFeatured: true, type: ""}); %>
