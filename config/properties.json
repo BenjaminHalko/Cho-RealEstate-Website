@@ -1,17 +1,40 @@
 {
+    "town-centre": {
+        "name": "Town & Centre",
+        "company": "Mosaic",
+        "desc": "Phase One at Town and Centre is a 30-Storey highrise at Westwood Street and Anson in Port Coquitlam.",
+        "category": "Coquitlam",
+        "location": "Town Centre",
+        "state": "featured",
+        "info": {
+            "Est. Compl.": "2027 - 2028",
+            "Bedrooms": "Studio, 1 Bed, 2 Beds, 2 Beds Corner, 3 Beds"
+        }
+    },
+    "encore": {
+        "name": "Encore",
+        "company": "Beedie Living",
+        "desc": "A 32 storey concrete high-rise and a 5 storey podium with stacked concrete townhomes and city homes",
+        "category": "Coquitlam",
+        "location": "Fraser Mills",
+        "state": "featured",
+        "info": {
+            "Bedrooms": "Jr. 1 Bed, 1 Bed, 1 Bed + Den, 2 Beds, 2 Beds + Den, 3 Beds"
+        }
+    },
     "etoile-gold": {
         "name": "Étoile Gold",
         "company": "Millennium",
         "desc": "A Paris-inspired luxury tower in the exciting Brentwood neighbourhood.",
-        "catagory": "Burnaby",
+        "category": "Burnaby",
         "location": "Brentwood",
         "state": "featured"
     },
     "solhouse": {
         "name": "Solhouse",
         "company": "Bosa Properties",
-        "desc": "This 50-story residential tower offers views of Central Park, Downtown Vancouver, and the North Shore",
-        "catagory": "Burnaby",
+        "desc": "This 50-storey residential tower offers views of Central Park, Downtown Vancouver, and the North Shore",
+        "category": "Burnaby",
         "location": "Metrotown",
         "state": "featured",
         "info": {
@@ -25,7 +48,7 @@
         "name": "Burquitlam Park District",
         "company": "Intragulf",
         "desc": "Burquitlam Park District reaches 40 storeys and comprises of 364 homes including studios, 1, 2 & 3 bedroom residences.",
-        "catagory": "Coquitlam",
+        "category": "Coquitlam",
         "location": "Burquitlam",
         "state": "featured",
         "info": {
@@ -37,9 +60,9 @@
         "name": "Debut",
         "company": "Beedie Living",
         "desc": "A 96-acre waterfront neighbourhood with various homes and facilities. Debut is the first opportunity to buy.",
-        "catagory": "Coquitlam",
+        "category": "Coquitlam",
         "location": "Fraser Mills",
-        "state": "featured",
+        "state": "sold",
         "info": {
             "Type": "Condo & Townhouse",
             "Units / Floors": "318 / 36",
@@ -50,7 +73,7 @@
         "name": "Icon",
         "company": "Ledingham McAllister",
         "desc": "Icon is a masterpiece of fine living in Burnaby, where you can enjoy spacious homes with park views, high-end features, and amenities.",
-        "catagory": "Burnaby",
+        "category": "Burnaby",
         "location": "Byrne",
         "state": "featured",
         "info": {
@@ -65,7 +88,7 @@
         "name": "Talistar",
         "company": "Polygon",
         "desc": "Richmond's most-anticipated masterplanned community of the year. Ideally situated in the Richmond City Centre.",
-        "catagory": "Richmond",
+        "category": "Richmond",
         "location": "City Centre",
         "state": "featured"
     },
@@ -73,7 +96,7 @@
         "name": "Marco Polo",
         "company": "Gryphon",
         "desc": "Marco Polo redefines work-life balance with state-of-the-art amenities and flexible spaces for inspired productivity.",
-        "catagory": "Vancouver",
+        "category": "Vancouver",
         "location": "Oakridge",
         "state": "featured",
         "video_id": "41cE9PNst90",
@@ -88,7 +111,7 @@
         "name": "Citizen",
         "company": "Anthem",
         "desc": "Ascend to the sky residences of Citizen, the highest tower in Metrotown. 66 stories with unparalleled views.",
-        "catagory": "Burnaby",
+        "category": "Burnaby",
         "location": "Metrotown",
         "video_id": "J4v_rscUhfA",
         "info": {
@@ -103,7 +126,7 @@
         "name": "Akimbo",
         "company": "IMANI",
         "desc": "Akimbo's bold exterior will define the Brentwood skyline with its unique angled architecture and offset balconies.",
-        "catagory": "Burnaby",
+        "category": "Burnaby",
         "location": "Brentwood",
         "state": "rented",
         "isListing": true
@@ -112,14 +135,14 @@
         "name": "Komo",
         "company": "Strand",
         "desc": "Experience a harmonious blend of effortless connectivity & tranquil repose with breathtaking mountain views from Burquitlam.",
-        "catagory": "Coquitlam",
+        "category": "Coquitlam",
         "location": "Burquitlam"
     },
     "harlin": {
         "name": "Harlin",
         "company": "Wesgroup",
         "desc": "A gateway tower to the Waterfront pathways of the River District, where luxury living meets unrivaled convenience.",
-        "catagory": "Vancouver",
+        "category": "Vancouver",
         "location": "River District",
         "video_id": "wYNOTirhiqg",
         "info": {
@@ -134,63 +157,63 @@
         "name": "Eminence",
         "company": "Meridian",
         "desc": "Eminence offers a quiet, amenity-rich community bordering Kelowna's largest natural park area.",
-        "catagory": "Kelowna",
+        "category": "Kelowna",
         "location": "Knox Mountain"
     },
     "elmwood": {
         "name": "Elmwood",
         "company": "Marcon",
         "desc": "Bold architecture, modern interiors and resort inspired amentities - home is alive with design and lifestyle.",
-        "catagory": "Coquitlam",
+        "category": "Coquitlam",
         "location": "Burquitlam"
     },
     "band": {
         "name": "Band",
         "company": "Townline",
         "desc": "Townline presents a 45 storey tower that commands attention in vibrant West Coquitlam.",
-        "catagory": "Coquitlam",
+        "category": "Coquitlam",
         "location": "Burquitlam"
     },
     "georgetown": {
         "name": "Georgetown 2",
         "company": "Anthem",
         "desc": "Georgetown 2 is the second phase of Georgetown, A vibrant master planned community by Anthem located in the heart of Surrey City Centre.",
-        "catagory": "Surrey",
+        "category": "Surrey",
         "location": "City Centre"
     },
     "southgate": {
         "name": "Southgate City",
         "company": "Ledingham McAllister",
         "desc": "A stunning blend of urban and aesthetic design, overlooking the slopes of South Burnaby.",
-        "catagory": "Burnaby",
+        "category": "Burnaby",
         "location": "Byrne"
     },
     "contour": {
         "name": "Contour",
         "company": "SVM Developments and Kirpal Group",
         "desc": "With less than 5 homes per plate, every home comes with an oversized balcony and feels like a true corner.",
-        "catagory": "Burnaby",
+        "category": "Burnaby",
         "location": "Metrotown"
     },
     "o2": {
         "name": "O2",
         "company": "Keltic",
         "desc": "285 Studio to Three Bedroom Homes where health is at the fore front and wellness is integrated into every aspect of the design.",
-        "catagory": "Burnaby",
+        "category": "Burnaby",
         "location": "Metrotown"
     },
     "perla": {
         "name": "Perla",
         "company": "Polygon",
         "desc": "A 220-acre front yard for you to enjoy steps away from Perla, central park offers year-round beauty and lively spaces for fun events.",
-        "catagory": "Burnaby",
+        "category": "Burnaby",
         "location": "Metrotown"
     },
     "hamilton": {
         "name": "Hamilton",
         "company": "Mosaic",
         "desc": "Hamilton is Mosaic's third community up at SFU and is made up of 115 concrete apartments in the heart of UniverCity.",
-        "catagory": "Vancouver",
+        "category": "Vancouver",
         "location": "SFU",
         "state": "sold"
     },
@@ -198,21 +221,21 @@
         "name": "Oasis",
         "company": "Concord Pacific",
         "desc": "Club Oasis is a unique recreational experience that provides the relaxing feel of an island resort within the comfort of your own home.",
-        "catagory": "Burnaby",
+        "category": "Burnaby",
         "location": "Brentwood"
     },
     "brentwood-tower": {
         "name": "Amazing Brentwood Tower 6",
         "company": "Shape Properties",
         "desc": "With only 369 homes, Tower Six is our rarest and most exclusive home offering to date.",
-        "catagory": "Burnaby",
+        "category": "Burnaby",
         "location": "Brentwood"
     },
     "south-yards": {
         "name": "South Yards",
         "company": "Anthem",
         "desc": "Anthem's highly anticipated South Yards in Brentwood offers 2,500 homes, retail space, and a one-acre park.",
-        "catagory": "Burnaby",
+        "category": "Burnaby",
         "location": "Brentwood"
     }
 }

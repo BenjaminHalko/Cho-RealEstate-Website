@@ -30,7 +30,7 @@
                         <table class="table">
                             <tr>
                                 <td>Location</td>
-                                <td><%= location.catagory %> - <%= location.location %></td>
+                                <td><%= location.category %> - <%= location.location %></td>
                             </tr>
                             <% for(let info in location.info) { %>
                             <tr>
@@ -57,7 +57,7 @@
                             <% } %>
                         </div>
                         <% if(location.state != "sold") { %>
-                        <p style="margin-top: 20px; text-align: center;"><b>If you have any questions or wish to see the price:</b></p>
+                        <p style="margin-top: 20px; text-align: center;"><b>Contact me for more info, resources, and up to date prices:</b></p>
                         <%- include('../partials/contact', {fullWidth: true, subject: 'Question about '+location.name }); %>
                         <% } %>
                     </div>

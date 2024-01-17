@@ -81,14 +81,14 @@ function processLocations() {
             }
         }
 
-        if (typeof sortedProperties[property.catagory] === 'undefined') {
-            sortedProperties[property.catagory] = {};
+        if (typeof sortedProperties[property.category] === 'undefined') {
+            sortedProperties[property.category] = {};
         }
 
-        if (typeof sortedProperties[property.catagory][property.location] === 'undefined') {
-            sortedProperties[property.catagory][property.location] = [property];
+        if (typeof sortedProperties[property.category][property.location] === 'undefined') {
+            sortedProperties[property.category][property.location] = [property];
         } else {
-            sortedProperties[property.catagory][property.location].push(property);
+            sortedProperties[property.category][property.location].push(property);
         }
     }
 
