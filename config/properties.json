@@ -1,4 +1,16 @@
 {
+    "town-centre": {
+        "name": "Town & Centre",
+        "company": "Mosaic",
+        "desc": "Phase One at Town and Centre is a 30-Storey highrise at Westwood Street and Anson in Port Coquitlam.",
+        "category": "Coquitlam",
+        "location": "Town Centre",
+        "state": "featured",
+        "info": {
+            "Est. Compl.": "2027 - 2028",
+            "Bedrooms": "Studio, 1 Bed, 2 Beds, 2 Beds Corner, 3 Beds"
+        }
+    },
     "encore": {
         "name": "Encore",
         "company": "Beedie Living",
@@ -50,7 +62,7 @@
         "desc": "A 96-acre waterfront neighbourhood with various homes and facilities. Debut is the first opportunity to buy.",
         "category": "Coquitlam",
         "location": "Fraser Mills",
-        "state": "featured",
+        "state": "sold",
         "info": {
             "Type": "Condo & Townhouse",
             "Units / Floors": "318 / 36",
