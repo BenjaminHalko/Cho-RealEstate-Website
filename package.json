@@ -8,7 +8,7 @@
     "sass": "^1.69.7"
   },
   "devDependencies": {
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.4.2",
     "nodemon": "^3.0.3",
     "webp-converter": "^2.3.3"
   },
