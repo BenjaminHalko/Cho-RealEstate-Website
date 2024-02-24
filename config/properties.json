@@ -1,4 +1,15 @@
 {
+    "ethos": {
+        "name": "Ethos",
+        "company": "Anthem",
+        "desc": "Nestled in the Heart of Metrotown in Burnaby with convenient shopping and entertainment connections",
+        "category": "Burnaby",
+        "location": "Metrotown",
+        "state": "featured",
+        "info": {
+            "Bedrooms": "Studio, Jr. 1 Bed, 1 Bed & 1 Den, 2 Den, 3 Bed"
+        }
+    },
     "town-centre": {
         "name": "Town & Centre",
         "company": "Mosaic",
