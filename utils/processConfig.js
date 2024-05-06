@@ -21,6 +21,8 @@ function processLocations() {
                 property.card_image = cardPath;
                 property.images.splice(property.images.indexOf(cardPath), 1);
                 property.images.push(cardPath);
+            } else {
+                property.card_image = backgroundPath;
             }
 
             if (backgroundPath) {

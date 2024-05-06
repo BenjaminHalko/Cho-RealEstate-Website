@@ -1,4 +1,27 @@
 {
+    "pine-and-glen": {
+        "name": "Pine & Glen",
+        "company": "Onni",
+        "desc": "Situated in the heart of Coquitlam’s City Centre featuring stunning architecture.",
+        "category": "Coquitlam",
+        "location": "Town Centre",
+        "state": "featured",
+        "info":  {
+            "1 Bed": "420 - 520 sqft",
+            "Jr. 2 Beds": "680 - 700 sqft",
+            "2 Beds": "775 - 815 sqft",
+            "3 Beds": "1,035 sqft",
+            "Est. Compl.": "2028"
+        }
+    },
+    "chapter": {
+        "name": "Chapter",
+        "company": "Beedie Living",
+        "desc": "Chapter is the only planned collection of lowrise wood frame homes that honour life’s meaningful moments.",
+        "category": "Coquitlam",
+        "location": "Fraser Mills",
+        "state": "featured"
+    },
     "ethos": {
         "name": "Ethos",
         "company": "Anthem",
@@ -16,7 +39,6 @@
         "desc": "Phase One at Town and Centre is a 30-Storey highrise at Westwood Street and Anson in Port Coquitlam.",
         "category": "Coquitlam",
         "location": "Town Centre",
-        "state": "featured",
         "info": {
             "Est. Compl.": "2027 - 2028",
             "Bedrooms": "Studio, 1 Bed, 2 Beds, 2 Beds Corner, 3 Beds"
@@ -28,7 +50,6 @@
         "desc": "A 32 storey concrete high-rise and a 5 storey podium with stacked concrete townhomes and city homes",
         "category": "Coquitlam",
         "location": "Fraser Mills",
-        "state": "featured",
         "info": {
             "Bedrooms": "Jr. 1 Bed, 1 Bed, 1 Bed + Den, 2 Beds, 2 Beds + Den, 3 Beds"
         }
@@ -38,8 +59,7 @@
         "company": "Millennium",
         "desc": "A Paris-inspired luxury tower in the exciting Brentwood neighbourhood.",
         "category": "Burnaby",
-        "location": "Brentwood",
-        "state": "featured"
+        "location": "Brentwood"
     },
     "solhouse": {
         "name": "Solhouse",
@@ -47,7 +67,6 @@
         "desc": "This 50-storey residential tower offers views of Central Park, Downtown Vancouver, and the North Shore",
         "category": "Burnaby",
         "location": "Metrotown",
-        "state": "featured",
         "info": {
             "Type": "Condo",
             "Units / Floors": "411 / 50",
@@ -61,7 +80,6 @@
         "desc": "Burquitlam Park District reaches 40 storeys and comprises of 364 homes including studios, 1, 2 & 3 bedroom residences.",
         "category": "Coquitlam",
         "location": "Burquitlam",
-        "state": "featured",
         "info": {
             "Maintenance Fee": "$0.59 / sqft",
             "Est. Compl.": "Summer 2028"
@@ -86,7 +104,6 @@
         "desc": "Icon is a masterpiece of fine living in Burnaby, where you can enjoy spacious homes with park views, high-end features, and amenities.",
         "category": "Burnaby",
         "location": "Byrne",
-        "state": "featured",
         "info": {
             "Type": "Condo",
             "Units / Floors": "352 / 46",
@@ -100,8 +117,7 @@
         "company": "Polygon",
         "desc": "Richmond's most-anticipated masterplanned community of the year. Ideally situated in the Richmond City Centre.",
         "category": "Richmond",
-        "location": "City Centre",
-        "state": "featured"
+        "location": "City Centre"
     },
     "marco-polo": {
         "name": "Marco Polo",
@@ -109,7 +125,6 @@
         "desc": "Marco Polo redefines work-life balance with state-of-the-art amenities and flexible spaces for inspired productivity.",
         "category": "Vancouver",
         "location": "Oakridge",
-        "state": "featured",
         "video_id": "41cE9PNst90",
         "info": {
             "Type": "Mixed-use mid-rise",
